@@ -203,17 +203,19 @@ h1,h2,h3{margin:0;font-weight:400}
 @media (max-width:520px){.results{grid-template-columns:1fr;gap:32px}}
 
 /* quotes */
-.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:48px}
+.quotes{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:56px 32px;margin-top:48px}
+.quotes .quote{grid-column:span 3}
+.quotes .quote:nth-child(n+5){grid-column:span 4}
 .quote{border-top:3px solid var(--gold);padding-top:22px;display:flex;flex-direction:column}
 .quote .mark{font-family:var(--display);font-size:80px;line-height:.7;height:40px;color:var(--gold)}
-.quote blockquote{margin:14px 0 0;font-size:22px;font-weight:600;line-height:1.35;flex:1}
+.quote blockquote{margin:14px 0 0;font-size:19px;font-weight:600;line-height:1.4;flex:1}
 .who{margin-top:24px;display:flex;align-items:center;gap:12px}
 .ini{width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--on-gold);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
 .who b{display:block;line-height:1.2}
 .who span{font-size:14px;color:var(--text-3)}
 .who .ini{font-size:14px;color:var(--on-gold)}
 .quotes-note{margin-top:28px;color:var(--text-2)}
-@media (max-width:960px){.quotes{grid-template-columns:1fr;gap:36px}}
+@media (max-width:960px){.quotes{grid-template-columns:1fr;gap:36px}.quotes .quote,.quotes .quote:nth-child(n+5){grid-column:auto}}
 
 /* growth systems */
 .systems{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:48px}
@@ -387,6 +389,9 @@ h1,h2,h3{margin:0;font-weight:400}
       <div class="stat res"><div class="stat-num">#1</div><div class="co">Heineken</div><p>Zlaty Bazant strengthened via brand building and activations.</p></div>
       <div class="stat res"><div class="stat-num">200%</div><div class="co">Yoplait</div><p>Flagship relaunch vs. target; market share from 21% to 29% across 4 CEE markets.</p></div>
       <div class="stat res"><div class="stat-num">+45.7%</div><div class="co">SkyEurope</div><p>Passenger growth and the most profitable half-year in company history, 8 markets.</p></div>
+      <div class="stat res"><div class="stat-num">#1</div><div class="co">E.ON</div><p>Market share in year 1 after launching E.ON e-mobility.</p></div>
+      <div class="stat res"><div class="stat-num">#2</div><div class="co">Dr.Max</div><p>New private label baby nutrition brand, in less than a year from launch.</p></div>
+      <div class="stat res"><div class="stat-num">+50%</div><div class="co">WPP MediaCom</div><p>Billing growth, agency ranking from #5 to #3, WPP High Performers Award 2012 and 2013.</p></div>
       <div class="stat res"><div class="stat-num">30+</div><div class="co">Teams led</div><p>Cross-functional and agency teams, 10+ industries, 2 divisions built from scratch at WPP MediaCom.</p></div>
     </div>
 
@@ -406,10 +411,14 @@ h1,h2,h3{margin:0;font-weight:400}
     </div>
     <div class="quotes">
       <figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>Excellent work! Most appreciated and well done in such a short timeframe!</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">JG</span><span><b>Justin Goes</b><span>CEO, Subway Europe</span></span></figcaption></figure>
+      <figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>He was the main contributor to the biggest success story in years that started the real company turnaround.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">JH</span><span><b>Jan Hanu&#353;</b><span>CEO, Yoplait</span></span></figcaption></figure>
+      <figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>Enormous drive, remarkably creative problem solving and pure business focus.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">JK</span><span><b>Jacek Kania</b><span>Business Director, WPP Media CEE</span></span></figcaption></figure>
       <figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>Key architect of our communication system - we are now selling better than ever before.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">MC</span><span><b>Marek Chovanec</b><span>Marketing Manager, VW Slovakia</span></span></figcaption></figure>
-      <figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>First-class marketer and brand builder. Passion and boldness. Strongly recommended!</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">VR</span><span><b>Vladimír Radosa</b><span>Marketing Manager, Heineken Slovakia</span></span></figcaption></figure>
+      <figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>First-class marketer and brand builder. Passion and boldness. Strongly recommended!</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">VR</span><span><b>Vladim&#237;r Radosa</b><span>Marketing Manager, Heineken Slovakia</span></span></figcaption></figure>
+      <figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>We are now nr. 2 brand in less than a year from start. Thanks to this success I was happy to entrust him with the launch of another new brand.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">MT</span><span><b>Mat&#250;&#353; Teke&#318;</b><span>Private Labels Manager, Dr.Max</span></span></figcaption></figure>
+      <figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>Milan's data based strategy and execution led to strong growth trajectory. He analysed our business of 2023 and proposed new strategy which he executed and delivered consistent results during 2024 and 2025.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">FK</span><span><b>Filip Kraj&#269;</b><span>Purchase and Logistic Director, Ecoprodukt &amp; Edimo</span></span></figcaption></figure>
     </div>
-    <p class="quotes-note">More references on request and on <a class="link" href="https://www.linkedin.com/in/milanobetko" target="_blank" rel="noopener">LinkedIn</a>.</p>
+    <p class="quotes-note">25 named references across 20 years. More on request and on <a class="link" href="https://www.linkedin.com/in/milanobetko" target="_blank" rel="noopener">LinkedIn</a>.</p>
   </div>
 </section>
 
