@@ -17,10 +17,10 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230B0B0B'/%3E%3Crect x='6' y='6' width='52' height='52' fill='%23D4A42C'/%3E%3Ctext x='32' y='44' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='26' text-anchor='middle' fill='%230B0B0B'%3EMO%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230B0B0B'/%3E%3Crect x='6' y='6' width='52' height='52' fill='%23D50C22'/%3E%3Ctext x='32' y='44' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='26' text-anchor='middle' fill='%230B0B0B'%3EMO%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#0B0B0B;
@@ -29,7 +29,7 @@
   --text-3:#C4C4C4;
   --line:#3A3A3A;
   --grid:#2E2E2E;
-  --gold:#D4A42C;
+  --gold:#D50C22;
   --on-gold:#0B0B0B;
   --display:"Anton",Impact,"Arial Narrow",sans-serif;
   --body:"Archivo","Helvetica Neue",Arial,sans-serif;
@@ -241,6 +241,53 @@ h1,h2,h3{margin:0;font-weight:400}
 .tl b{display:block;font-size:17px}
 .tl span{display:block;color:var(--text-2);font-size:15px}
 @media (max-width:960px){.about{grid-template-columns:1fr;gap:44px}.tl li{grid-template-columns:104px minmax(0,1fr);gap:14px}}
+
+/* THEME: Signal Red */
+:root{--gold:#D50C22;--on-gold:#FFFFFF;--red-text:#FF4D5A;
+--display:"DM Serif Display",Georgia,"Times New Roman",serif;--body:"Inter","Helvetica Neue",Arial,sans-serif}
+.display{text-transform:none;letter-spacing:-.015em}
+.hero-h1 .l1{line-height:.98}
+.hero-h1 .l2{color:var(--red-text);font-style:italic;line-height:.92}
+.gold,.eyebrow,.stat.is-gold .stat-num,.problem .n,.role .tag,.quote .mark,.tl em,.link-gold,.sub-head,.res-block .sub-head,.steps .n,.tile.ready .cc{color:var(--red-text)}
+.link-gold{border-color:var(--red-text)}
+.link{border-bottom-color:var(--red-text)}
+.nav-links a:hover,.link:hover,.site-footer a:hover,.back:hover{color:var(--red-text)}
+a:focus-visible,button:focus-visible{outline-color:var(--red-text)}
+.btn-gold{background:var(--gold);color:#FFFFFF}
+.btn-gold:hover{background:#FFFFFF;color:#0B0B0B}
+.btn-dark{background:#0B0B0B;color:#FFFFFF}
+.btn-dark:hover{background:#FFFFFF;color:#0B0B0B}
+.btn-line{border-color:#FFFFFF;color:#FFFFFF}
+.btn-line:hover{background:#FFFFFF;color:#0B0B0B}
+.contact .btn-gold,.feature .btn-gold{background:#0B0B0B;color:#FFFFFF}
+.arrow.down .body{color:#0B0B0B}
+.role{border-top-color:var(--gold)}
+.problem .n,.steps .n{font-style:italic}
+.role h3,.sys h3{text-transform:none;letter-spacing:-.01em}
+.lead{margin-top:28px}
+
+/* FONT: Jost */
+:root{--display:"Jost",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;--body:"Jost",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+body{font-size:18px}
+.display{font-weight:700;letter-spacing:-.03em}
+.hero-h1 .l2{font-weight:700;font-style:italic;letter-spacing:-.035em}
+.eyebrow,.meta-label,.marquee,.role .tag,.feature-eyebrow,.brands .lbl,.hero-photo figcaption,.sub-head{letter-spacing:.12em;font-weight:600}
+.stat-num{font-weight:700;letter-spacing:-.03em}
+.problem .n,.steps .n{font-weight:700}
+.role h3,.sys h3,.quote .mark{font-weight:700}
+.hero-body .lead{margin-top:40px}
+
+/* FINAL */
+
+.more-refs{margin-top:40px;border-top:1px solid var(--line)}
+.more-refs summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:700;font-size:15px;letter-spacing:.12em;text-transform:uppercase;display:flex;justify-content:space-between;gap:16px}
+.more-refs summary::-webkit-details-marker{display:none}
+.more-refs summary::after{content:"+";color:var(--red-text);font-size:22px;line-height:1}
+.more-refs[open] summary::after{content:"-"}
+.quotes.more{margin-top:12px}
+.quotes.more .quote,.quotes.more .quote:nth-child(n+5){grid-column:span 4}
+.quotes.more blockquote{font-size:17px;font-weight:500}
+@media (max-width:960px){.quotes.more .quote,.quotes.more .quote:nth-child(n+5){grid-column:auto}}
 </style>
 </head>
 <body>
@@ -368,7 +415,7 @@ h1,h2,h3{margin:0;font-weight:400}
 
     <article class="feature">
       <div>
-        <p class="feature-eyebrow">Featured success story  /  Edimo  /  2023 - 2025</p>
+        <p class="feature-eyebrow">Featured success story  /  Edimo  /  2024 - 2025</p>
         <h3 class="display feature-title">E-commerce transformation to growth.</h3>
         <p class="feature-sub">From a 90% crash after the covid boom to 9x profit in the first 12 months, with a launch in 5 new EU markets.</p>
         <a class="btn btn-dark" href="edimo-case-study.html">Read the case study &#8594;</a>
@@ -418,7 +465,8 @@ h1,h2,h3{margin:0;font-weight:400}
       <figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>We are now nr. 2 brand in less than a year from start. Thanks to this success I was happy to entrust him with the launch of another new brand.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">MT</span><span><b>Mat&#250;&#353; Teke&#318;</b><span>Private Labels Manager, Dr.Max</span></span></figcaption></figure>
       <figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>Milan's data based strategy and execution led to strong growth trajectory. He analysed our business of 2023 and proposed new strategy which he executed and delivered consistent results during 2024 and 2025.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">FK</span><span><b>Filip Kraj&#269;</b><span>Purchase and Logistic Director, Ecoprodukt &amp; Edimo</span></span></figcaption></figure>
     </div>
-    <p class="quotes-note">25 named references across 20 years. More on request and on <a class="link" href="https://www.linkedin.com/in/milanobetko" target="_blank" rel="noopener">LinkedIn</a>.</p>
+    <details class="more-refs"><summary>Show 18 more references</summary><div class="quotes more"><figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>Milan is passionate, creative, visionary and loyal. His biggest strengths are insights, deep expertise in marketing, strategic communications planning, developing and launching new services and integration.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">AD</span><span><b>Andrej Dziak</b><span>CEO, MediaCom Slovakia</span></span></figcaption></figure><figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>Milan proved his skills as a marketer with deep understanding of clients, brand building, strategic communications planning and services development.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">JH</span><span><b>J&#225;n Havelka</b><span>CEO, GroupM Slovakia</span></span></figcaption></figure><figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>Milan has been a great help in upgrading our local strategic planning product and I am looking forward to his contribution to the team development and new business support.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">RK</span><span><b>Richard Kop&#250;nik</b><span>CEO, Mindshare Slovakia</span></span></figcaption></figure><figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>Great work! The progress made by you and the team in such a short space of time really is commendable.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">LW</span><span><b>Louise Wardle</b><span>Vice-President Marketing EMEA, Subway</span></span></figcaption></figure><figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>Thank you for the work you have done. It goes to show that a lot can be achieved in a relatively short period of time.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">MB</span><span><b>Mike Brouwers</b><span>Marketing Director Europe, Subway</span></span></figcaption></figure><figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>I highly recommend Milan if you want to think out of the box. I have really enjoyed working with him, he is also very supportive in any situation. He is a change maker and works hard to reach his goals!</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">SC</span><span><b>Sandra Chassan</b><span>CEO France &amp; BeNeLux, Subway</span></span></figcaption></figure><figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>You came to our team like a hurricane and we needed it. Thank you for what you have done for our team, for our markets, our businesses.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">GO</span><span><b>Givi Ordenidze</b><span>General Manager Georgia, Subway</span></span></figcaption></figure><figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>I must say that I really like your passion and drive to transform everything needed! I really thank you and appreciate your dedication and hard work, but most importantly I congratulate you on your results!</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">AT</span><span><b>Andrei Triffan</b><span>General Manager Romania, Subway</span></span></figcaption></figure><figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>The main thing I appreciate is that you are getting things done. It goes to show that a lot can be achieved in a relatively short period of time.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">RL</span><span><b>Rokas Liutkauskas</b><span>General Manager Lithuania, Subway</span></span></figcaption></figure><figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>Milan came with a lot of drive and vast expertise that helped restart the whole commercial part of the business. He helped the leadership to understand the opportunities for growth and proposed pivoting that proved right.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">MK</span><span><b>Martin Karner</b><span>Senior Marketing Manager, Ecoprodukt &amp; Edimo</span></span></figcaption></figure><figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>He looks at situations from different angles and constantly comes up with out-of-the-box solutions that are practical and executable. Thanks to his leadership approach, we accelerated time-to-market.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">MK</span><span><b>Martina Kov&#225;&#269;ov&#225;</b><span>Expansion Lead B2B &amp; B2C, DACH &amp; CEE, Edimo</span></span></figcaption></figure><figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>Milan drove AI adaptation in the whole marketing, product and IR dev teams. We are now delivering more and better than before. He is demanding on his teams but also on himself.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">FO</span><span><b>Filip Olajec</b><span>Brand Lead, Edimo</span></span></figcaption></figure><figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>After we changed agencies, I was impressed by planning led by Milan that helped us grow the majority of our brands.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">L&#268;</span><span><b>Ladislav &#268;i&#382;m&#225;rik</b><span>Country Division Head, Bayer CHC Slovakia</span></span></figcaption></figure><figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>Milan was key to the success of campaigns in 2013-2014 that surpassed our ambitious internal goals. He delivered the right consumer insights, advisory on creative and precise, innovative communications and media planning.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">AK</span><span><b>Alena K&#318;&#250;&#269;ikov&#225;</b><span>Manager Communication &amp; Identity, UniCredit Bank Slovakia</span></span></figcaption></figure><figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>His proposal of strategy and detailed planning with the key focus on digital helped us deliver results significantly surpassing targets!</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">MO</span><span><b>Milan Ondrej</b><span>Marketing &amp; Sales Manager, Privatbanka</span></span></figcaption></figure><figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>He always explored all possible angles and searched for the right insights, making sure the strategy would bring business results to clients.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">MM</span><span><b>Miloslav M&#225;jek</b><span>Digital Director, MediaCom Slovakia</span></span></figcaption></figure><figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>Milan &#8220;lives his brand&#8221;. He is an exceptional asset for the company. He is resourceful, hard working, dedicated, strategically very sound and intelligent.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">TH</span><span><b>Tom&#225;&#353; Hriv&#328;&#225;k</b><span>Ex Strategic Planning Director, Euro RSCG New Europe, TBWA and Mark/BBDO Prague</span></span></figcaption></figure><figure class="quote" style="margin:0"><span class="mark" aria-hidden="true">&#8220;</span><blockquote>First-class marketer, truly oriented on the consumer, at the same time constantly advocating new, innovative but practical approaches and their integration into a meaningful direction for business.</blockquote><figcaption class="who"><span class="ini" aria-hidden="true">JC</span><span><b>Jaroslav C&#237;r</b><span>Ex Global Director Consumer &amp; Market Insight, Unilever</span></span></figcaption></figure></div></details>
+    <p class="quotes-note">25 named references across 20 years. More on <a class="link" href="https://www.linkedin.com/in/milanobetko" target="_blank" rel="noopener">LinkedIn</a>.</p>
   </div>
 </section>
 
@@ -459,12 +507,13 @@ h1,h2,h3{margin:0;font-weight:400}
         </div>
         <p>I help companies find the next source of growth, prove it in numbers and then navigate it - across markets, channels and partner networks. My strongest asset is integration: marketing, sales, agencies and data working as one growth system instead of disconnected campaigns.</p>
         <p>Three times international Marketing Director or CMO, former Strategy Director at WPP MediaCom. I have led 30+ cross-functional and agency teams and delivered 200+ strategic and GTM projects across 10+ industries.</p>
+        <p>Building digital since 2001: from the first website for Zlat&#253; Ba&#382;ant (Heineken) and pioneering e-commerce in CEE at SkyEurope to multi-market e-shops, lead-generation platforms and campaign sites today.</p>
         <p>Open to Fractional and Interim leadership mandates across CEE and DACH.</p>
         <p class="small">English (fluent, CAE), Slovak and Czech (native), French (intermediate). Master's in Business Management, University of Economics Bratislava.</p>
       </div>
       <ul class="tl">
         <li><em>2015 - today</em><div><b>Grow &amp; Prosper</b><span>CMO and growth leadership on demand - the umbrella for interim and fractional mandates</span></div></li>
-        <li><em>2023 - 2025</em><div><b>Edimo.com</b><span>CMO / Growth Director, CEE &amp; DACH - 2 &#8594; 7 markets, 9x profit turnaround. <a class="link-gold" href="edimo-case-study.html">Case study &#8594;</a></span></div></li>
+        <li><em>2024 - 2025</em><div><b>Edimo.com</b><span>CMO / Growth Director, CEE &amp; DACH - 2 &#8594; 7 markets, 9x profit turnaround. <a class="link-gold" href="edimo-case-study.html">Case study &#8594;</a></span></div></li>
         <li><em>2022 - 2023</em><div><b>Dexfinity</b><span>Head of Strategy - e-commerce marketing accelerator</span></div></li>
         <li><em>2019 - 2022</em><div><b>Subway</b><span>Marketing Director CEE - 13 markets</span></div></li>
         <li><em>2010 - 2015</em><div><b>MediaCom / WPP</b><span>Strategy Director, Head of Insight &amp; Beyond Advertising</span></div></li>
