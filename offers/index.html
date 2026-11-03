@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#121111">
+<title>Milan Obetko - Offers</title>
+<meta name="description" content="Ten ways to work with Milan Obetko, 4x International CMO with 20+ years across CEE and DACH: strategy, CEO and CMO advisory, fractional CMO, FoodTech, GreenTech, China2Europe, B2B acquisition, AI advisory and agency partnership.">
+<link rel="canonical" href="https://milanobetko.com/offers/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://milanobetko.com/offers/">
+<meta property="og:site_name" content="Milan Obetko">
+<meta property="og:title" content="Milan Obetko - Offers: 10 ways to work together">
+<meta property="og:description" content="Ten ways to work with Milan Obetko, 4x International CMO with 20+ years across CEE and DACH: strategy, CEO and CMO advisory, fractional CMO, FoodTech, GreenTech, China2Europe, B2B acquisition, AI advisory and agency partnership.">
+<meta property="og:image" content="https://milanobetko.com/offers/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://milanobetko.com/offers/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400..800&display=swap">
+<style>
+/* Layout: one tab rail over one 9:16 one-pager (1080 x 1920), scaled to fit the screen. Every offer, web pages included, is condensed to the same one-pager format. Each tab carries its page's own accent as a small swatch. */
+:root{
+  --ink:#0B0B0B;
+  --rail:#121111;
+  --line:#3A3A3A;
+  --fg:#FFFFFF;
+  --on-fg:#0B0B0B;
+  --ground:#161515;
+  --font:"Jost",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color-scheme:dark;
+}
+html,body{height:100%}
+body{margin:0;background:var(--ink);color:var(--fg);font-family:var(--font);display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--rail)}
+.rail{flex:0 0 auto;background:var(--rail);border-bottom:1px solid var(--line);padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;border:2px solid var(--fg);background:transparent;color:var(--fg);font-family:var(--font);font-size:15px;font-weight:700;line-height:1;white-space:nowrap;cursor:pointer}
+.tab .sw{width:12px;height:12px;flex:0 0 auto;background:var(--sw);box-shadow:0 0 0 1px rgba(255,255,255,.35)}
+.tab[aria-selected="true"]{background:var(--fg);color:var(--on-fg);font-weight:800}
+.tab:focus-visible{outline:3px solid var(--fg);outline-offset:3px}
+.full{display:flex;justify-content:flex-end;margin-top:10px}
+.full a{display:inline-flex;align-items:center;min-height:40px;padding:0 4px;color:var(--fg);font-size:15px;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.full a:focus-visible{outline:3px solid var(--fg);outline-offset:3px}
+.stage{position:relative;flex:1 1 auto;min-height:0;overflow:hidden;background:var(--ground)}
+.sheet{position:absolute;top:0;left:50%;width:1080px;height:1920px;transform-origin:0 0}
+.sheet iframe{display:block;position:absolute;top:0;left:0;width:1080px;height:1920px;border:0;background:var(--ink)}
+.sheet iframe[hidden]{display:none}
+@media (max-width:560px){.tab{padding:0 12px;font-size:14px;gap:8px}}
+</style>
+</head>
+<body>
+
+<nav class="rail" aria-label="Offer pages">
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="full"><a id="full" href="https://milanobetko.com/" target="_blank" rel="noopener">See the full page &#8594;</a></div>
+</nav>
+<div class="stage" id="stage"></div>
+
+<script>
+(function(){
+  var PAGES = [
+    { id: 'strategy', url: 'https://milanobetko.com/strategy2027/',  label: 'Strategy 2027+',      src: 'strategy.html',  sw: '#8A1630' },
+    { id: 'cmo', url: 'https://milanobetko.com/cmo-sparring/',       label: 'CMO Sparring',        src: 'cmo.html',       sw: '#C8281E' },
+    { id: 'ceo', url: 'https://milanobetko.com/ceo-second-opinion/',       label: 'CEO Second Opinion',  src: 'ceo.html',       sw: '#D50C22' },
+    { id: 'fcmo', url: 'https://milanobetko.com/fractional-cmo/',      label: 'Fractional CMO',      src: 'fcmo.html',      sw: '#C9A227' },
+    { id: 'foodtech', url: 'https://milanobetko.com/food/',  label: 'FoodTech',            src: 'foodtech.html',  sw: '#FFC21A' },
+    { id: 'greentech', url: 'https://milanobetko.com/green-tech/', label: 'GreenTech',           src: 'greentech.html', sw: '#C8F542' },
+    { id: 'china2europe', url: 'https://milanobetko.com/china2europe/', label: 'China2Europe',     src: 'china2europe.html', sw: '#B3141C' },
+    { id: 'b2b', url: 'https://milanobetko.com/b2b-acquisition/',       label: 'B2B Acquisition',     src: 'b2b.html',       sw: '#C9E265' },
+    { id: 'ai', url: 'https://milanobetko.com/ai-advisory/',        label: 'AI Advisory',          src: 'ai.html',        sw: '#A3134D' },
+    { id: 'agency', url: 'https://milanobetko.com/agency/',    label: 'For Agencies',         src: 'agency.html',    sw: '#2A5BFF' }
+  ];
+  var tabs = document.getElementById('tabs');
+  var stage = document.getElementById('stage');
+  var sheet = document.createElement('div');
+  sheet.className = 'sheet';
+  stage.appendChild(sheet);
+  var frames = {};
+  var buttons = {};
+
+  function fit(){
+    var w = stage.clientWidth, h = stage.clientHeight;
+    var s = Math.min(w / 1080, h / 1920);
+    sheet.style.transform = 'translateX(' + (-540 * s) + 'px) scale(' + s + ')';
+  }
+  fit();
+  window.addEventListener('resize', fit);
+
+  PAGES.forEach(function(p){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tab';
+    b.id = 'tab-' + p.id;
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-selected', 'false');
+    b.setAttribute('aria-controls', 'panel-' + p.id);
+    b.style.setProperty('--sw', p.sw);
+    var sw = document.createElement('span');
+    sw.className = 'sw';
+    sw.setAttribute('aria-hidden', 'true');
+    b.appendChild(sw);
+    b.appendChild(document.createTextNode(p.label));
+    b.addEventListener('click', function(){ show(p.id, true); });
+    tabs.appendChild(b);
+    buttons[p.id] = b;
+  });
+
+  tabs.addEventListener('keydown', function(e){
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    var i = PAGES.findIndex(function(p){ return buttons[p.id] === document.activeElement; });
+    if (i < 0) return;
+    var n = (i + (e.key === 'ArrowRight' ? 1 : PAGES.length - 1)) % PAGES.length;
+    buttons[PAGES[n].id].focus();
+    show(PAGES[n].id, true);
+    e.preventDefault();
+  });
+
+  function show(id, fromUser){
+    var page = PAGES.find(function(p){ return p.id === id; }) || PAGES[0];
+    if (!frames[page.id]){
+      var f = document.createElement('iframe');
+      f.id = 'panel-' + page.id;
+      f.title = page.label;
+      f.setAttribute('role', 'tabpanel');
+      f.setAttribute('aria-labelledby', 'tab-' + page.id);
+      f.src = page.src;
+      sheet.appendChild(f);
+      frames[page.id] = f;
+    }
+    PAGES.forEach(function(p){
+      buttons[p.id].setAttribute('aria-selected', p.id === page.id ? 'true' : 'false');
+      buttons[p.id].tabIndex = p.id === page.id ? 0 : -1;
+      if (frames[p.id]) frames[p.id].hidden = p.id !== page.id;
+    });
+    var fl = document.getElementById('full'); fl.href = page.url; fl.setAttribute('aria-label', 'See the full page: ' + page.label);
+    buttons[page.id].scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    if (fromUser){
+      try { history.replaceState(null, '', '#' + page.id); } catch (e) {}
+      try { localStorage.setItem('offer-tab', page.id); } catch (e) {}
+    }
+  }
+
+  function initial(){
+    var h = (location.hash || '').replace('#', '');
+    if (PAGES.some(function(p){ return p.id === h; })) return h;
+    try {
+      var s = localStorage.getItem('offer-tab');
+      if (s && PAGES.some(function(p){ return p.id === s; })) return s;
+    } catch (e) {}
+    return PAGES[0].id;
+  }
+  window.addEventListener('hashchange', function(){
+    var h = (location.hash || '').replace('#', '');
+    if (PAGES.some(function(p){ return p.id === h; })) show(h, false);
+  });
+  show(initial(), false);
+})();
+</script>
+</body>
+</html>
