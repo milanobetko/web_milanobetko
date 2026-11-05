@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#121111">
+<title>Milan Obetko - Portfolio</title>
+<meta name="description" content="All of Milan Obetko's offer pages in one place: strategy, CEO and CMO advisory, fractional CMO, FoodTech, GreenTech, China2Europe, B2B and AI advisory, agency partnership.">
+<link rel="canonical" href="https://milanobetko.com/portfolio/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://milanobetko.com/portfolio/">
+<meta property="og:site_name" content="Milan Obetko">
+<meta property="og:title" content="Milan Obetko - Portfolio: every offer page in one place">
+<meta property="og:description" content="Switch between all offer pages: strategy, advisory, fractional leadership, B2B and AI.">
+<meta property="og:image" content="https://milanobetko.com/portfolio/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://milanobetko.com/portfolio/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400..800&display=swap">
+<style>
+:root{--ink:#0B0B0B;--rail:#121111;--line:#3A3A3A;--fg:#FFFFFF;--on-fg:#0B0B0B;--font:"Jost",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color-scheme:dark}
+html,body{height:100%;margin:0}
+body{background:var(--ink);color:var(--fg);font-family:var(--font);display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+.rail{flex:0 0 auto;background:var(--rail);border-bottom:1px solid var(--line);padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;align-items:center;gap:12px}
+.tabs{flex:1 1 auto;min-width:0;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;border:2px solid var(--fg);background:transparent;color:var(--fg);font-family:var(--font);font-size:15px;font-weight:700;line-height:1;white-space:nowrap;cursor:pointer}
+.tab .sw{width:12px;height:12px;flex:0 0 auto;background:var(--sw);box-shadow:0 0 0 1px rgba(255,255,255,.35)}
+.tab[aria-selected="true"]{background:var(--fg);color:var(--on-fg);font-weight:800}
+.tab:focus-visible,.open:focus-visible{outline:3px solid var(--fg);outline-offset:3px}
+.open{flex:0 0 auto;display:inline-flex;align-items:center;min-height:44px;padding:0 4px;color:var(--fg);font-size:14px;font-weight:700;text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
+.stage{position:relative;flex:1 1 auto;min-height:0}
+.stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:var(--ink)}
+.stage iframe[hidden]{display:none}
+@media (max-width:560px){.tab{padding:0 12px;font-size:14px;gap:8px}.open{font-size:13px}}
+</style>
+</head>
+<body>
+<nav class="rail" aria-label="Offer pages">
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <a class="open" id="open" href="/" target="_blank" rel="noopener">Open &#8599;</a>
+</nav>
+<div class="stage" id="stage"></div>
+<script>
+(function(){
+  var PAGES = [
+    { id: 'strategy', label: 'Strategy 2027+', src: '/strategy2027/', sw: '#8A1630' },
+    { id: 'cmo', label: 'CMO Sparring', src: '/cmo-sparring/', sw: '#C8281E' },
+    { id: 'ceo', label: 'CEO Second Opinion', src: '/ceo-second-opinion/', sw: '#D50C22' },
+    { id: 'fcmo', label: 'Fractional CMO', src: '/fractional-cmo/', sw: '#C9A227' },
+    { id: 'foodtech', label: 'FoodTech', src: '/food/', sw: '#FFC21A' },
+    { id: 'greentech', label: 'GreenTech', src: '/green-tech/', sw: '#C8F542' },
+    { id: 'china2europe', label: 'China2Europe', src: '/china2europe/', sw: '#B3141C' },
+    { id: 'b2b', label: 'B2B Acquisition', src: '/b2b-acquisition/', sw: '#C9E265' },
+    { id: 'ai', label: 'AI Advisory', src: '/ai-advisory/', sw: '#A3134D' },
+    { id: 'agency', label: 'For Agencies', src: '/agency/', sw: '#2A5BFF' },
+    { id: 'b2bcred', label: 'B2B', src: '/b2b/', sw: '#00826E' }
+  ];
+  var tabs=document.getElementById('tabs'), stage=document.getElementById('stage'), open=document.getElementById('open');
+  var frames={}, buttons={};
+  PAGES.forEach(function(p){
+    var b=document.createElement('button'); b.type='button'; b.className='tab'; b.id='tab-'+p.id;
+    b.setAttribute('role','tab'); b.setAttribute('aria-selected','false'); b.setAttribute('aria-controls','panel-'+p.id);
+    b.style.setProperty('--sw',p.sw);
+    var sw=document.createElement('span'); sw.className='sw'; sw.setAttribute('aria-hidden','true'); b.appendChild(sw);
+    b.appendChild(document.createTextNode(p.label));
+    b.addEventListener('click',function(){show(p.id,true);});
+    tabs.appendChild(b); buttons[p.id]=b;
+  });
+  tabs.addEventListener('keydown',function(e){
+    if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;
+    var i=PAGES.findIndex(function(p){return buttons[p.id]===document.activeElement;}); if(i<0)return;
+    var n=(i+(e.key==='ArrowRight'?1:PAGES.length-1))%PAGES.length; buttons[PAGES[n].id].focus(); show(PAGES[n].id,true); e.preventDefault();
+  });
+  function show(id,fromUser){
+    var page=PAGES.find(function(p){return p.id===id;})||PAGES[0];
+    if(!frames[page.id]){var f=document.createElement('iframe'); f.id='panel-'+page.id; f.title=page.label; f.setAttribute('role','tabpanel'); f.setAttribute('aria-labelledby','tab-'+page.id); f.src=page.src; stage.appendChild(f); frames[page.id]=f;}
+    PAGES.forEach(function(p){buttons[p.id].setAttribute('aria-selected',p.id===page.id?'true':'false'); buttons[p.id].tabIndex=p.id===page.id?0:-1; if(frames[p.id])frames[p.id].hidden=p.id!==page.id;});
+    open.href=page.src; open.setAttribute('aria-label','Open '+page.label+' in a new tab');
+    buttons[page.id].scrollIntoView({block:'nearest',inline:'nearest'});
+    if(fromUser){try{history.replaceState(null,'','#'+page.id);}catch(e){}}
+  }
+  var h=(location.hash||'').replace('#','');
+  show(PAGES.some(function(p){return p.id===h;})?h:PAGES[0].id,false);
+  window.addEventListener('hashchange',function(){var h=(location.hash||'').replace('#','');if(PAGES.some(function(p){return p.id===h;}))show(h,false);});
+})();
+</script>
+</body>
+</html>
