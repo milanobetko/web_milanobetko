@@ -71,13 +71,15 @@ h1 em{font-style:italic;color:var(--acct)}
 .lead b{color:var(--white)}
 
 .sec{padding-block:0 clamp(72px,9vw,120px)}
-.refs{columns:3 300px;column-gap:18px}
-.refs figure{break-inside:avoid;margin:0 0 18px;background:var(--card);border-top:3px solid var(--acc);padding:20px 22px}
+.refs{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;align-items:start}
+.refs figure{margin:0;background:var(--card);border-top:3px solid var(--acc);padding:20px 22px}
 .refs blockquote{margin:0;font-size:17.5px;line-height:1.5;font-weight:500}
 .refs figcaption{margin-top:12px;font-size:14.5px;color:var(--t3);line-height:1.4}
 .refs figcaption b{display:block;color:var(--white);font-size:15.5px}
 
-.home-btn{margin-top:30px}
+.lnk{display:inline-block;font-weight:700;font-size:16px;text-decoration:none;border-bottom:2px solid var(--acct);padding-bottom:2px}
+.lnk:hover{color:var(--acct)}
+.home-btn{margin-top:26px}
 .endbar{padding-block:0 clamp(64px,8vw,96px)}
 .contact{background:var(--acc);color:var(--on)}
 .contact .wrap{padding-block:clamp(64px,8vw,112px);display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px;align-items:end}
@@ -100,9 +102,12 @@ footer a:hover{color:var(--white)}
 <p class="eyebrow">References <span>/ Milan Obetko</span></p>
 <h1>In their <em>own words.</em></h1>
 <p class="lead"><b>25 named references from 20 years:</b> clients, the chief executives I reported to, and the teams I led.</p>
-<a class="btn btn-line home-btn" href="https://milanobetko.com/">&#8592; Back to milanobetko.com</a>
+<a class="lnk home-btn" href="https://milanobetko.com/">&#8592; Back to milanobetko.com</a>
 </div></section>
 <section class="sec" id="references" aria-label="References"><div class="wrap"><div class="refs">
+<figure><blockquote>“Great work. The progress made by you and the team in such a short space of time really is commendable.”</blockquote><figcaption><b>Louise Wardle</b>Vice-President Marketing, EMEA</figcaption></figure>
+<figure><blockquote>“Thank you for work you have done. It goes to show that a lot can be achieved in a relatively short period of time.”</blockquote><figcaption><b>Mike Brouwers</b>Marketing Director Europe</figcaption></figure>
+<figure><blockquote>“Excellent work. Most appreciated and well done.”</blockquote><figcaption><b>Justin Goes</b>CEO Europe</figcaption></figure>
 <figure><blockquote>“Milan's data based strategy and execution led to strong growth trajectory. He analysed our business of 2023 and proposed new strategy which he executed and delivered consistent results during 2024 and 2025.”</blockquote><figcaption><b>Filip Krajč</b>Purchase and Logistic Director, Ecoprodukt &amp; Edimo</figcaption></figure>
 <figure><blockquote>“Milan came with a lot of drive and vast expertise that helped restart the whole commercial part of the business. He was the driving force behind portfolio scaling, new markets expansion, ecommerce profit-driven optimization, and lead generation boost.”</blockquote><figcaption><b>Martin Karner</b>ex-Head of Marketing, Edimo</figcaption></figure>
 <figure><blockquote>“Milan brought to our team a long-term experience and strong drive. He looks at situations from different angles and constantly comes up with out-of-the-box solutions that are practical and executable. Thanks to his leadership approach, we accelerated time-to-market.”</blockquote><figcaption><b>Martina Kováčová</b>Expansion lead B2B &amp; B2C, DACH &amp; CEE, Edimo</figcaption></figure>
@@ -124,12 +129,9 @@ footer a:hover{color:var(--white)}
 <figure><blockquote>“I must say that I really like your passion and drive to transform everything needed. I appreciate your dedication and hard work, but most importantly I congratulate you for your results.”</blockquote><figcaption><b>Andrei Triffan</b>General Manager Romania</figcaption></figure>
 <figure><blockquote>“You came to our team like a hurricane and we needed it. Thank you for what you have done for our team, for our markets, our businesses.”</blockquote><figcaption><b>Givi Ordenidze</b>General Manager Georgia</figcaption></figure>
 <figure><blockquote>“Main thing what I appreciate is that you're making things done. It goes to show that a lot can be achieved in a relatively short period of time.”</blockquote><figcaption><b>Rokas Liutkauskas</b>General Manager Lithuania</figcaption></figure>
-<figure><blockquote>“Great work. The progress made by you and the team in such a short space of time really is commendable.”</blockquote><figcaption><b>Louise Wardle</b>Vice-President Marketing, EMEA</figcaption></figure>
-<figure><blockquote>“Thank you for work you have done. It goes to show that a lot can be achieved in a relatively short period of time.”</blockquote><figcaption><b>Mike Brouwers</b>Marketing Director Europe</figcaption></figure>
-<figure><blockquote>“Excellent work. Most appreciated and well done.”</blockquote><figcaption><b>Justin Goes</b>CEO Europe</figcaption></figure>
 <figure><blockquote>“Terrific job. We were all thrilled about the CEE update. It's so well done, we are asking our other Western Europe business units to model after you.”</blockquote><figcaption><b>Senior Manager of Development Performance</b>EMEA</figcaption></figure>
 </div></div></section>
-<section class="endbar"><div class="wrap"><a class="btn btn-line" href="https://milanobetko.com/">&#8592; Back to milanobetko.com</a></div></section>
+<section class="endbar"><div class="wrap"><a class="lnk" href="https://milanobetko.com/">&#8592; Back to milanobetko.com</a></div></section>
 <section class="contact" id="contact" aria-labelledby="h-contact"><div class="wrap">
 <div><h2 id="h-contact">Looking for a senior marketing and growth leader? Let's talk.</h2><p class="note">Available from Q4 2026 for Fractional and Interim leadership mandates across CEE and DACH.</p></div>
 <div><div class="acts"><a class="btn btn-dark" href="mailto:milan.obetko@gmail.com?subject=Let%27s%20talk">Get in touch</a><a class="btn btn-line" href="https://www.linkedin.com/in/milanobetko" target="_blank" rel="noopener">Connect on LinkedIn</a></div><p class="det"><a href="mailto:milan.obetko@gmail.com">milan.obetko@gmail.com</a><br><a href="tel:+421911719998">+421 911 719 998</a><br>Bratislava, Slovakia / Prague, Czech Republic</p></div>
