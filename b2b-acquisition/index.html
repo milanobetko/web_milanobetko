@@ -237,6 +237,37 @@ h2{letter-spacing:-.025em}
 .contact .btn-white{background:var(--brk);color:var(--ink)}
 .contact .btn-white:hover{background:#DBEC9B}
 @media (max-width:560px){.top .btn{padding:11px 14px;font-size:12px}}
+
+/* motion, ported from b2b-acquisition-engine.com: engine pulses, counters, steps rail */
+.engwrap{margin-top:clamp(36px,4vw,52px);display:flex;justify-content:center}
+.engine{--soft:#CFCFCF;--card:#111113;--line2:rgba(255,255,255,.28);--lime:#C9E265;--f:"Jost",sans-serif;position:relative;width:100%;aspect-ratio:560/470;max-width:760px;margin:0}
+.engine svg{width:100%;height:100%;display:block;overflow:visible}
+.engine .lbl{font:600 11px var(--f);letter-spacing:.16em;text-transform:uppercase;fill:var(--soft)}
+.engine .nd{fill:var(--card);stroke:var(--line2);stroke-width:1}
+.engine .nd.res{stroke-dasharray:4 4}
+.engine .nt{font:500 13px var(--f);fill:#FFFFFF}
+.engine .nt.s{font-size:11px;fill:var(--soft)}
+.engine .nt.v{font-size:11px}
+.engine .path{fill:none;stroke:rgba(201,226,101,.32);stroke-width:1.2}
+.engine .path.d{stroke-dasharray:4 5}
+.engine .sq{fill:rgba(255,255,255,.14)}
+.engine .sq.on{fill:var(--lime)}
+.engine .out{fill:var(--lime)}
+.engine .outt{font:600 13px var(--f);fill:#0A0A0B;letter-spacing:.06em;text-transform:uppercase}
+.engine .pulse{fill:var(--lime)}
+.engine .yb{fill:none;stroke:var(--lime);stroke-width:1.2;stroke-dasharray:3 4}
+.engine.ev{display:none;aspect-ratio:340/400;max-width:420px}
+@media (max-width:620px){.engine.eh{display:none}.engine.ev{display:block}}
+.count{font-variant-numeric:tabular-nums}
+.rail4{position:relative;padding-top:22px}
+.rail4::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--line)}
+.rail4::after{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:var(--hot);transition:width 1.8s linear}
+.rail4.play::after{width:100%}
+.rail4 .step{transition:border-color .35s,transform .35s cubic-bezier(.2,1.4,.4,1)}
+.rail4.play .step{border-top-color:var(--hot);animation:steppop .5s cubic-bezier(.2,1.4,.4,1) both}
+@keyframes steppop{0%{transform:translateY(6px)}60%{transform:translateY(-3px)}100%{transform:none}}
+@media (max-width:1000px){.rail4::before,.rail4::after{display:none}.rail4{padding-top:0}}
+@media (prefers-reduced-motion:reduce){.rail4::after,.rail4 .step{transition:none;animation:none}}
 </style>
 
 <header class="top">
@@ -275,10 +306,10 @@ h2{letter-spacing:-.025em}
       </figure>
     </div>
     <div class="facts-row" aria-label="The engine in numbers">
-      <div class="fact is-acc"><div class="num">3-5 wks</div><p>to campaign launch</p></div>
-      <div class="fact"><div class="num">~95%</div><p>handled by us</p></div>
-      <div class="fact"><div class="num">4 h</div><p>a month from you, max</p></div>
-      <div class="fact"><div class="num">30 days</div><p>notice to exit, no lock-in</p></div>
+      <div class="fact is-acc"><div class="num"><span class="count" data-to="3">3</span>-<span class="count" data-to="5">5</span> wks</div><p>to campaign launch</p></div>
+      <div class="fact"><div class="num">~<span class="count" data-to="95">95</span>%</div><p>handled by us</p></div>
+      <div class="fact"><div class="num"><span class="count" data-to="4">4</span> h</div><p>a month from you, max</p></div>
+      <div class="fact"><div class="num"><span class="count" data-to="30">30</span> days</div><p>notice to exit, no lock-in</p></div>
     </div>
   </div>
 </section>
@@ -326,6 +357,70 @@ h2{letter-spacing:-.025em}
     <div class="sec-head">
       <span class="step-no">02  How it works</span>
       <h2 id="h-engine">Continuous multi-channel, <span class="hl">multi-sequence acquisition.</span></h2>
+    </div>
+    <div class="engwrap">
+<figure class="engine eh" role="img" aria-label="Diagram of the engine: the mapped market feeds three satellite brands, which run email, LinkedIn, WhatsApp and Messenger sequences that turn into qualified meetings. Your own brand stays untouched.">
+        <svg viewBox="0 0 560 470" id="engH">
+          <text class="lbl" x="0" y="18">Market mapped</text>
+          <text class="lbl" x="150" y="18">Satellite brands</text>
+          <text class="lbl" x="318" y="18">Channels</text>
+          <text class="lbl" x="452" y="18">Meetings</text>
+          <g class="g-mkt"></g><g class="g-paths"></g><g class="g-pulses"></g>
+          <g>
+            <rect class="nd" x="150" y="80" width="120" height="40"/><text class="nt" x="164" y="105">Satellite 01</text>
+            <rect class="nd" x="150" y="170" width="120" height="40"/><text class="nt" x="164" y="195">Satellite 02</text>
+            <rect class="nd" x="150" y="260" width="120" height="40"/><text class="nt" x="164" y="285">Satellite 03</text>
+            <rect class="nd res" x="150" y="350" width="120" height="40"/><text class="nt s" x="164" y="375">Reserve</text>
+          </g>
+          <g>
+            <rect class="nd" x="318" y="70" width="104" height="36"/><text class="nt" x="332" y="93">E-mail</text>
+            <rect class="nd" x="318" y="150" width="104" height="36"/><text class="nt" x="332" y="173">LinkedIn</text>
+            <rect class="nd" x="318" y="230" width="104" height="36"/><text class="nt" x="332" y="253">WhatsApp</text>
+            <rect class="nd res" x="318" y="310" width="104" height="36"/><text class="nt s" x="332" y="333">Messenger</text>
+          </g>
+          <g>
+            <rect class="out" x="452" y="170" width="108" height="96"/>
+            <text class="outt" x="466" y="208">Qualified</text>
+            <text class="outt" x="466" y="228">meetings</text>
+            <text class="outt" x="466" y="248">weekly</text>
+          </g>
+          <g>
+            <rect class="yb" x="452" y="300" width="108" height="56"/>
+            <text class="nt" x="466" y="324">Your brand</text>
+            <text class="nt s" x="466" y="343">Untouched</text>
+          </g>
+        </svg>
+      </figure>
+      <figure class="engine ev" role="img" aria-label="Diagram of the engine: the mapped market feeds three satellite brands, which run email, LinkedIn, WhatsApp and Messenger sequences that turn into qualified meetings. Your own brand stays untouched.">
+        <svg viewBox="0 0 340 400" id="engV">
+          <text class="lbl" x="0" y="10">Market mapped</text>
+          <text class="lbl" x="0" y="112">Satellite brands</text>
+          <text class="lbl" x="0" y="196">Channels</text>
+          <text class="lbl" x="0" y="280">Meetings</text>
+          <g class="g-mkt"></g><g class="g-paths"></g><g class="g-pulses"></g>
+          <g>
+            <rect class="nd" x="0" y="122" width="76" height="34"/><text class="nt v" x="9" y="143">Satellite 01</text>
+            <rect class="nd" x="88" y="122" width="76" height="34"/><text class="nt v" x="97" y="143">Satellite 02</text>
+            <rect class="nd" x="176" y="122" width="76" height="34"/><text class="nt v" x="185" y="143">Satellite 03</text>
+            <rect class="nd res" x="264" y="122" width="76" height="34"/><text class="nt s v" x="273" y="143">Reserve</text>
+          </g>
+          <g>
+            <rect class="nd" x="0" y="206" width="76" height="34"/><text class="nt v" x="9" y="227">E-mail</text>
+            <rect class="nd" x="88" y="206" width="76" height="34"/><text class="nt v" x="97" y="227">LinkedIn</text>
+            <rect class="nd" x="176" y="206" width="76" height="34"/><text class="nt v" x="185" y="227">WhatsApp</text>
+            <rect class="nd res" x="264" y="206" width="76" height="34"/><text class="nt s v" x="273" y="227">Messenger</text>
+          </g>
+          <g>
+            <rect class="out" x="0" y="290" width="340" height="44"/>
+            <text class="outt" x="14" y="317">Qualified meetings weekly</text>
+          </g>
+          <g>
+            <rect class="yb" x="0" y="352" width="340" height="40"/>
+            <text class="nt" x="14" y="377">Your brand</text>
+            <text class="nt s" x="104" y="377">Untouched</text>
+          </g>
+        </svg>
+      </figure>
     </div>
     <div class="weeks" role="img" aria-label="A four-week cycle: email every week, LinkedIn between, WhatsApp in weeks 3 and 4, repeated as an ongoing system">
       <div class="wk-row wk-head"><span></span><div class="wk-cols"><span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span></div></div>
@@ -384,7 +479,7 @@ h2{letter-spacing:-.025em}
       <div class="term"><span class="k">Ownership</span><h3>Yours from day one.</h3><p>Domains, data, sequences and the playbook stay with you.</p></div>
       <div class="term"><span class="k">Handover</span><h3>Trained and documented.</h3><p>Staff training and documented processes.</p></div>
     </div>
-    <div class="steps" aria-label="How we work together">
+    <div class="steps rail4" aria-label="How we work together">
       <div class="step"><h3>Diagnostics &amp; strategy</h3><p>Segment, geography, buyers and the offer that opens the door.</p></div>
       <div class="step"><h3>Build &amp; launch</h3><p class="sp">Fixed price, confirmed on the first call</p><p>The system built and launched, in about two months.</p></div>
       <div class="step"><h3>Managed growth</h3><p class="sp">€3,000-5,500 / month</p><p>We run it, with monthly reporting.</p></div>
@@ -453,6 +548,48 @@ h2{letter-spacing:-.025em}
     <span><a href="https://milanobetko.com/">milanobetko.com</a>  /  <a href="https://b2b-acquisition-engine.com" target="_blank" rel="noopener">b2b-acquisition-engine.com</a></span>
   </div>
 </footer>
+
+<script>
+(function(){
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var NS='http://www.w3.org/2000/svg';
+  function el(tag,a,parent){var e=document.createElementNS(NS,tag);for(var k in a)e.setAttribute(k,a[k]);parent.appendChild(e);return e;}
+  function engine(id,o){
+    var svg=document.getElementById(id);if(!svg)return;
+    var gm=svg.querySelector('.g-mkt'),gp=svg.querySelector('.g-paths'),gu=svg.querySelector('.g-pulses');
+    for(var r=0;r<o.rows;r++){for(var c=0;c<o.cols;c++){var i=r*o.cols+c;el('rect',{x:o.gx(c),y:o.gy(r),width:9,height:9,'class':'sq'+(o.lit.indexOf(i)>-1?' on':'')},gm);}}
+    o.paths.forEach(function(p){el('path',{d:p.d,'class':'path'+(p.dash?' d':'')},gp);});
+    if(!reduce){
+      o.routes.forEach(function(d,k){var c=el('circle',{r:3,'class':'pulse',cx:-20,cy:-20},gu);el('animateMotion',{dur:(3.6+(k%4)*0.5)+'s',repeatCount:'indefinite',begin:(-k*0.45)+'s',path:d,calcMode:'linear'},c);});
+      if('IntersectionObserver' in window&&svg.pauseAnimations){new IntersectionObserver(function(en){en.forEach(function(x){x.isIntersecting?svg.unpauseAnimations():svg.pauseAnimations();});}).observe(svg);}
+    }
+  }
+  function link(si,ci){return (si+ci)%2===0||ci===si;}
+  (function(){
+    var sats=[100,190,280], ch=[88,168,248,328], oy=218, paths=[], routes=[];
+    sats.forEach(function(sy){paths.push({d:'M112 '+sy+' C 132 '+sy+', 132 '+sy+', 150 '+sy});});
+    sats.forEach(function(sy,si){ch.forEach(function(cy,ci){if(link(si,ci))paths.push({d:'M270 '+sy+' C 296 '+sy+', 292 '+cy+', 318 '+cy,dash:ci===3});});});
+    ch.forEach(function(cy,ci){paths.push({d:'M422 '+cy+' C 440 '+cy+', 436 '+oy+', 452 '+oy,dash:ci===3});});
+    sats.forEach(function(sy,si){ch.forEach(function(cy,ci){if(!link(si,ci))return;routes.push('M108 '+sy+' L 270 '+sy+' C 296 '+sy+', 292 '+cy+', 318 '+cy+' L 422 '+cy+' C 440 '+cy+', 436 '+oy+', 452 '+oy);});});
+    engine('engH',{rows:12,cols:8,gx:function(c){return c*14;},gy:function(r){return 70+r*28;},lit:[3,9,14,20,27,31,38,44,50,57,63,69],paths:paths,routes:routes});
+  })();
+  (function(){
+    var sx=[38,126,214], cx=[38,126,214,302], paths=[], routes=[];
+    sx.forEach(function(x){paths.push({d:'M'+x+' 78 L '+x+' 122'});});
+    sx.forEach(function(x,si){cx.forEach(function(c,ci){if(link(si,ci))paths.push({d:'M'+x+' 156 C '+x+' 182, '+c+' 180, '+c+' 206',dash:ci===3});});});
+    cx.forEach(function(c,ci){paths.push({d:'M'+c+' 240 C '+c+' 266, 170 264, 170 290',dash:ci===3});});
+    sx.forEach(function(x,si){cx.forEach(function(c,ci){if(!link(si,ci))return;routes.push('M'+x+' 74 L '+x+' 156 C '+x+' 182, '+c+' 180, '+c+' 206 L '+c+' 240 C '+c+' 266, 170 264, 170 290');});});
+    engine('engV',{rows:4,cols:20,gx:function(c){return 4+c*17;},gy:function(r){return 22+r*14;},lit:[2,7,13,18,24,29,35,41,46,52,58,63,69,75],paths:paths,routes:routes});
+  })();
+  function once(node,fn,th){if(!node)return;if(!('IntersectionObserver' in window)){fn();return;}var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){fn();io.disconnect();}});},{threshold:th||.35});io.observe(node);}
+  function count(node){var to=+node.dataset.to;if(reduce){node.textContent=to;return;}node.textContent='0';var t0=null;function st(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/1300,1);node.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(st);}requestAnimationFrame(st);}
+  document.querySelectorAll('.count').forEach(function(n){once(n,function(){count(n);},.4);});
+  document.querySelectorAll('.rail4').forEach(function(r){
+    [].slice.call(r.children).forEach(function(c,i){var d=(i*0.45).toFixed(2)+'s';c.style.transitionDelay=d;c.style.animationDelay=d;});
+    once(r,function(){r.classList.add('play');},.3);
+  });
+})();
+</script>
 
 </body>
 </html>
