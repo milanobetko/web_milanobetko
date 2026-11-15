@@ -95,7 +95,7 @@ footer a:hover{color:var(--white)}
 <style>
 /* Interactive lens: relationship colours are the only new hues; red stays the page accent and the Managers colour. */
 :root{--c-manager:#FF5A68;--c-team:#F2C94C;--c-client:#4FD1B5;--c-franchise:#C49BFF;--c-peer:#8FB8FF;--c-partner:#FF9F6B;--dim:#2A2626}
-.hgrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:end}
+.hgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(28px,5vw,72px);align-items:end}
 @media (max-width:900px){.hgrid{grid-template-columns:1fr}}
 .meter{border-top:3px solid var(--acc);padding-top:18px;min-width:0}
 .mnum{margin:0;display:flex;align-items:baseline;gap:14px;line-height:.85}
@@ -104,7 +104,7 @@ footer a:hover{color:var(--white)}
 .mlab{margin:14px 0 0;font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-.01em}
 .msub{margin:4px 0 0;font-size:15.5px;color:var(--t3);min-height:2.9em}
 .msub:empty{min-height:0}
-.dots{margin-top:14px;display:grid;grid-template-columns:repeat(17,minmax(0,1fr));gap:8px;max-width:460px}
+.dots{margin-top:14px;display:grid;grid-template-columns:repeat(var(--cols,18),minmax(0,1fr));gap:8px;max-width:calc(var(--cols,18) * 27.5px - 8px)}
 .dots button{appearance:none;border:0;padding:0;aspect-ratio:1;border-radius:50%;background:var(--c);cursor:pointer;transition:transform .25s,background .35s,opacity .35s;position:relative}
 .dots button.off{background:var(--dim)}
 .dots button:hover,.dots button:focus-visible{transform:scale(1.5);z-index:2}
@@ -238,6 +238,7 @@ figs.forEach(function(f,i){var b=document.createElement('button');b.type='button
   b.addEventListener('click',function(){if(f.hidden){st.rel='';st.co='';apply(true)}
     setTimeout(function(){f.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'center'});f.classList.add('hit');setTimeout(function(){f.classList.remove('hit')},1800)},60)});
   dots.appendChild(b);f._dot=b});
+dots.style.setProperty('--cols',Math.ceil(N/2));
 function match(f,rel,co){return(!rel||f.dataset.rel===rel)&&(!co||(' '+f.dataset.co+' ').indexOf(' '+co+' ')>-1)}
 function count(rel,co){return figs.filter(function(f){return match(f,rel,co)}).length}
 function tween(to){var from=shown,t0=null;shown=to;if(matchMedia('(prefers-reduced-motion:reduce)').matches){cnt.textContent=to;return}
