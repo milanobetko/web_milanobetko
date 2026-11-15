@@ -134,39 +134,72 @@ footer .soc a{color:var(--magenta);text-decoration:none}
 .dock .btn{flex:1;min-height:58px;padding-bottom:env(safe-area-inset-bottom,0px)}
 .dock .call{flex:0 0 34%;background:var(--white);color:var(--magenta);box-shadow:inset 0 1px 0 var(--line)}
 
-/* desktop: show the page in a phone */
-.side{display:none}
+
+.nav{display:none}
+figure{margin:0}
+/* responsive: tablet and desktop */
 @media (min-width:760px){
-  body{background:#F1EEF0;min-height:100vh;display:flex;align-items:center;justify-content:center;gap:64px;padding:24px}
-  .side{display:block;max-width:260px;color:var(--grey);font-size:15px}
-  .side b{display:block;font-weight:400;color:var(--ink);font-size:22px;line-height:1.3;margin-bottom:8px}
-  .phone{width:390px;height:min(844px,calc(100vh - 48px));overflow-y:auto;border-radius:36px;border:9px solid #1E1A1D;scrollbar-width:none}
-  .phone::-webkit-scrollbar{display:none}
+  body{font-size:18px}
+  .bar{height:76px;padding:0 40px}
+  .nav{display:flex;gap:34px;margin-left:auto;margin-right:34px}
+  .nav a{font-size:13px;text-decoration:none;text-transform:uppercase;letter-spacing:.16em;color:var(--ink)}
+  .nav a:hover,.bar .contact-link:hover{color:var(--magenta)}
+  .hero{display:grid;grid-template-columns:5fr 7fr;min-height:calc(100vh - 76px);max-height:860px}
+  .panel{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:56px 48px}
+  .panel .more{margin:18px 0 0}
+  .panel h1{font-size:34px}
+  .hero-fig{position:relative;overflow:hidden}
+  .hero-fig .hero-photo{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto}
+  .hero-fig .capbar{position:absolute;left:0;right:0;bottom:0;background:rgba(255,255,255,.9)}
+  .wrap,.clients,.grid,.sub-h,.projects{max-width:1104px;margin-left:auto;margin-right:auto;padding-left:40px;padding-right:40px}
+  .clients{padding-top:48px}
+  section{padding:88px 0;scroll-margin-top:76px}
+  h2{font-size:40px}
+  .svc{display:grid;grid-template-columns:1fr 1fr;column-gap:56px}
+  .svc li:last-child{border-bottom:0}
+  .grid{grid-template-columns:repeat(4,1fr);gap:20px}
+  .projects{display:grid;grid-template-columns:1fr 1fr;column-gap:56px}
+  .projects li:last-child{border-bottom:0}
+  .rule{max-width:1024px;margin:0 auto}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0 40px}
+  .steps li,.steps li:last-child{border-bottom:0}
+  .about .wrap{display:grid;grid-template-columns:5fr 6fr;column-gap:64px;align-items:start}
+  .about .wrap>img{grid-row:1/span 7;margin-bottom:0!important}
+  .contact .wrap{display:grid;grid-template-columns:5fr 6fr;column-gap:64px;grid-template-areas:"h f" "l f" "d f";grid-template-rows:auto auto 1fr;align-items:start}
+  .contact h2{grid-area:h}.contact .lead{grid-area:l}.contact form{grid-area:f}.contact .direct{grid-area:d;margin-top:8px}
+  footer{padding:32px 40px;text-align:center}
+  footer .soc{justify-content:center}
+  .dock{display:none}
+}
+@media (min-width:1100px){
+  .panel{padding:64px 72px}
+  .panel h1{font-size:40px}
+  .hero{grid-template-columns:1fr 1fr}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.dock{transition:none}}
 </style>
 </head>
 <body>
-<div class="side" aria-hidden="true">
-  <b>Mobile concept for dianamrazikova.com</b>
-  Scroll inside the phone, or open the link on a phone.
-</div>
-
 <div class="phone" id="phone">
   <header class="bar">
     <a class="logo" href="#top" aria-label="Diana Mrazikova Photography, back to top"><span class="n">diana mrazikova</span><span class="p">Photography</span></a>
+    <nav class="nav"><a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a></nav>
     <a class="contact-link" href="#contact">Contact</a>
   </header>
 
   <main id="top">
-    <div class="panel" id="hero">
+    <div class="hero" id="hero">
+    <div class="panel">
       <h1>Imagery promoting positive change</h1>
       <p>Documentary photos, video and text for UNICEF, USAID, ICRC and brands.</p>
       <span class="hand">Based in Havana, on assignment worldwide.</span>
       <a class="btn btn-white" href="#contact">Send a brief</a><a class="more" href="#work">See the work</a>
     </div>
+    <figure class="hero-fig">
     <img class="photo hero-photo" src="img/hero.jpg" alt="Havana seen from a rooftop, with palm trees">
     <div class="capbar"><b>Havana</b>Home since 2015</div>
+    </figure>
+    </div>
 
     <div class="clients">
       <p>Commissioned by</p>
@@ -289,7 +322,7 @@ footer .soc a{color:var(--magenta);text-decoration:none}
       <a href="https://www.instagram.com/havana.diaries/" target="_blank" rel="noopener">@havana.diaries</a>
       <a href="https://www.instagram.com/dianamrazi/" target="_blank" rel="noopener">@dianamrazi</a>
     </div>
-    Mobile design concept for dianamrazikova.com. Photos from @havana.diaries.
+    Design concept for dianamrazikova.com. Photos from @havana.diaries.
   </footer>
 
   <div class="dock" id="dock" aria-hidden="true">
@@ -311,9 +344,8 @@ footer .soc a{color:var(--magenta);text-decoration:none}
       e.preventDefault();
       var need=a.getAttribute('data-need');
       if(need){document.getElementById('need').value=need}
-      var off=id==='top'?0:64;
-      if(desktop()){phone.scrollTo({top:id==='top'?0:t.offsetTop-off,behavior:reduce()?'auto':'smooth'})}
-      else{window.scrollTo({top:id==='top'?0:t.getBoundingClientRect().top+window.pageYOffset-off,behavior:reduce()?'auto':'smooth'})}
+      var off=id==='top'?0:(window.innerWidth>=760?76:64);
+      window.scrollTo({top:id==='top'?0:t.getBoundingClientRect().top+window.pageYOffset-off,behavior:reduce()?'auto':'smooth'})
     });
   });
 
