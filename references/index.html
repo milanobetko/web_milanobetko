@@ -79,8 +79,6 @@ h1 em{font-style:italic;color:var(--acct)}
 
 .lnk{display:inline-block;font-weight:700;font-size:16px;text-decoration:none;border-bottom:2px solid var(--acct);padding-bottom:2px}
 .lnk:hover{color:var(--acct)}
-.home-btn{margin-top:26px}
-.endbar{padding-block:0 clamp(64px,8vw,96px)}
 .contact{background:var(--acc);color:var(--on)}
 .contact .wrap{padding-block:clamp(64px,8vw,112px);display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px;align-items:end}
 .contact h2{margin:0;font-size:clamp(36px,5vw,66px);line-height:.98;font-weight:800;letter-spacing:-.04em;text-wrap:balance}
@@ -96,7 +94,7 @@ footer a:hover{color:var(--white)}
 </style>
 <style>
 /* Interactive lens: relationship colours are the only new hues; red stays the page accent and the Managers colour. */
-:root{--c-manager:#FF5A68;--c-team:#F2C94C;--c-client:#4FD1B5;--c-peer:#8FB8FF;--c-partner:#FF9F6B;--dim:#2A2626}
+:root{--c-manager:#FF5A68;--c-team:#F2C94C;--c-client:#4FD1B5;--c-franchise:#C49BFF;--c-peer:#8FB8FF;--c-partner:#FF9F6B;--dim:#2A2626}
 .hgrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:end}
 @media (max-width:900px){.hgrid{grid-template-columns:1fr}}
 .meter{border-top:3px solid var(--acc);padding-top:18px;min-width:0}
@@ -105,6 +103,7 @@ footer a:hover{color:var(--white)}
 .mnum span{font-size:20px;font-weight:600;color:var(--t3)}
 .mlab{margin:14px 0 0;font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-.01em}
 .msub{margin:4px 0 0;font-size:15.5px;color:var(--t3);min-height:2.9em}
+.msub:empty{min-height:0}
 .dots{margin-top:14px;display:grid;grid-template-columns:repeat(17,minmax(0,1fr));gap:8px;max-width:460px}
 .dots button{appearance:none;border:0;padding:0;aspect-ratio:1;border-radius:50%;background:var(--c);cursor:pointer;transition:transform .25s,background .35s,opacity .35s;position:relative}
 .dots button.off{background:var(--dim)}
@@ -113,7 +112,7 @@ footer a:hover{color:var(--white)}
 .legend{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13.5px;font-weight:600;color:var(--t3)}
 .legend i,.chips i,.tg i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--c);margin-right:7px}
 [data-k="manager"],[data-rel="manager"]{--c:var(--c-manager)}[data-k="team"],[data-rel="team"]{--c:var(--c-team)}
-[data-k="client"],[data-rel="client"]{--c:var(--c-client)}[data-k="peer"],[data-rel="peer"]{--c:var(--c-peer)}
+[data-k="client"],[data-rel="client"]{--c:var(--c-client)}[data-k="franchise"],[data-rel="franchise"]{--c:var(--c-franchise)}[data-k="peer"],[data-rel="peer"]{--c:var(--c-peer)}
 [data-k="partner"],[data-rel="partner"]{--c:var(--c-partner)}
 .fbar{position:sticky;top:calc(72px + env(safe-area-inset-top,0px));z-index:15;background:rgba(11,11,11,.95);backdrop-filter:blur(8px);border-block:1px solid var(--line);margin-bottom:28px;scroll-margin-top:72px}
 .fbar .wrap{padding-block:10px;display:grid;gap:8px}
@@ -150,15 +149,14 @@ footer a:hover{color:var(--white)}
 <p class="eyebrow">References <span>/ Milan Obetko</span></p>
 <h1>In their <em>own words.</em></h1>
 <p class="lead"><b>36 named references from 20 years.</b> Read them all, or look through one lens: the people I reported to, the teams I led, my clients, or one company at a time.</p>
-<a class="lnk home-btn" href="https://milanobetko.com/">&#8592; Back to milanobetko.com</a>
 </div>
 <div class="meter" aria-live="polite">
-<p class="mnum"><b id="cnt">35</b><span>of 35</span></p>
+<p class="mnum"><b id="cnt">36</b><span id="cntl">references</span></p>
 <p class="mlab" id="mlab">All references</p>
-<p class="msub" id="msub">Every dot is one person. Tap a dot to jump to their words.</p>
+<p class="msub" id="msub"></p>
 <div class="dots" id="dots"></div>
 <ul class="legend">
-<li data-k="manager"><i></i>Managers</li><li data-k="team"><i></i>My team</li><li data-k="client"><i></i>Clients</li><li data-k="peer"><i></i>Peers &amp; franchisees</li><li data-k="partner"><i></i>Agency partners</li>
+<li data-k="manager"><i></i>Managers</li><li data-k="team"><i></i>My team</li><li data-k="client"><i></i>Clients</li><li data-k="franchise"><i></i>Franchise partners</li><li data-k="peer"><i></i>Peers</li><li data-k="partner"><i></i>Agency partners</li>
 </ul>
 </div>
 </div>
@@ -169,7 +167,8 @@ footer a:hover{color:var(--white)}
 <button type="button" data-rel="manager"><i></i>Managers<b></b></button>
 <button type="button" data-rel="team"><i></i>My team<b></b></button>
 <button type="button" data-rel="client"><i></i>Clients<b></b></button>
-<button type="button" data-rel="peer"><i></i>Peers &amp; franchisees<b></b></button>
+<button type="button" data-rel="franchise"><i></i>Franchise partners<b></b></button>
+<button type="button" data-rel="peer"><i></i>Peers<b></b></button>
 <button type="button" data-rel="partner"><i></i>Agency partners<b></b></button>
 </div></div>
 <div class="frow"><span class="flab">Where</span><div class="chips" role="group" aria-label="Filter by company" id="cochips">
@@ -188,7 +187,7 @@ footer a:hover{color:var(--white)}
 <figure id="r3" data-rel="manager" data-co="subway" style="view-transition-name:r3"><p class="tg"><i></i>Manager<span>Subway</span></p><blockquote>“Thank you for work you have done. It goes to show that a lot can be achieved in a relatively short period of time.”</blockquote><figcaption><b>Mike Brouwers</b>Marketing Director Europe</figcaption></figure>
 <figure id="r4" data-rel="team" data-co="subway" style="view-transition-name:r4"><p class="tg"><i></i>My team<span>Subway</span></p><blockquote>“A strongly insights- and data-based but also creative marketing leader who turns bold, unconventional ideas into brand work that is distinctive, memorable, and instantly clear to the audience. An exceptional leader: open-minded, a great listener, and always willing to hear out ideas from the team. He creates an environment where people feel confident to contribute and grow.”</blockquote><figcaption><b>Katarina Kratochvilova</b>Senior Marketing Manager CEE, Subway</figcaption></figure>
 <figure id="r5" data-rel="manager" data-co="yoplait" style="view-transition-name:r5"><p class="tg"><i></i>Manager<span>Yoplait</span></p><blockquote>“Milan is a unique guy and also unique marketer. Open minded, creative, demonstrating out-of-box thinking, but keeping strategic view. He was the main contributor to the biggest success story in years that started the real company turnaround.”</blockquote><figcaption><b>Jan Hanus</b>CEO, Yoplait</figcaption></figure>
-<figure id="r6" data-rel="peer" data-co="subway" style="view-transition-name:r6"><p class="tg"><i></i>Peer<span>Subway</span></p><blockquote>“I highly recommend Milan if you want to think out of the box. I have really enjoyed working with him, he is also very supportive in any situation. He is a change maker and works hard to reach his goals.”</blockquote><figcaption><b>Sandra Chassan</b>CEO France &amp; BeNeLux</figcaption></figure>
+<figure id="r6" data-rel="franchise" data-co="subway" style="view-transition-name:r6"><p class="tg"><i></i>Franchise partner<span>Subway</span></p><blockquote>“I highly recommend Milan if you want to think out of the box. I have really enjoyed working with him, he is also very supportive in any situation. He is a change maker and works hard to reach his goals.”</blockquote><figcaption><b>Sandra Chassan</b>CEO France &amp; BeNeLux</figcaption></figure>
 <figure id="r7" data-rel="manager" data-co="wpp" style="view-transition-name:r7"><p class="tg"><i></i>Manager<span>WPP Media</span></p><blockquote>“Milan proved his skills as a marketer with deep understanding of clients, brand building, strategic communications planning and services development.”</blockquote><figcaption><b>Jan Havelka</b>CEO, WPP Media (GroupM) Slovakia</figcaption></figure>
 <figure id="r8" data-rel="manager" data-co="wpp" style="view-transition-name:r8"><p class="tg"><i></i>Manager<span>WPP Media</span></p><blockquote>“Milan is passionate, creative, visionary and loyal. His biggest strengths are insights, deep expertise in the area of marketing, strategic communications planning, developing and launching new services and integration.”</blockquote><figcaption><b>Andrej Dziak</b>CEO, WPP Media (MediaCom) Slovakia</figcaption></figure>
 <figure id="r9" data-rel="manager" data-co="wpp" style="view-transition-name:r9"><p class="tg"><i></i>Manager<span>WPP Media</span></p><blockquote>“Milan's been a great help in upgrading our local strategic planning product and I am looking forward to his contribution to the team development and new business support.”</blockquote><figcaption><b>Richard Kopunik</b>CEO, WPP Media (Mindshare) Slovakia</figcaption></figure>
@@ -200,10 +199,10 @@ footer a:hover{color:var(--white)}
 <figure id="r15" data-rel="team" data-co="edimo" style="view-transition-name:r15"><p class="tg"><i></i>My team<span>Edimo</span></p><blockquote>“Milan drove AI adaptation in the whole marketing, product and development teams. We are now delivering more and better than before. He is demanding on his teams but also on himself.”</blockquote><figcaption><b>Filip Olajec</b>Brand Lead, Edimo</figcaption></figure>
 <figure id="r16" data-rel="partner" data-co="yoplait" style="view-transition-name:r16"><p class="tg"><i></i>Agency partner<span>Yoplait</span></p><blockquote>“First-class marketer, truly oriented on the consumer, at the same time constantly advocating new, innovative, but practical approaches and their integration into a meaningful direction for business.”</blockquote><figcaption><b>Jaroslav Cir</b>ex-Consumer &amp; Market Insight Global Director, Unilever</figcaption></figure>
 <figure id="r17" data-rel="client" data-co="wpp" style="view-transition-name:r17"><p class="tg"><i></i>Client<span>Client of WPP Media</span></p><blockquote>“After we changed agencies, I was impressed by planning led by Milan that helped us grow majority of our brands.”</blockquote><figcaption><b>Ladislav Cizmarik</b>Country Division Head, Bayer CHC Slovensko</figcaption></figure>
-<figure id="r18" data-rel="peer" data-co="subway" style="view-transition-name:r18"><p class="tg"><i></i>Peer<span>Subway</span></p><blockquote>“I must say that I really like your passion and drive to transform everything needed. I appreciate your dedication and hard work, but most importantly I congratulate you for your results.”</blockquote><figcaption><b>Andrei Triffan</b>General Manager Romania</figcaption></figure>
-<figure id="r19" data-rel="peer" data-co="subway" style="view-transition-name:r19"><p class="tg"><i></i>Peer<span>Subway</span></p><blockquote>“You came to our team like a hurricane and we needed it. Thank you for what you have done for our team, for our markets, our businesses.”</blockquote><figcaption><b>Givi Ordenidze</b>General Manager Georgia</figcaption></figure>
-<figure id="r20" data-rel="peer" data-co="subway" style="view-transition-name:r20"><p class="tg"><i></i>Peer<span>Subway</span></p><blockquote>“Main thing what I appreciate is that you're making things done. It goes to show that a lot can be achieved in a relatively short period of time.”</blockquote><figcaption><b>Rokas Liutkauskas</b>General Manager Lithuania</figcaption></figure>
-<figure id="r21" data-rel="peer" data-co="subway" style="view-transition-name:r21"><p class="tg"><i></i>Peer<span>Subway</span></p><blockquote>“It has always been a pleasure with you. Thank you for all your professional approach and engagement to business and for pushing things forward. It was really impressive.”</blockquote><figcaption><b>Piotr Bruzdziak</b>Multi-Unit Owner, Subway Warsaw</figcaption></figure>
+<figure id="r18" data-rel="franchise" data-co="subway" style="view-transition-name:r18"><p class="tg"><i></i>Franchise partner<span>Subway</span></p><blockquote>“I must say that I really like your passion and drive to transform everything needed. I appreciate your dedication and hard work, but most importantly I congratulate you for your results.”</blockquote><figcaption><b>Andrei Triffan</b>General Manager Romania</figcaption></figure>
+<figure id="r19" data-rel="franchise" data-co="subway" style="view-transition-name:r19"><p class="tg"><i></i>Franchise partner<span>Subway</span></p><blockquote>“You came to our team like a hurricane and we needed it. Thank you for what you have done for our team, for our markets, our businesses.”</blockquote><figcaption><b>Givi Ordenidze</b>General Manager Georgia</figcaption></figure>
+<figure id="r20" data-rel="franchise" data-co="subway" style="view-transition-name:r20"><p class="tg"><i></i>Franchise partner<span>Subway</span></p><blockquote>“Main thing what I appreciate is that you're making things done. It goes to show that a lot can be achieved in a relatively short period of time.”</blockquote><figcaption><b>Rokas Liutkauskas</b>General Manager Lithuania</figcaption></figure>
+<figure id="r21" data-rel="franchise" data-co="subway" style="view-transition-name:r21"><p class="tg"><i></i>Franchise partner<span>Subway</span></p><blockquote>“It has always been a pleasure with you. Thank you for all your professional approach and engagement to business and for pushing things forward. It was really impressive.”</blockquote><figcaption><b>Piotr Bruzdziak</b>Multi-Unit Owner, Subway Warsaw</figcaption></figure>
 <figure id="r22" data-rel="partner" data-co="" style="view-transition-name:r22"><p class="tg"><i></i>Agency partner</p><blockquote>“Milan lives his brand. He is an exceptional asset for the company. He is resourceful, hard working, dedicated, strategically very sound and intelligent.”</blockquote><figcaption><b>Tomas Hrivnak</b>ex-Strategic Planning Director, Euro RSCG New Europe, TBWA Prague, Mark/BBDO Prague</figcaption></figure>
 <figure id="r23" data-rel="partner" data-co="subway wpp" style="view-transition-name:r23"><p class="tg"><i></i>Agency partner<span>Subway's agency</span></p><blockquote>“He has unquestionable knowledge and experience in the fields of marketing and brand strategy. He is very results driven and demanding business leader, yet fair and easy going.”</blockquote><figcaption><b>Jacek Kania</b>Business Unit Director, WPP Media (Wavemaker)</figcaption></figure>
 <figure id="r24" data-rel="peer" data-co="wpp" style="view-transition-name:r24"><p class="tg"><i></i>Peer<span>WPP Media</span></p><blockquote>“Milan has a great passion and bold approach to new challenges. He always explored all possible angles and searched for the right insights making sure the strategy would bring business results to clients.”</blockquote><figcaption><b>Miloslav Majek</b>Digital Director, WPP Media (MediaCom) Slovakia</figcaption></figure>
@@ -219,7 +218,6 @@ footer a:hover{color:var(--white)}
 <figure id="r33" data-rel="team" data-co="skyeurope" style="view-transition-name:r33"><p class="tg"><i></i>My team<span>SkyEurope</span></p><blockquote>“A true leader, enthusiastic marketer with exceptional drive. Strategic thinker able to get things moving. I mostly admire his passion for innovative, but most importantly effective solutions.”</blockquote><figcaption><b>Lucia Gocnikova</b>Marketing Coordinator CEE, SkyEurope Airlines</figcaption></figure>
 <figure id="r34" data-rel="peer" data-co="skyeurope" style="view-transition-name:r34"><p class="tg"><i></i>Peer<span>SkyEurope</span></p><blockquote>“Milan is a talented Marketing Manager and working with him has been a pleasure.”</blockquote><figcaption><b>Marco Fontana</b>Manager Airline &amp; Tourism</figcaption></figure>
 </div><p class="none" id="none" hidden>No references in this combination. <button type="button" id="reset2">Show all 36</button></p></div></div></section>
-<section class="endbar"><div class="wrap"><a class="lnk" href="https://milanobetko.com/">&#8592; Back to milanobetko.com</a></div></section>
 <section class="contact" id="contact" aria-labelledby="h-contact"><div class="wrap">
 <div><h2 id="h-contact">The next reference could be yours. Let's talk.</h2><p class="note">Available from Q4 2026 for fractional, interim and full-time leadership roles across CEE and DACH.</p></div>
 <div><div class="acts"><a class="btn btn-dark" href="mailto:milan.obetko@gmail.com?subject=Let%27s%20talk">Get in touch</a><a class="btn btn-line" href="https://www.linkedin.com/in/milanobetko" target="_blank" rel="noopener">Connect on LinkedIn</a></div><p class="det"><a href="mailto:milan.obetko@gmail.com">milan.obetko@gmail.com</a><br><a href="tel:+421911719998">+421 911 719 998</a><br>Bratislava, Slovakia / Prague, Czech Republic</p></div>
@@ -230,9 +228,9 @@ footer a:hover{color:var(--white)}
 (function(){
 var figs=[].slice.call(document.querySelectorAll('#refs figure')),N=figs.length;
 var relBtns=[].slice.call(document.querySelectorAll('#relchips button')),coBtns=[].slice.call(document.querySelectorAll('#cochips button'));
-var cnt=document.getElementById('cnt'),mlab=document.getElementById('mlab'),msub=document.getElementById('msub'),dots=document.getElementById('dots'),none=document.getElementById('none');
-var REL={manager:'Managers',team:'My team',client:'Clients',peer:'Peers & franchisees',partner:'Agency partners'};
-var RELSUB={manager:'The chief executives and directors I reported to.',team:'People who reported to me.',client:'Clients I planned and delivered for.',peer:'General managers, franchisees and colleagues I worked alongside.',partner:'Agencies I briefed and led as the client.'};
+var cnt=document.getElementById('cnt'),cntl=document.getElementById('cntl'),mlab=document.getElementById('mlab'),msub=document.getElementById('msub'),dots=document.getElementById('dots'),none=document.getElementById('none');
+var REL={manager:'Managers',team:'My team',client:'Clients',franchise:'Franchise partners',peer:'Peers',partner:'Agency partners'};
+var RELSUB={manager:'The chief executives and directors I reported to.',team:'People who reported to me.',client:'Clients I planned and delivered for.',franchise:'Subway general managers and franchisees I worked with.',peer:'Colleagues I worked alongside.',partner:'Agencies I briefed and led as the client.'};
 var CO={subway:['Subway','Marketing Director CEE, 2019-2022. 13 markets, 300 restaurants.'],edimo:['Edimo','CMO, 2023-2025. From 2 to 7 markets.'],wpp:['WPP Media','Strategy Director, WPP Media (MediaCom), 2010-2015. Mindshare and GroupM, 2016.'],skyeurope:['SkyEurope Airlines','Marketing Manager CEE, 2005-2007.'],yoplait:['Yoplait','Flagship relaunch: 200% vs. target.']};
 var st={rel:'',co:''},shown=N;
 figs.forEach(function(f,i){var b=document.createElement('button');b.type='button';b.dataset.rel=f.dataset.rel;
@@ -250,7 +248,8 @@ function render(){var n=0;figs.forEach(function(f){var on=match(f,st.rel,st.co);
   coBtns.forEach(function(b){var c=count(st.rel,b.dataset.co);b.querySelector('b').textContent=c;b.setAttribute('aria-pressed',String(b.dataset.co===st.co));b.disabled=!c&&b.dataset.co!==st.co});
   var parts=[];if(st.co)parts.push(CO[st.co][0]);if(st.rel)parts.push(REL[st.rel]);
   mlab.textContent=parts.length?parts.join(' / '):'All references';
-  msub.textContent=st.co?CO[st.co][1]:(st.rel?RELSUB[st.rel]:'Every dot is one person. Tap a dot to jump to their words.');
+  msub.textContent=st.co?CO[st.co][1]:(st.rel?RELSUB[st.rel]:'');
+  cntl.textContent=n===1?'reference':'references';
   tween(n)}
 function apply(push){var run=function(){render()};
   if(document.startViewTransition&&!matchMedia('(prefers-reduced-motion:reduce)').matches)document.startViewTransition(run);else run();
