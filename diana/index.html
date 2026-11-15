@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#3A1F35">
+<meta name="theme-color" content="#A8217F">
 <meta name="robots" content="noindex,nofollow">
-<title>Diana Mrazikova - Documentary photo, video and text</title>
-<meta name="description" content="Photojournalist and documentary filmmaker. Photos, video and text for UNICEF, USAID, ICRC and brands. Based in Havana, on assignment worldwide.">
+<title>Diana Mrazikova - Imagery promoting positive change</title>
+<meta name="description" content="Documentary photos, video and text for UNICEF, USAID, ICRC and brands. Based in Havana, on assignment worldwide.">
 <link rel="canonical" href="https://milanobetko.com/diana/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://milanobetko.com/diana/">
-<meta property="og:title" content="Diana Mrazikova - Stories that make people care">
-<meta property="og:description" content="Documentary photo, video and text for UNICEF, USAID, ICRC and brands. Based in Havana, on assignment worldwide.">
+<meta property="og:title" content="Diana Mrazikova - Imagery promoting positive change">
+<meta property="og:description" content="Documentary photos, video and text for UNICEF, USAID, ICRC and brands. Based in Havana, on assignment worldwide.">
 <meta property="og:image" content="https://milanobetko.com/diana/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -19,292 +19,205 @@
 <meta name="twitter:image" content="https://milanobetko.com/diana/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Reenie+Beanie&display=swap">
 <style>
-/* Concept: a photo editor's contact sheet. Sunset over the Malecon: aubergine, linen and blush, with one champagne-gold marker that circles the frame that matters. */
+/* Built on the existing dianamrazikova.com identity: white, one magenta, a light wide sans, and her handwriting used sparingly. */
 :root{
-  --teal:#3A1F35;
-  --teal2:#4E2A47;
-  --deep:#22121F;
-  --paper:#F8F1EC;
-  --marker:#D8B26E;
-  --pink:#EFD5CC;
-  --muted:#6B5463;
-  --onteal:#EADCE4;
-  --font:"Schibsted Grotesk",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --magenta:#A8217F;
+  --magenta-dk:#8C1A6B;
+  --ink:#211C20;
+  --grey:#6B6469;
+  --line:#E6E2E5;
+  --ph:#EDEAEC;
+  --white:#FFFFFF;
+  --sans:"Didact Gothic","Century Gothic",Futura,-apple-system,"Segoe UI",sans-serif;
+  --hand:"Reenie Beanie",cursive;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--deep);font-family:var(--font);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--sans);font-kerning:none;font-feature-settings:"kern" 0;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--marker);outline-offset:3px;border-radius:4px}
-.phone{position:relative;background:var(--paper)}
-.wrap{padding:0 22px}
+:focus-visible{outline:2px solid var(--magenta);outline-offset:3px}
+.phone{position:relative;background:var(--white)}
+.wrap{padding:0 24px}
 
-/* top bar */
-.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;height:60px;padding:0 16px 0 22px;background:var(--teal);color:var(--paper)}
-.wordmark{font-weight:800;font-size:18px;letter-spacing:-.01em;text-decoration:none}
-.bar .hire{font-weight:700;font-size:15px;text-decoration:none;background:var(--paper);color:var(--deep);padding:9px 14px;border-radius:999px}
+/* header */
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 24px;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.logo{text-decoration:none;line-height:1}
+.logo .n{display:block;font-size:20px;letter-spacing:.01em}
+.logo .p{display:block;font-size:9px;letter-spacing:.32em;color:var(--magenta);margin-top:5px;text-transform:uppercase}
+.bar .contact-link{font-size:13px;text-decoration:none;color:var(--magenta);text-transform:uppercase;letter-spacing:.16em}
 
-/* hero */
-.hero{background:var(--teal);color:var(--paper);padding:26px 0 34px}
-.hero h1{text-wrap:balance;font-size:46px;line-height:.98;font-weight:850;letter-spacing:-.03em;margin:0 0 18px;max-width:11ch}
-.hero .lede{font-size:18px;line-height:1.5;color:var(--onteal);margin:0 0 24px;max-width:34ch}
-.ctas{display:flex;gap:10px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 22px;border-radius:999px;font-weight:750;font-size:17px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
-.btn-marker{background:var(--marker);color:var(--deep)}
-.btn-ghost{background:transparent;color:var(--paper);box-shadow:inset 0 0 0 2px rgba(248,241,236,.55)}
-.btn-ink{background:var(--deep);color:var(--paper)}
+/* hero: the magenta panel from her site, then the picture */
+.panel{background:var(--magenta);color:var(--white);padding:40px 24px 36px}
+.panel h1{margin:0 0 22px;font-weight:400;font-size:27px;line-height:1.35;text-transform:uppercase;letter-spacing:.14em}
+.panel p{margin:0 0 6px;font-size:18px;line-height:1.55;max-width:32ch}
+.panel .hand{font-family:var(--hand);font-size:31px;line-height:1.1;margin:14px 0 28px;display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 24px;font-family:inherit;font-size:13px;text-transform:uppercase;letter-spacing:.16em;text-decoration:none;border:0;border-radius:0;cursor:pointer}
+.btn-white{background:var(--white);color:var(--magenta)}
+.btn-mag{background:var(--magenta);color:var(--white)}
+.panel .more{display:inline-block;margin-left:18px;font-size:13px;text-transform:uppercase;letter-spacing:.16em;color:var(--white)}
 
-.hero-sheet{margin:34px 0 0}
-.hs-film{position:relative;display:flex;justify-content:center;gap:12px;overflow:hidden;background:#1A0D18;padding:30px 0 30px}
-.hs-film::before,.hs-film::after{content:"";position:absolute;left:0;right:0;height:10px;background:radial-gradient(circle at 50% 50%,#3E2A3A 0 3.2px,transparent 3.6px) 0 0/16px 10px repeat-x}
-.hs-film::before{top:8px}.hs-film::after{bottom:8px}
-.hs-cell{position:relative;flex:0 0 56%}
-.hs-cell .frame{aspect-ratio:4/5}
-.hs-cell .num{position:absolute;top:-21px;left:2px;font-size:12px;font-weight:700;color:var(--marker);font-variant-numeric:tabular-nums}
-.hs-cell.dim .frame{opacity:.55}
-.loop{position:absolute;pointer-events:none;z-index:3;overflow:visible}
-.hs-cell .loop{left:-10%;top:-7%;width:120%;height:114%}
-.loop path{fill:none;stroke:var(--marker);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
-.hero .loop path{stroke-dasharray:1600;stroke-dashoffset:1600;animation:draw 1.1s .5s cubic-bezier(.6,.1,.3,1) forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
-.hero-sheet .caption{padding:0 22px}
-.caption{font-size:14px;line-height:1.4;margin-top:10px;color:var(--onteal)}
-.caption b{color:var(--paper);font-weight:700}
+.ph{background:var(--ph);position:relative}
+.ph::after{content:"photo";position:absolute;right:10px;top:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#A39CA1}
+.hero-photo{aspect-ratio:4/5}
+.capbar{display:flex;gap:10px;align-items:baseline;padding:10px 24px;background:#F5F3F4;font-size:14px;color:var(--grey)}
+.capbar b{font-weight:400;color:var(--magenta);text-transform:uppercase;letter-spacing:.14em;font-size:12px}
 
-.clients{margin-top:34px;padding-top:18px;border-top:1px solid rgba(248,241,236,.22)}
-.clients p{margin:0 0 10px;font-size:14px;color:var(--onteal)}
-.clients ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 18px;font-weight:800;font-size:19px;letter-spacing:-.01em}
-
-/* photo placeholders: unexposed film, so the demo reads as frames waiting for Diana's pictures */
-.frame{position:relative;width:100%;overflow:hidden;background:linear-gradient(160deg,#7A4466 0%,#43263E 45%,#E0A98F 120%)}
-.frame::after{content:"";position:absolute;inset:0;opacity:.35;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
-.frame .ph{position:absolute;left:12px;bottom:10px;z-index:1;font-size:12px;color:rgba(248,241,236,.88)}
-.f2{background:linear-gradient(200deg,#F0C9B8 0%,#B07A72 55%,#3A1F35 120%)}
-.f3{background:linear-gradient(140deg,#6B5A3E 0%,#B89A66 65%,#F1DDB0 130%)}
-.f4{background:linear-gradient(180deg,#A7BCC8 0%,#56708A 60%,#2A2A40 110%)}
-.f5{background:linear-gradient(120deg,#C9787A 0%,#E9B79E 55%,#F6E3CF 120%)}
-.f6{background:linear-gradient(170deg,#4A3A5E 0%,#94708A 60%,#E8BCAE 120%)}
+.clients{padding:34px 24px 6px}
+.clients p{margin:0 0 10px;font-size:14px;color:var(--grey)}
+.clients ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;letter-spacing:.16em;text-transform:uppercase}
 
 /* sections */
-section{padding:56px 0;scroll-margin-top:60px}
-h2{text-wrap:balance;font-size:32px;line-height:1.05;font-weight:850;letter-spacing:-.025em;margin:0 0 10px}
-.sub{margin:0 0 26px;color:var(--muted);max-width:36ch}
+section{padding:52px 0;scroll-margin-top:64px}
+h2{margin:0 0 8px;font-weight:400;font-size:30px;line-height:1.2;letter-spacing:-.005em}
+.lead{margin:0 0 28px;color:var(--grey)}
+.rule{border:0;border-top:1px solid var(--line);margin:0 24px}
 
-/* services: one list, tap to open */
-.svc{list-style:none;margin:0;padding:0;border-top:2px solid var(--deep)}
-.svc details{border-bottom:1px solid #E2D2CD}
-.svc summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr 32px;gap:12px;align-items:start;padding:18px 0}
-.svc summary::-webkit-details-marker{display:none}
-.svc .t{display:block;font-weight:800;font-size:21px;line-height:1.2;letter-spacing:-.01em}
-.svc .d{display:block;color:var(--muted);font-size:16px;margin-top:4px}
-.svc .pm{width:32px;height:32px;border-radius:50%;background:var(--deep);position:relative;margin-top:2px;transition:background .2s}
-.svc .pm::before,.svc .pm::after{content:"";position:absolute;left:9px;right:9px;top:15px;height:2px;background:var(--paper);transition:transform .25s}
-.svc .pm::after{transform:rotate(90deg)}
-.svc details[open] .pm{background:var(--marker)}
-.svc details[open] .pm::before,.svc details[open] .pm::after{background:var(--deep)}
-.svc details[open] .pm::after{transform:rotate(0)}
-.svc .body{padding:0 0 22px}
-.svc .body p{margin:0 0 12px}
-.svc .body strong{font-weight:750}
-.svc .ask{margin-top:6px;min-height:48px;font-size:16px}
+/* services */
+.svc{list-style:none;margin:0;padding:0}
+.svc li{padding:22px 0;border-top:1px solid var(--line)}
+.svc li:last-child{border-bottom:1px solid var(--line)}
+.svc h3{margin:0 0 6px;font-weight:400;font-size:21px;line-height:1.3}
+.svc p{margin:0 0 10px;color:var(--grey);font-size:16px}
+.svc .hand{font-family:var(--hand);color:var(--magenta);font-size:25px;line-height:1.15;margin:4px 0 12px}
+.svc a{font-size:13px;text-transform:uppercase;letter-spacing:.16em;color:var(--magenta);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
 
-/* contact sheet strip */
-.sheet{background:var(--deep);color:var(--paper)}
-.sheet h2{color:var(--paper)}
-.sheet .sub{color:var(--onteal)}
-.strip{display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 22px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-.strip::-webkit-scrollbar{display:none}
-.film{flex:0 0 82%;scroll-snap-align:start;background:#1A0D18;padding:30px 10px 16px;position:relative}
-.film .shot{position:relative}
-.film::before,.film::after{content:"";position:absolute;left:0;right:0;height:10px;background:radial-gradient(circle at 50% 50%,#3E2A3A 0 3.2px,transparent 3.6px) 0 0/16px 10px repeat-x}
-.film::before{top:7px}.film::after{bottom:-2px;display:none}
-.film .num{position:absolute;top:-1px;right:12px;font-size:12px;font-weight:700;color:var(--marker);font-variant-numeric:tabular-nums}
-.film .frame{aspect-ratio:3/2}
-.film .who{display:block;font-weight:800;font-size:17px;margin-top:22px;padding:0 4px}
-.film .what{display:block;font-size:15px;color:var(--onteal);padding:0 4px}
-.film.pick{z-index:2}
-.film.pick .loop{left:-6%;top:-13%;width:112%;height:126%}
-.swipe{margin:16px 22px 0;font-size:14px;color:var(--onteal)}
+/* work grid */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:26px 14px;padding:0 24px}
+.grid .ph{aspect-ratio:1/1}
+.grid .who{display:block;margin-top:10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--magenta)}
+.grid .what{display:block;font-size:15px;line-height:1.35;margin-top:2px}
 
-/* Havana */
-.havana{background:var(--pink)}
-.havana .frame{aspect-ratio:1/1;margin-bottom:22px}
-.havana .kinds{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px;padding:0;list-style:none}
-.havana .kinds li{border:1.5px solid var(--deep);border-radius:6px;padding:3px 10px;font-weight:650;font-size:15px}
-.havana .ig{display:inline-block;margin-top:18px;font-weight:700;font-size:16px}
-
-/* steps: a real sequence, so numbers */
+/* steps */
 .steps{list-style:none;margin:0;padding:0;counter-reset:s}
-.steps li{counter-increment:s;display:grid;grid-template-columns:52px 1fr;gap:4px 14px;padding:16px 0;border-top:1px solid #E2D2CD}
-.steps li::before{content:counter(s);grid-row:span 2;width:44px;height:44px;border-radius:50%;background:var(--teal);color:var(--paper);display:grid;place-items:center;font-weight:850;font-size:19px}
-.steps .t{font-weight:800;font-size:19px;line-height:1.25}
-.steps .d{color:var(--muted);font-size:16px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:0 12px;padding:16px 0;border-top:1px solid var(--line)}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+.steps li::before{content:counter(s);color:var(--magenta);font-size:20px;line-height:1.35;grid-row:span 2}
+.steps .t{font-size:19px;line-height:1.35}
+.steps .d{color:var(--grey);font-size:16px}
 
 /* about */
-.about .row{display:grid;grid-template-columns:104px 1fr;gap:16px;align-items:center;margin-bottom:20px}
-.about .frame{aspect-ratio:1/1;border-radius:50%}
-.about .frame .ph{left:0;right:0;bottom:40%;text-align:center}
-.about .role{font-weight:800;font-size:19px;line-height:1.25}
-.about p{margin:0 0 14px;max-width:38ch}
+.about .ph{aspect-ratio:4/5;margin-bottom:24px}
+.about p{margin:0 0 14px;max-width:40ch}
+.about .hand{font-family:var(--hand);color:var(--magenta);font-size:30px;line-height:1.1;margin:22px 0 0}
 
 /* contact */
-.contact{background:var(--teal);color:var(--paper);padding-bottom:40px}
-.contact h2{color:var(--paper)}
-.contact .sub{color:var(--onteal)}
-form{display:grid;gap:18px}
-fieldset{border:0;margin:0;padding:0}
-legend,label{display:block;padding:0;font-weight:700;font-size:16px;margin-bottom:8px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips input{position:absolute;opacity:0;pointer-events:none}
-.chips label{margin:0;cursor:pointer;padding:10px 15px;border-radius:999px;box-shadow:inset 0 0 0 2px rgba(248,241,236,.5);font-weight:650;font-size:15px;min-height:44px;display:inline-flex;align-items:center}
-.chips input:checked+label{background:var(--marker);color:var(--deep);box-shadow:none}
-.chips input:focus-visible+label{outline:3px solid var(--marker);outline-offset:3px}
-input[type=text],textarea{width:100%;font:inherit;font-size:17px;color:var(--deep);background:var(--paper);border:0;border-radius:12px;padding:14px 14px;min-height:52px}
-textarea{min-height:110px;resize:vertical}
-.err{margin:0;color:var(--marker);font-weight:700;font-size:15px;min-height:0}
-.note{font-size:14px;color:var(--onteal);margin:6px 0 0}
-.direct{margin-top:34px;padding-top:22px;border-top:1px solid rgba(248,241,236,.22);display:grid;gap:4px}
-.direct p{margin:0 0 6px;color:var(--onteal);font-size:15px}
-.direct a{font-weight:800;font-size:21px;text-decoration:none;letter-spacing:-.01em}
+.contact{background:#F7F5F6}
+form{display:grid;gap:22px}
+label{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:var(--grey);margin-bottom:6px}
+input,select,textarea{width:100%;font:inherit;font-kerning:none;font-size:17px;color:var(--ink);background:transparent;border:0;border-bottom:1px solid #BDB5BA;border-radius:0;padding:10px 0;-webkit-appearance:none;appearance:none}
+select{background-image:linear-gradient(45deg,transparent 50%,var(--magenta) 50%),linear-gradient(135deg,var(--magenta) 50%,transparent 50%);background-position:calc(100% - 12px) 55%,calc(100% - 7px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+input:focus,select:focus,textarea:focus{outline:0;border-bottom:2px solid var(--magenta)}
+textarea{min-height:96px;resize:vertical}
+.err{margin:0;color:var(--magenta);font-size:15px}
+.note{font-size:14px;color:var(--grey);margin:8px 0 0}
+.direct{margin-top:36px;display:grid;gap:6px}
+.direct p{margin:0;font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:var(--grey)}
+.direct a{font-size:20px;text-decoration:none}
 
-footer{background:var(--deep);color:var(--onteal);padding:28px 22px 110px;font-size:14px}
-footer .soc{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:14px}
-footer .soc a{color:var(--paper);font-weight:700;font-size:16px}
+footer{padding:30px 24px 104px;font-size:14px;color:var(--grey);border-top:1px solid var(--line)}
+footer .soc{display:flex;gap:20px;margin-bottom:12px}
+footer .soc a{color:var(--magenta);text-decoration:none}
 
-/* sticky action bar, shown between hero and contact form */
-.dock{position:sticky;bottom:0;z-index:30;display:flex;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(248,241,236,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid #E2D2CD;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease,visibility 0s .25s;margin-top:-76px}
-.dock.on{opacity:1;visibility:visible;transform:none;transition:opacity .25s ease,transform .25s ease}
-.dock .btn{flex:1;min-height:50px}
-.dock .call{flex:0 0 auto;background:var(--paper);color:var(--deep);box-shadow:inset 0 0 0 2px var(--deep);padding:0 18px}
+/* sticky action bar between hero and contact */
+.dock{position:sticky;bottom:0;z-index:30;display:flex;margin-top:-58px;opacity:0;visibility:hidden;transition:opacity .2s ease,visibility 0s .2s}
+.dock.on{opacity:1;visibility:visible;transition:opacity .2s ease}
+.dock .btn{flex:1;min-height:58px;padding-bottom:env(safe-area-inset-bottom,0px)}
+.dock .call{flex:0 0 34%;background:var(--white);color:var(--magenta);box-shadow:inset 0 1px 0 var(--line)}
 
-/* desktop: present the page inside a phone */
+/* desktop: show the page in a phone */
 .side{display:none}
 @media (min-width:760px){
-  body{background:#170B15;min-height:100vh;display:flex;align-items:center;justify-content:center;gap:56px;padding:24px}
-  .side{display:block;color:#EADCE4;max-width:280px}
-  .side b{display:block;color:#fff;font-size:26px;line-height:1.1;letter-spacing:-.02em;margin-bottom:10px}
-  .side p{margin:0;font-size:16px}
-  .phone{width:400px;height:min(860px,calc(100vh - 48px));overflow-y:auto;border-radius:44px;box-shadow:0 0 0 10px #000,0 30px 80px rgba(0,0,0,.55);scrollbar-width:none}
+  body{background:#F1EEF0;min-height:100vh;display:flex;align-items:center;justify-content:center;gap:64px;padding:24px}
+  .side{display:block;max-width:260px;color:var(--grey);font-size:15px}
+  .side b{display:block;font-weight:400;color:var(--ink);font-size:22px;line-height:1.3;margin-bottom:8px}
+  .phone{width:390px;height:min(844px,calc(100vh - 48px));overflow-y:auto;border-radius:36px;border:9px solid #1E1A1D;scrollbar-width:none}
   .phone::-webkit-scrollbar{display:none}
 }
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .hero .loop path{animation:none;stroke-dashoffset:0}
-  .dock,.svc .pm::after{transition:none}
-}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.dock{transition:none}}
 </style>
 </head>
 <body>
 <div class="side" aria-hidden="true">
   <b>Mobile concept for dianamrazikova.com</b>
-  <p>Scroll inside the phone. Open on a phone for the real feel.</p>
+  Scroll inside the phone, or open the link on a phone.
 </div>
 
 <div class="phone" id="phone">
   <header class="bar">
-    <a class="wordmark" href="#top">Diana Mrazikova</a>
-    <a class="hire" href="#contact">Hire Diana</a>
+    <a class="logo" href="#top" aria-label="Diana Mrazikova Photography, back to top"><span class="n">diana mrazikova</span><span class="p">Photography</span></a>
+    <a class="contact-link" href="#contact">Contact</a>
   </header>
 
   <main id="top">
-    <section class="hero" id="hero" aria-label="Introduction">
+    <div class="panel" id="hero">
+      <h1>Imagery promoting positive change</h1>
+      <p>Documentary photos, video and text for UNICEF, USAID, ICRC and brands.</p>
+      <span class="hand">Based in Havana, on assignment worldwide.</span>
+      <a class="btn btn-white" href="#contact">Send a brief</a><a class="more" href="#work">See the work</a>
+    </div>
+    <div class="ph hero-photo" role="img" aria-label="Photo placeholder"></div>
+    <div class="capbar"><b>UNICEF</b>Polio campaign, DR Congo</div>
+
+    <div class="clients">
+      <p>Commissioned by</p>
+      <ul><li>UNICEF</li><li>USAID</li><li>ICRC</li><li>Johns Hopkins CCP</li><li>Digital Green</li><li>Orange</li></ul>
+    </div>
+
+    <section id="services" aria-labelledby="svc-h">
       <div class="wrap">
-        <h1>Stories that make people care.</h1>
-        <p class="lede">Photojournalist and documentary filmmaker. Photos, video and text for UNICEF, USAID, ICRC and brands. Based in Havana, on assignment worldwide.</p>
-        <div class="ctas">
-          <a class="btn btn-marker" href="#contact">Send a brief</a>
-          <a class="btn btn-ghost" href="#work">See the work</a>
-        </div>
-      </div>
-      <figure class="hero-sheet" style="margin-left:0;margin-right:0;margin-bottom:0">
-        <div class="hs-film">
-          <div class="hs-cell dim"><span class="num">11</span><div class="frame f2"></div></div>
-          <div class="hs-cell"><span class="num">11A</span><div class="frame"><span class="ph">Photo placeholder</span></div>
-            <svg class="loop" viewBox="0 0 360 460" preserveAspectRatio="none" aria-hidden="true"><path d="M196 12 C300 14 352 110 350 236 C348 360 288 450 176 448 C70 446 10 360 10 232 C10 110 70 16 170 14 C230 13 280 30 312 62"/></svg></div>
-          <div class="hs-cell dim"><span class="num">12</span><div class="frame f4"></div></div>
-        </div>
-        <figcaption class="caption"><b>UNICEF</b>, polio campaign in DR Congo</figcaption>
-      </figure>
-      <div class="wrap clients">
-        <p>Commissioned by</p>
-        <ul>
-          <li>UNICEF</li><li>USAID</li><li>ICRC</li><li>Johns Hopkins CCP</li><li>Digital Green</li><li>Orange</li>
+        <h2 id="svc-h">What I do</h2>
+        <p class="lead">Photos, video and words that move people to act.</p>
+        <ul class="svc">
+          <li>
+            <h3>NGOs and nonprofits</h3>
+            <p>Field documentaries for campaigns, donor reports and advocacy, from child care and health to education and women's empowerment.</p>
+            <div class="hand">raising health awareness<br>advocating peacebuilding<br>advocating for gender equality</div>
+            <a href="#contact" data-need="NGO story">Ask about an NGO story</a>
+          </li>
+          <li>
+            <h3>Video and multimedia</h3>
+            <p>Short documentaries and multimedia stories that combine footage, photos and text.</p>
+            <a href="#contact" data-need="Video">Ask about a video</a>
+          </li>
+          <li>
+            <h3>Lifestyle and commercial</h3>
+            <p>PR and business portraits, beauty and fashion, magazines and advertising.</p>
+            <a href="#contact" data-need="Commercial">Ask about a commercial shoot</a>
+          </li>
+          <li>
+            <h3>Photo shoot in Havana</h3>
+            <p>Portraits, couples, pregnancy and family shoots, on the Malecón or in the streets of the city.</p>
+            <a href="#contact" data-need="Havana shoot">Ask about a Havana shoot</a>
+          </li>
         </ul>
       </div>
     </section>
 
-    <section id="services" aria-labelledby="svc-h">
-      <div class="wrap">
-        <h2 id="svc-h">What you can hire me for</h2>
-        <p class="sub">Tap a line to see what you get.</p>
-        <div class="svc">
-          <details open>
-            <summary><span><span class="t">Stories for NGOs and nonprofits</span><span class="d">Field documentaries for campaigns, donor reports and advocacy.</span></span><span class="pm" aria-hidden="true"></span></summary>
-            <div class="body">
-              <p><strong>Topics I cover:</strong> child care and health, water and sanitation (WASH), women's empowerment, education, post-conflict development, farming.</p>
-              <p><strong>You get:</strong> photo series, interviews and text, short films, print clips and advocacy documents, image banks.</p>
-              <a class="btn btn-ink ask" href="#contact" data-need="NGO story">Ask about an NGO story</a>
-            </div>
-          </details>
-          <details>
-            <summary><span><span class="t">Video and multimedia</span><span class="d">Short documentaries that combine footage, photos and words.</span></span><span class="pm" aria-hidden="true"></span></summary>
-            <div class="body">
-              <p>One story told in every format your team needs: a film for the campaign page, clips for social media, photos and text for the report.</p>
-              <a class="btn btn-ink ask" href="#contact" data-need="Video">Ask about a video</a>
-            </div>
-          </details>
-          <details>
-            <summary><span><span class="t">Lifestyle and commercial</span><span class="d">Portraits, PR, magazines, beauty, fashion and advertising.</span></span><span class="pm" aria-hidden="true"></span></summary>
-            <div class="body">
-              <p><strong>Work includes:</strong> advertising for Orange Senegal, women lifestyle features, PR and business portraits, beauty and fashion, print and magazine clips.</p>
-              <a class="btn btn-ink ask" href="#contact" data-need="Commercial">Ask about a commercial shoot</a>
-            </div>
-          </details>
-          <details>
-            <summary><span><span class="t">Photo shoot in Havana</span><span class="d">Portraits, couples, pregnancy and family shoots.</span></span><span class="pm" aria-hidden="true"></span></summary>
-            <div class="body">
-              <p>For visitors and locals who want photos that look like Havana, not like a tourist snapshot.</p>
-              <a class="btn btn-ink ask" href="#contact" data-need="Havana shoot">Ask about a Havana shoot</a>
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section class="sheet" id="work" aria-labelledby="work-h">
+    <section id="work" aria-labelledby="work-h" style="padding-top:0">
       <div class="wrap">
         <h2 id="work-h">Selected work</h2>
-        <p class="sub">Swipe through the contact sheet.</p>
+        <p class="lead">For NGOs, international agencies and brands.</p>
       </div>
-      <div class="strip" tabindex="0" aria-label="Selected projects, scroll sideways">
-        <article class="film pick"><span class="num">04A</span><div class="shot"><div class="frame"><span class="ph">Photo placeholder</span></div><svg class="loop" viewBox="0 0 340 250" preserveAspectRatio="none" aria-hidden="true"><path d="M186 10 C290 10 334 62 332 126 C330 196 262 240 166 238 C72 236 8 192 8 124 C8 58 70 12 160 12 C214 12 258 24 290 44"/></svg></div><span class="who">UNICEF</span><span class="what">Polio campaign, DR Congo</span></article>
-        <article class="film"><span class="num">05</span><div class="frame f2"><span class="ph">Photo placeholder</span></div><span class="who">UNICEF</span><span class="what">First month of baby Dovis</span></article>
-        <article class="film"><span class="num">05A</span><div class="frame f4"><span class="ph">Photo placeholder</span></div><span class="who">USAID and Johns Hopkins CCP</span><span class="what">Malaria and bed nets</span></article>
-        <article class="film"><span class="num">06</span><div class="frame f3"><span class="ph">Photo placeholder</span></div><span class="who">Digital Green</span><span class="what">Farmers in Ethiopia</span></article>
-        <article class="film"><span class="num">06A</span><div class="frame f6"><span class="ph">Photo placeholder</span></div><span class="who">ICRC</span><span class="what">Post-conflict development</span></article>
-        <article class="film"><span class="num">07</span><div class="frame"><span class="ph">Photo placeholder</span></div><span class="who">UNICEF Cuba</span><span class="what">Image bank</span></article>
-        <article class="film"><span class="num">07A</span><div class="frame f5"><span class="ph">Photo placeholder</span></div><span class="who">Orange Senegal</span><span class="what">Advertising</span></article>
+      <div class="grid">
+        <div><div class="ph" role="img" aria-label="Photo placeholder"></div><span class="who">UNICEF</span><span class="what">Polio campaign, DR Congo</span></div>
+        <div><div class="ph" role="img" aria-label="Photo placeholder"></div><span class="who">ICRC</span><span class="what">Post-conflict development</span></div>
+        <div><div class="ph" role="img" aria-label="Photo placeholder"></div><span class="who">Albinos</span><span class="what">Behaviour change campaign, Senegal</span></div>
+        <div><div class="ph" role="img" aria-label="Photo placeholder"></div><span class="who">USAID / JHU CCP</span><span class="what">Malaria and bed nets</span></div>
+        <div><div class="ph" role="img" aria-label="Photo placeholder"></div><span class="who">Digital Green</span><span class="what">Farmers in Ethiopia</span></div>
+        <div><div class="ph" role="img" aria-label="Photo placeholder"></div><span class="who">UNICEF</span><span class="what">First month of baby Dovis</span></div>
+        <div><div class="ph" role="img" aria-label="Photo placeholder"></div><span class="who">UNICEF Cuba</span><span class="what">Image bank</span></div>
+        <div><div class="ph" role="img" aria-label="Photo placeholder"></div><span class="who">Orange Senegal</span><span class="what">Advertising</span></div>
       </div>
-      <p class="swipe">7 projects. Swipe sideways.</p>
     </section>
 
-    <section class="havana" id="havana" aria-labelledby="hav-h">
-      <div class="wrap">
-        <div class="frame f5"><span class="ph">Photo placeholder</span></div>
-        <h2 id="hav-h">Your photo shoot in Havana</h2>
-        <p class="sub" style="color:var(--deep)">On the Malecón at sunset or in the streets of the city, with a photographer who has lived here for 11 years.</p>
-        <ul class="kinds"><li>Portraits</li><li>Couples</li><li>Pregnancy</li><li>Family</li></ul>
-        <a class="btn btn-ink" href="#contact" data-need="Havana shoot">Book a Havana shoot</a><br>
-        <a class="ig" href="https://www.instagram.com/havana.diaries/" target="_blank" rel="noopener">Life in Havana on Instagram @havana.diaries</a>
-      </div>
-    </section>
+    <hr class="rule">
 
     <section id="how" aria-labelledby="how-h">
       <div class="wrap">
         <h2 id="how-h">How an assignment works</h2>
-        <p class="sub">Three steps from first message to finished story.</p>
+        <p class="lead">From first message to finished story.</p>
         <ol class="steps">
           <li><span class="t">Send a brief</span><span class="d">What the story is, where, when and who it is for.</span></li>
           <li><span class="t">Agree on the plan</span><span class="d">You get a shot list, a timeline and a quote.</span></li>
@@ -313,40 +226,36 @@ footer .soc a{color:var(--paper);font-weight:700;font-size:16px}
       </div>
     </section>
 
-    <section class="about" id="about" aria-labelledby="about-h" style="padding-top:8px">
+    <section class="about" id="about" aria-labelledby="about-h" style="padding-top:0">
       <div class="wrap">
+        <div class="ph" role="img" aria-label="Portrait placeholder"></div>
         <h2 id="about-h">About me</h2>
-        <div class="row">
-          <div class="frame f2"><span class="ph">Portrait</span></div>
-          <div class="role">Writer, photojournalist and Cuba storyteller</div>
-        </div>
         <p>I'm Diana, a Slovak photojournalist, writer and documentary filmmaker.</p>
         <p>I document the daily lives of women and the issues they face, and give a voice to topics from taboos to women's rights and local customs.</p>
-        <p>I came to Cuba for two months in 2015 and have lived in Havana ever since.</p>
-        <p>My assignments have taken me to DR Congo, Senegal, Ethiopia and Cuba.</p>
+        <p>My assignments have taken me to DR Congo, Senegal and Ethiopia. I came to Cuba for two months in 2015 and have lived in Havana ever since.</p>
+        <p class="hand">Diana</p>
       </div>
     </section>
 
     <section class="contact" id="contact" aria-labelledby="c-h">
       <div class="wrap">
         <h2 id="c-h">Tell me about your project</h2>
-        <p class="sub">I'm available for assignments worldwide.</p>
+        <p class="lead">I'm available for assignments worldwide.</p>
         <form id="brief" novalidate>
-          <fieldset>
-            <legend>What do you need?</legend>
-            <div class="chips">
-              <input type="radio" name="need" id="n1" value="NGO story"><label for="n1">NGO story</label>
-              <input type="radio" name="need" id="n2" value="Video"><label for="n2">Video</label>
-              <input type="radio" name="need" id="n3" value="Commercial"><label for="n3">Commercial</label>
-              <input type="radio" name="need" id="n4" value="Havana shoot"><label for="n4">Havana shoot</label>
-            </div>
-          </fieldset>
-          <div><label for="where">Where and when?</label><input type="text" id="where" placeholder="Senegal, March 2027"></div>
-          <div><label for="name">Your name and organisation</label><input type="text" id="name" autocomplete="name"></div>
+          <div><label for="need">What do you need?</label>
+            <select id="need">
+              <option value="">Choose one</option>
+              <option>NGO story</option>
+              <option>Video</option>
+              <option>Commercial</option>
+              <option>Havana shoot</option>
+            </select></div>
+          <div><label for="where">Where and when</label><input type="text" id="where" placeholder="Senegal, March 2027"></div>
+          <div><label for="name">Name and organisation</label><input type="text" id="name" autocomplete="name"></div>
           <div><label for="msg">About the project</label><textarea id="msg" placeholder="What is the story and who is it for?"></textarea></div>
           <p class="err" id="err" role="alert"></p>
           <div>
-            <button class="btn btn-marker" type="submit" style="width:100%">Send brief by email</button>
+            <button class="btn btn-mag" type="submit" style="width:100%">Send brief by email</button>
             <p class="note">Opens your email app with the brief filled in.</p>
           </div>
         </form>
@@ -368,7 +277,7 @@ footer .soc a{color:var(--paper);font-weight:700;font-size:16px}
   </footer>
 
   <div class="dock" id="dock" aria-hidden="true">
-    <a class="btn btn-marker" href="#contact" tabindex="-1">Send a brief</a>
+    <a class="btn btn-mag" href="#contact" tabindex="-1">Send a brief</a>
     <a class="btn call" href="tel:+421917394192" tabindex="-1">Call</a>
   </div>
 </div>
@@ -377,47 +286,35 @@ footer .soc a{color:var(--paper);font-weight:700;font-size:16px}
 (function(){
   var phone=document.getElementById('phone');
   var desktop=function(){return window.matchMedia('(min-width:760px)').matches};
+  var reduce=function(){return window.matchMedia('(prefers-reduced-motion:reduce)').matches};
 
-  // in-page links scroll the phone on desktop, the page on mobile
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
     a.addEventListener('click',function(e){
-      var id=a.getAttribute('href').slice(1);
-      var t=document.getElementById(id);
+      var id=a.getAttribute('href').slice(1),t=document.getElementById(id);
       if(!t)return;
       e.preventDefault();
       var need=a.getAttribute('data-need');
-      if(need){
-        var r=document.querySelector('input[name=need][value="'+need+'"]');
-        if(r)r.checked=true;
-      }
-      var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-      if(desktop()){
-        phone.scrollTo({top:t.offsetTop-(id==='top'?60:56),behavior:reduce?'auto':'smooth'});
-      }else{
-        var y=t.getBoundingClientRect().top+window.pageYOffset-(id==='top'?60:56);
-        window.scrollTo({top:y,behavior:reduce?'auto':'smooth'});
-      }
+      if(need){document.getElementById('need').value=need}
+      var off=id==='top'?0:64;
+      if(desktop()){phone.scrollTo({top:id==='top'?0:t.offsetTop-off,behavior:reduce()?'auto':'smooth'})}
+      else{window.scrollTo({top:id==='top'?0:t.getBoundingClientRect().top+window.pageYOffset-off,behavior:reduce()?'auto':'smooth'})}
     });
   });
 
-  // dock: visible after the hero, hidden over the contact form
-  var dock=document.getElementById('dock');
-  var heroOut=false,contactIn=false;
+  var dock=document.getElementById('dock'),heroOut=false,contactIn=false;
   function upd(){var on=heroOut&&!contactIn;dock.classList.toggle('on',on);dock.setAttribute('aria-hidden',on?'false':'true');dock.querySelectorAll('a').forEach(function(a){a.tabIndex=on?0:-1})}
   if('IntersectionObserver' in window){
-    new IntersectionObserver(function(es){heroOut=!es[0].isIntersecting;upd()},{threshold:0}).observe(document.querySelector('.hero .ctas'));
-    new IntersectionObserver(function(es){contactIn=es[0].isIntersecting;upd()},{threshold:0}).observe(document.getElementById('contact'));
+    new IntersectionObserver(function(es){heroOut=!es[0].isIntersecting;upd()}).observe(document.getElementById('hero'));
+    new IntersectionObserver(function(es){contactIn=es[0].isIntersecting;upd()}).observe(document.getElementById('contact'));
   }
 
-  // brief form opens a prefilled email
   document.getElementById('brief').addEventListener('submit',function(e){
     e.preventDefault();
-    var r=document.querySelector('input[name=need]:checked');
-    var need=r?r.value:'';
-    var where=document.getElementById('where').value.trim();
-    var name=document.getElementById('name').value.trim();
-    var msg=document.getElementById('msg').value.trim();
-    var err=document.getElementById('err');
+    var need=document.getElementById('need').value,
+        where=document.getElementById('where').value.trim(),
+        name=document.getElementById('name').value.trim(),
+        msg=document.getElementById('msg').value.trim(),
+        err=document.getElementById('err');
     if(!need&&!msg){err.textContent='Choose what you need or write a few words about the project.';return}
     err.textContent='';
     var subject='Brief'+(need?': '+need:'')+(name?' from '+name:'');
