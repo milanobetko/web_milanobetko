@@ -61,6 +61,13 @@ a{color:inherit}
 .ph{background:var(--ph);position:relative}
 .ph::after{content:"photo";position:absolute;right:10px;top:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#A39CA1}
 .hero-photo{aspect-ratio:4/5}
+.photo{display:block;width:100%;height:auto;object-fit:cover;background:var(--ph)}
+.svc .photo{aspect-ratio:3/2;margin:4px 0 16px}
+.projects{list-style:none;margin:28px 0 0;padding:0 24px}
+.projects li{padding:12px 0;border-top:1px solid var(--line);font-size:16px}
+.projects li:last-child{border-bottom:1px solid var(--line)}
+.projects b{display:block;font-weight:400;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--magenta)}
+.sub-h{margin:44px 24px 0;font-weight:400;font-size:21px}
 .capbar{display:flex;gap:10px;align-items:baseline;padding:10px 24px;background:#F5F3F4;font-size:14px;color:var(--grey)}
 .capbar b{font-weight:400;color:var(--magenta);text-transform:uppercase;letter-spacing:.14em;font-size:12px}
 
@@ -85,7 +92,8 @@ h2{margin:0 0 8px;font-weight:400;font-size:30px;line-height:1.2;letter-spacing:
 
 /* work grid */
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:26px 14px;padding:0 24px}
-.grid .ph{aspect-ratio:1/1}
+.grid .ph{aspect-ratio:1/1;width:100%}
+.grid .ph::after,.photo::after{content:none}
 .grid .who{display:block;margin-top:10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--magenta)}
 .grid .what{display:block;font-size:15px;line-height:1.35;margin-top:2px}
 
@@ -157,8 +165,8 @@ footer .soc a{color:var(--magenta);text-decoration:none}
       <span class="hand">Based in Havana, on assignment worldwide.</span>
       <a class="btn btn-white" href="#contact">Send a brief</a><a class="more" href="#work">See the work</a>
     </div>
-    <div class="ph hero-photo" role="img" aria-label="Photo placeholder"></div>
-    <div class="capbar"><b>UNICEF</b>Polio campaign, DR Congo</div>
+    <img class="photo hero-photo" src="img/hero.jpg" alt="Havana seen from a rooftop, with palm trees">
+    <div class="capbar"><b>Havana</b>Home since 2015</div>
 
     <div class="clients">
       <p>Commissioned by</p>
@@ -189,6 +197,7 @@ footer .soc a{color:var(--magenta);text-decoration:none}
           <li>
             <h3>Photo shoot in Havana</h3>
             <p>Portraits, couples, pregnancy and family shoots, on the Malecón or in the streets of the city.</p>
+            <img class="photo" src="img/shoot.jpg" alt="Woman walking down a cobbled street">
             <a href="#contact" data-need="Havana shoot">Ask about a Havana shoot</a>
           </li>
         </ul>
@@ -197,19 +206,26 @@ footer .soc a{color:var(--magenta);text-decoration:none}
 
     <section id="work" aria-labelledby="work-h" style="padding-top:0">
       <div class="wrap">
-        <h2 id="work-h">Selected work</h2>
-        <p class="lead">For NGOs, international agencies and brands.</p>
+        <h2 id="work-h">Recent stories</h2>
+        <p class="lead">From Havana and beyond.</p>
       </div>
       <div class="grid">
-        <div><div class="ph" role="img" aria-label="Photo placeholder"></div><span class="who">UNICEF</span><span class="what">Polio campaign, DR Congo</span></div>
-        <div><div class="ph" role="img" aria-label="Photo placeholder"></div><span class="who">ICRC</span><span class="what">Post-conflict development</span></div>
-        <div><div class="ph" role="img" aria-label="Photo placeholder"></div><span class="who">Albinos</span><span class="what">Behaviour change campaign, Senegal</span></div>
-        <div><div class="ph" role="img" aria-label="Photo placeholder"></div><span class="who">USAID / JHU CCP</span><span class="what">Malaria and bed nets</span></div>
-        <div><div class="ph" role="img" aria-label="Photo placeholder"></div><span class="who">Digital Green</span><span class="what">Farmers in Ethiopia</span></div>
-        <div><div class="ph" role="img" aria-label="Photo placeholder"></div><span class="who">UNICEF</span><span class="what">First month of baby Dovis</span></div>
-        <div><div class="ph" role="img" aria-label="Photo placeholder"></div><span class="who">UNICEF Cuba</span><span class="what">Image bank</span></div>
-        <div><div class="ph" role="img" aria-label="Photo placeholder"></div><span class="who">Orange Senegal</span><span class="what">Advertising</span></div>
+        <div><img class="photo ph" src="img/market.jpg" alt="Women at a market stall"><span class="what">At the market</span></div>
+        <div><img class="photo ph" src="img/street.jpg" alt="Woman on a bicycle on a street in Havana"><span class="what">Street life, Havana</span></div>
+        <div><img class="photo ph" src="img/villa.jpg" alt="Old villa among palm trees in Havana"><span class="what">Havana</span></div>
+        <div><img class="photo ph" src="img/skyline.jpg" alt="Havana rooftops at dusk"><span class="what">Havana at dusk</span></div>
       </div>
+      <h3 class="sub-h">Projects</h3>
+      <ul class="projects">
+        <li><b>UNICEF</b>Polio campaign, DR Congo</li>
+        <li><b>ICRC</b>Post-conflict development</li>
+        <li><b>Albinos</b>Behaviour change campaign, Senegal</li>
+        <li><b>USAID / JHU CCP</b>Malaria and bed nets</li>
+        <li><b>Digital Green</b>Farmers in Ethiopia</li>
+        <li><b>UNICEF</b>First month of baby Dovis</li>
+        <li><b>UNICEF Cuba</b>Image bank</li>
+        <li><b>Orange Senegal</b>Advertising</li>
+      </ul>
     </section>
 
     <hr class="rule">
@@ -228,7 +244,7 @@ footer .soc a{color:var(--magenta);text-decoration:none}
 
     <section class="about" id="about" aria-labelledby="about-h" style="padding-top:0">
       <div class="wrap">
-        <div class="ph" role="img" aria-label="Portrait placeholder"></div>
+        <img class="photo" src="img/diana.jpg" alt="Diana Mrazikova at her desk" style="aspect-ratio:4/5;margin-bottom:24px">
         <h2 id="about-h">About me</h2>
         <p>I'm Diana, a Slovak photojournalist, writer and documentary filmmaker.</p>
         <p>I document the daily lives of women and the issues they face, and give a voice to topics from taboos to women's rights and local customs.</p>
@@ -273,7 +289,7 @@ footer .soc a{color:var(--magenta);text-decoration:none}
       <a href="https://www.instagram.com/havana.diaries/" target="_blank" rel="noopener">@havana.diaries</a>
       <a href="https://www.instagram.com/dianamrazi/" target="_blank" rel="noopener">@dianamrazi</a>
     </div>
-    Mobile design concept for dianamrazikova.com. Photos are placeholders.
+    Mobile design concept for dianamrazikova.com. Photos from @havana.diaries.
   </footer>
 
   <div class="dock" id="dock" aria-hidden="true">
