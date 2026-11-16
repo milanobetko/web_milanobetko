@@ -49,6 +49,22 @@ h2{margin:0 0 14px;font-size:clamp(34px,4.6vw,58px);line-height:1;font-weight:80
 .stats div{border-top:3px solid var(--white);padding-top:10px}.stats div.h{border-color:var(--hot)}
 .stats b{display:block;font-size:clamp(36px,4.3vw,56px);font-weight:800;line-height:1;letter-spacing:-.03em;white-space:nowrap}.stats div.h b{color:var(--hot)}
 .stats span{display:block;margin-top:6px;color:var(--t3);font-size:17px;line-height:1.25}
+
+.plain{margin:4px 0 14px;font-size:18px;color:var(--t2)}.plain b{color:var(--mint);font-weight:700}
+.story{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px;position:relative}
+.story:before{content:"";position:absolute;left:0;right:0;top:19px;height:3px;background:var(--line)}
+.st{position:relative;min-width:0}
+.st .no{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--mint);color:var(--ink);font-weight:800;font-size:17px}
+.st:first-child .no{background:var(--hot)}
+.st h3{margin:12px 0 2px;font-size:27px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.st .how{margin:0 0 10px;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--hot2)}
+.st p{margin:0 0 8px;color:var(--t2);font-size:17px;line-height:1.42}.st p b{color:#fff}
+.st.wide{grid-column:span 2}
+.moral{margin-top:26px;display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
+.moral div{padding:20px 24px;font-size:20px;line-height:1.35}
+.moral .a{background:var(--panel2);border-left:4px solid var(--mint);color:var(--t2)}.moral .a b{color:#fff}
+.moral .b{background:var(--hot);color:#1A0A04;font-weight:700}.moral .b b{font-size:30px;font-weight:800;letter-spacing:-.02em}
+@media (max-width:900px){.story{grid-template-columns:1fr;gap:26px}.story:before{left:19px;right:auto;top:0;bottom:0;width:3px;height:auto}.st{padding-left:58px}.st .no{position:absolute;left:0;top:0}.st h3{margin-top:4px}.st.wide{grid-column:auto}.moral{grid-template-columns:1fr}}
 .band{background:var(--panel)}
 .ph{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;margin:46px 0 16px;padding-top:18px;border-top:1px solid var(--line)}
 .ph .n{font-size:14px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);background:var(--hot);padding:4px 10px}
@@ -95,7 +111,7 @@ footer{padding:26px 0;color:var(--t3);font-size:15px}footer .wrap{display:flex;f
 @media (max-width:420px){.brand{font-size:17px}.brand .tag{display:none}.mini{grid-template-columns:1fr}}
 </style></head><body>
 <header class="top"><div class="wrap"><a class="brand" href="https://milanobetko.com/">Milan Obetko <span class="tag">Expansion</span></a>
-<nav class="nav" aria-label="Main"><ul><li><a href="#how">How it works</a></li><li><a href="#proof">Proof</a></li><li><a href="#who">Who you work with</a></li></ul><a class="btn btn-hot" href="#contact">Let's talk</a></nav></div></header>
+<nav class="nav" aria-label="Main"><ul><li><a href="#practice">In practice</a></li><li><a href="#how">How it works</a></li><li><a href="#proof">Proof</a></li><li><a href="#who">Who you work with</a></li></ul><a class="btn btn-hot" href="#contact">Let's talk</a></nav></div></header>
 <main>
 <section class="hero"><div class="wrap">
 <div class="hero-grid"><div>
@@ -114,11 +130,32 @@ footer{padding:26px 0;color:var(--t3);font-size:15px}footer .wrap{display:flex;f
 <div class="stats"><div><b>20+</b><span>brands and new markets launched</span></div><div><b>15+</b><span>markets in CEE and DACH</span></div><div><b>5x</b><span>international scope: EMEA &amp; global projects, Europe &amp; Asia</span></div><div class="h"><b>2 &rarr; 7</b><span>markets at Edimo, 9x profit in 12 months</span></div><div class="h"><b>4 &rarr; 27</b><span>markets, client under NDA</span></div></div>
 </div></section>
 
+<section id="practice"><div class="wrap">
+<p class="eyebrow">In practice</p><h2>A real example. <span class="hl">From 2 countries to 7.</span></h2>
+<p class="sub"><b style="color:#fff">Edimo sells solar power for homes and companies:</b> an online shop, installations and wholesale. It was at home in Slovakia and Czechia. This is how five more countries were added, one at a time.</p>
+<div class="story rv">
+<div class="st wide"><span class="no">1</span><h3>Austria</h3><p class="how">Online shop + installations</p>
+<p><b>Why first:</b> close to home, attractive margins, mature customers, and competitors we could match on price.</p>
+<p><b>What we did:</b> built a simple page that collects enquiries for installations. Launched the ads and tuned them week by week: dozens to hundreds of ad versions for different customer groups, their needs and their pains. Translated the online shop and adapted the product range for Austria.</p>
+<p><b>First enquiries:</b> within weeks.</p></div>
+<div class="st"><span class="no">2</span><h3>Switzerland</h3><p class="how">Installations only</p>
+<p>A much harder market: several languages, and different subsidy rules in every canton. This is where we started to use AI intensively to adapt the campaigns to each language.</p></div>
+<div class="st"><span class="no">3</span><h3>Romania</h3><p class="how">Online shop, then wholesale</p>
+<p>We entered with the online shop only. Wholesale followed.</p></div>
+<div class="st"><span class="no">4</span><h3>Hungary</h3><p class="how">Online shop</p>
+<p>We entered with the online shop.</p></div>
+</div>
+<div class="story rv" style="margin-top:26px;grid-template-columns:1fr"><div class="st"><span class="no" style="background:var(--mint)">5</span><h3>Germany</h3><p class="how">Installations, online shop in preparation</p>
+<p>We launched installations and prepared the online shop, built on the foundations from Austria.</p></div></div>
+<div class="moral rv"><div class="a"><b>What this means for you:</b> you do not open five countries at once. You open one, see what works, and reuse it in the next. Each country gets the way in that fits it: a shop, installations, wholesale, or all three.</div><div class="b"><b>9x profit</b><br>in the first 12 months, with +260% enquiries.</div></div>
+</div></section>
+
 <section class="band" id="how"><div class="wrap">
 <p class="eyebrow">How it works</p><h2>Start with a Deep Dive. <span class="hl">Then launch. Then lead.</span></h2>
 <p class="sub">Three steps. Each one stands alone, and each one builds on the one before.</p>
 
 <div class="ph rv"><span class="n">Step 1</span><h3>Expansion Deep Dive</h3><span class="m">10 working days &middot; fixed price</span></div>
+<p class="plain rv"><b>In plain words:</b> we find out which country to enter first and how to win there.</p>
 <div class="cards c3 rv">
 <div class="card"><small>Where are we now?</small><h4>Diagnosis.</h4><p>What to fix and where the opportunities are in your marketing mix for success on the new market. A structured review of the whole setup: positioning, funnel, channels, content, tools and data, budgets and processes.</p></div>
 <div class="card"><small>Where do we want to go?</small><h4>Strategy.</h4><p>Which market first, and why. Your positioning localised and fine-tuned: exactly how to win against local competitors. The biggest gaps and levers, for short- and long-term upside.</p></div>
@@ -127,6 +164,7 @@ footer{padding:26px 0;color:var(--t3);font-size:15px}footer .wrap{display:flex;f
 <div class="out rv"><b>You get: the Market Entry Blueprint.</b><span>100% senior attention. No juniors. Yours to run, with or without me.</span></div>
 
 <div class="ph rv"><span class="n">Step 2</span><h3>Launch</h3><span class="m">Built and run with your team</span></div>
+<p class="plain rv"><b>In plain words:</b> we open the market, so the first customers start to come.</p>
 <div class="cards c3 rv">
 <div class="card hotc"><small>Demand</small><h4>Acquisition Engine</h4><p>We map the market, find the decision makers and book weekly qualified meetings. Built and run with your team, then it is yours.</p><p class="f">Live in 3-5 weeks</p></div>
 <div class="card hotc"><small>Brand &amp; performance</small><h4>360 Integration</h4><p>From product and brand strategy through creative and media, brand and activation and shopper marketing, to customer experience. One plan in every market.</p><p class="f">B2C, B2B &amp; B2B2C</p></div>
@@ -134,6 +172,7 @@ footer{padding:26px 0;color:var(--t3);font-size:15px}footer .wrap{display:flex;f
 </div>
 
 <div class="ph rv"><span class="n">Step 3</span><h3>Lead</h3><span class="m">Fractional or interim</span></div>
+<p class="plain rv"><b>In plain words:</b> a senior person runs it with you, for as long as you need.</p>
 <div class="cards c2 rv">
 <div class="card"><small>Leadership</small><h4>Expansion Lead</h4><p>I lead marketing, agencies and budget across your markets as part of your team, or I mentor your existing team to lead it.</p><p class="f">Fractional 20-40% of FTE, or a fixed-term mandate</p></div>
 <div class="card"><small>Partners</small><h4>Proven local partners</h4><p>A network of proven partners in Europe. No search. No pitching. Senior only.</p><p class="f">30+ agency partnerships</p></div>
@@ -150,7 +189,7 @@ footer{padding:26px 0;color:var(--t3);font-size:15px}footer .wrap{display:flex;f
 <p class="eyebrow">Proof</p><h2>Done before. <span class="hl">In 15+ markets.</span></h2>
 <div class="proof rv">
 <div class="big"><small>Edimo &middot; 2024 - 2025 &middot; B2C and B2B</small><h3>From 2 to 7 markets. From a 90% crash to 9x profit.</h3>
-<div class="g"><div><b>2 &rarr; 7</b><span>markets: AT, CH, RO, DE, HU added</span></div><div><b>9x</b><span>profit, first 12 months</span></div><div><b>+600%</b><span>POAS</span></div><div><b>+260%</b><span>leads</span></div></div></div>
+<div class="g"><div><b>2 &rarr; 7</b><span>markets: AT, CH, RO, HU, DE added</span></div><div><b>9x</b><span>profit, first 12 months</span></div><div><b>+600%</b><span>POAS (profit on ad spend)</span></div><div><b>+260%</b><span>leads</span></div></div></div>
 <div class="side">
 <figure class="q"><blockquote>&ldquo;He was the driving force behind portfolio scaling, new markets expansion, ecommerce profit-driven optimization, and lead generation boost.&rdquo;</blockquote><figcaption><b>Martin Karner</b>, ex-Head of Marketing, Edimo</figcaption></figure>
 <figure class="q"><blockquote>&ldquo;He looks at situations from different angles and constantly comes up with out-of-the-box solutions that are practical and executable. We accelerated time-to-market.&rdquo;</blockquote><figcaption><b>Martina Kovacova</b>, Expansion Lead B2B &amp; B2C, DACH &amp; CEE, Edimo</figcaption></figure>
