@@ -125,6 +125,8 @@ h1,h2,h3{margin:0;font-weight:400}
 .shot-at{background-image:var(--shot-at)}
 .shot-ro{background-image:var(--shot-ro)}
 .shot-ch{background-image:var(--shot-ch)}
+a.shot{display:block;transition:filter .2s}
+a.shot:hover{filter:brightness(1.08)}
 .shot-hu{background-image:var(--shot-hu)}
 .shot-de{background-image:var(--shot-de)}
 
@@ -298,8 +300,8 @@ body{font-size:18px}
       </div>
       <div class="collage">
         <div class="block" aria-hidden="true"></div>
-        <div class="shot shot-ch" role="img" aria-label="Edimo Switzerland website"></div>
-        <div class="shot shot-at" role="img" aria-label="Edimo Austria website"></div>
+        <a class="shot shot-ch" href="https://www.edimo.ch/" target="_blank" rel="noopener" aria-label="Edimo Switzerland website (opens in a new window)"></a>
+        <a class="shot shot-at" href="https://www.edimo.at/" target="_blank" rel="noopener" aria-label="Edimo Austria website (opens in a new window)"></a>
       </div>
     </div>
     <div class="case-stats" aria-label="Key results">
@@ -372,11 +374,11 @@ body{font-size:18px}
     </div>
     <p class="meta-label launches-label">New market launches</p>
     <div class="launches">
-      <figure><div class="shot shot-at" role="img" aria-label="Edimo Austria website"></div><figcaption><span class="gold">AT</span>  Austria</figcaption></figure>
-      <figure><div class="shot shot-ro" role="img" aria-label="Edimo Romania website"></div><figcaption><span class="gold">RO</span>  Romania</figcaption></figure>
-      <figure><div class="shot shot-ch" role="img" aria-label="Edimo Switzerland website"></div><figcaption><span class="gold">CH</span>  Switzerland</figcaption></figure>
-      <figure><div class="shot shot-hu" role="img" aria-label="Edimo Hungary website"></div><figcaption><span class="gold">HU</span>  Hungary</figcaption></figure>
-      <figure><div class="shot shot-de" role="img" aria-label="Edimo Germany website"></div><figcaption><span class="gold">DE</span>  Germany</figcaption></figure>
+      <figure><a class="shot shot-at" href="https://www.edimo.at/" target="_blank" rel="noopener" aria-label="Edimo Austria website (opens in a new window)"></a><figcaption><span class="gold">AT</span>  Austria</figcaption></figure>
+      <figure><a class="shot shot-ro" href="https://www.edimo.ro/" target="_blank" rel="noopener" aria-label="Edimo Romania website (opens in a new window)"></a><figcaption><span class="gold">RO</span>  Romania</figcaption></figure>
+      <figure><a class="shot shot-ch" href="https://www.edimo.ch/" target="_blank" rel="noopener" aria-label="Edimo Switzerland website (opens in a new window)"></a><figcaption><span class="gold">CH</span>  Switzerland</figcaption></figure>
+      <figure><a class="shot shot-hu" href="https://www.edimo.hu/" target="_blank" rel="noopener" aria-label="Edimo Hungary website (opens in a new window)"></a><figcaption><span class="gold">HU</span>  Hungary</figcaption></figure>
+      <figure><a class="shot shot-de" href="https://www.edimoenergie.de/" target="_blank" rel="noopener" aria-label="Edimo Germany website (opens in a new window)"></a><figcaption><span class="gold">DE</span>  Germany</figcaption></figure>
     </div>
   </div>
 </section>
