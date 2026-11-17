@@ -283,6 +283,15 @@ footer a:hover{color:var(--acct)}
 .effc .eg{fill:none;stroke:var(--acc);stroke-width:12;stroke-linecap:round;stroke-linejoin:round;opacity:.28;filter:blur(8px)}
 .effc .ed{fill:var(--acc);filter:drop-shadow(0 0 10px rgba(220,108,74,.95)) drop-shadow(0 0 26px rgba(220,108,74,.6))}
 .effc.done .ed{animation:effpulse 3.2s ease-in-out infinite}
+.effc .ga{fill:#DC6C4A;opacity:0}
+.effc .pg{fill:none;stroke:#FF9C74;stroke-width:12;stroke-linecap:round;filter:blur(7px);opacity:0}
+.effc .pu{fill:none;stroke:#FFD2BE;stroke-width:3.5;stroke-linecap:round;opacity:0}
+.effc .sl{fill:none;stroke:rgba(236,232,225,.55);stroke-width:1;stroke-dasharray:3 4;opacity:0;transition:opacity .25s}
+.effc .sa{fill:var(--acc);filter:drop-shadow(0 0 10px rgba(220,108,74,.95));opacity:0;transition:opacity .25s}
+.effc .sb{fill:#ECE8E1;opacity:0;transition:opacity .25s}
+.effc .gt{fill:#FFFFFF;font:700 15px Jost,sans-serif;text-anchor:end;opacity:0}
+@media (pointer:fine){.eff{cursor:crosshair}}
+@media (max-width:900px){.effc{touch-action:pan-y}}
 @keyframes effpulse{50%{filter:drop-shadow(0 0 16px rgba(220,108,74,1)) drop-shadow(0 0 44px rgba(220,108,74,.85))}}
 .effc .el{position:absolute;font-size:15px;font-weight:700;letter-spacing:.01em;white-space:nowrap;opacity:0;transition:opacity .6s ease}
 .effc.done .el{opacity:1}
@@ -397,7 +406,30 @@ build();plan();size();addEventListener('resize',size);
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){if(red)draw(cyc.end+1)});
 if('IntersectionObserver' in window){new IntersectionObserver(function(e){on=e[0].isIntersecting;if(on)start()},{threshold:.15}).observe(cv)}else{on=true}
 document.addEventListener('visibilitychange',start);start()})();</script>
-<script>(function(){var c=document.getElementById('effc');if(!c)return;var svg=c.querySelector('svg'),NS='http://www.w3.org/2000/svg',l1=c.querySelector('.l1');var red=false,W=0,H=0,p=0,t0=0,run=false,K=5.5,S=.22,E=Math.exp(K)-1;function mk(n,cl){var e=document.createElementNS(NS,n);e.setAttribute('class',cl);svg.appendChild(e);return e}var ax=mk('path','ax'),ln=mk('path','ln'),eg=mk('path','eg'),ex=mk('path','ex'),ed=mk('circle','ed');ed.setAttribute('r',7);function fy(t){return(Math.exp(K*t)-1)/E}function draw(){var y0=H-10,A=H-34,n=Math.max(2,Math.round(140*p)),d='',i,t;for(i=0;i<=n;i++){t=p*i/n;d+=(i?'L':'M')+(W*t).toFixed(1)+' '+(y0-A*fy(t)).toFixed(1)}ex.setAttribute('d',d);eg.setAttribute('d',d);ed.setAttribute('cx',(W*p).toFixed(1));ed.setAttribute('cy',(y0-A*fy(p)).toFixed(1));ln.setAttribute('d','M0 '+y0+'L'+(W*p).toFixed(1)+' '+(y0-A*S*p).toFixed(1))}function layout(){W=c.clientWidth;H=c.clientHeight;if(!W||!H)return;svg.setAttribute('width',W);svg.setAttribute('height',H);svg.setAttribute('viewBox','0 0 '+W+' '+H);var y0=H-10,d='M0 '+y0+'H'+W,i;for(i=0;i<=24;i++)d+='M'+(W*i/24).toFixed(1)+' '+y0+'v'+(i%6?4:9);ax.setAttribute('d',d);if(W<620){l1.style.right='auto';l1.style.left='22%';l1.style.bottom=(20+(H-34)*S*.5)+'px'}else{l1.style.left='auto';l1.style.right='0';l1.style.bottom=(22+(H-34)*S)+'px'}draw()}function step(ts){if(!t0)t0=ts;var u=Math.min(1,(ts-t0)/2800);p=u<.5?4*u*u*u:1-Math.pow(-2*u+2,3)/2;draw();if(u<1)requestAnimationFrame(step);else c.classList.add('done')}function go(){if(run)return;run=true;if(red){p=1;draw();c.classList.add('done')}else requestAnimationFrame(step)}layout();addEventListener('resize',layout);if(red||!('IntersectionObserver' in window)){go()}else{var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){go();io.disconnect()}},{threshold:.35});io.observe(c)}})();</script>
+<script>(function(){var c=document.getElementById('effc');if(!c)return;var sec=c.closest('.eff')||c,svg=c.querySelector('svg'),NS='http://www.w3.org/2000/svg',l1=c.querySelector('.l1');var W=0,H=0,p=0,t0=0,run=false,done=false,vis=false,raf=0,K=5.5,S=.22,E=Math.exp(K)-1,TC=.6,sc=null,sx=0,stm=0,ga2=0;
+function mk(n,cl){var e=document.createElementNS(NS,n);e.setAttribute('class',cl);svg.appendChild(e);return e}
+var ax=mk('path','ax'),ga=mk('path','ga'),ln=mk('path','ln'),eg=mk('path','eg'),ex=mk('path','ex'),pg=mk('path','pg'),pu=mk('path','pu'),ed=mk('circle','ed'),sl=mk('path','sl'),sb=mk('circle','sb'),sa=mk('circle','sa'),gt=mk('text','gt');ed.setAttribute('r',7);sa.setAttribute('r',6);sb.setAttribute('r',5);gt.textContent='The gap';
+function fy(t){return(Math.exp(K*t)-1)/E}
+(function(){var lo=.2,hi=.99,m,i;for(i=0;i<40;i++){m=(lo+hi)/2;if(fy(m)<S*m)lo=m;else hi=m}TC=m})();
+function Y(v){return H-10-(H-34)*v}
+function cv(a,b,n){var d='',i,t;for(i=0;i<=n;i++){t=a+(b-a)*i/n;d+=(i?'L':'M')+(W*t).toFixed(1)+' '+Y(fy(t)).toFixed(1)}return d}
+function draw(){var n=Math.max(2,Math.round(140*p)),d=cv(0,p,n);ex.setAttribute('d',d);eg.setAttribute('d',d);ed.setAttribute('cx',(W*p).toFixed(1));ed.setAttribute('cy',Y(fy(p)).toFixed(1));ln.setAttribute('d','M0 '+Y(0)+'L'+(W*p).toFixed(1)+' '+Y(S*p).toFixed(1))}
+function gap(to){if(to<=TC+.002)return'';var d=cv(TC,to,60),i,t;for(i=24;i>=0;i--){t=TC+(to-TC)*i/24;d+='L'+(W*t).toFixed(1)+' '+Y(S*t).toFixed(1)}return d+'Z'}
+function frame(ts){raf=0;if(!vis)return;var t=ts/1000,ph=(t%3.4)/3.4,a=Math.max(0,ph-.07),pe=ph;
+pu.setAttribute('d',cv(a,pe,24));pu.style.opacity=(ph<.08?ph/.08:ph>.94?(1-ph)/.06:1).toFixed(3);
+pg.setAttribute('d',cv(a,pe,24));pg.style.opacity=pu.style.opacity;
+var act=sc!==null,tg=act?.42:.14+.06*Math.sin(t*1.6);ga2+=(tg-ga2)*.12;var to=act?Math.max(TC,sx):1;ga.setAttribute('d',gap(to));ga.style.opacity=ga2.toFixed(3);
+if(act){var X=W*sx,ya=Y(fy(sx)),yb=Y(S*sx);sl.setAttribute('d','M'+X.toFixed(1)+' '+Y(0)+'V'+Math.min(ya,yb,Y(1)+0).toFixed(1));sa.setAttribute('cx',X);sa.setAttribute('cy',ya);sb.setAttribute('cx',X);sb.setAttribute('cy',yb);sl.style.opacity=sa.style.opacity=sb.style.opacity=1;
+if(sx>TC+.06){var my=(ya+yb)/2+5,lx=Math.min(X-12,W-4);gt.setAttribute('x',lx);gt.setAttribute('y',my);gt.style.opacity=Math.min(1,(sx-TC-.06)/.05)}else gt.style.opacity=0}else{sl.style.opacity=sa.style.opacity=sb.style.opacity=gt.style.opacity=0}
+raf=requestAnimationFrame(frame)}
+function startLoop(){if(done&&vis&&!raf)raf=requestAnimationFrame(frame)}
+function layout(){W=c.clientWidth;H=c.clientHeight;if(!W||!H)return;svg.setAttribute('width',W);svg.setAttribute('height',H);svg.setAttribute('viewBox','0 0 '+W+' '+H);var y0=H-10,d='M0 '+y0+'H'+W,i;for(i=0;i<=24;i++)d+='M'+(W*i/24).toFixed(1)+' '+y0+'v'+(i%6?4:9);ax.setAttribute('d',d);if(W<620){l1.style.right='auto';l1.style.left='22%';l1.style.bottom=(20+(H-34)*S*.5)+'px'}else{l1.style.left='auto';l1.style.right='0';l1.style.bottom=(22+(H-34)*S)+'px'}draw()}
+function step(ts){if(!t0)t0=ts;var u=Math.min(1,(ts-t0)/2800);p=u<.5?4*u*u*u:1-Math.pow(-2*u+2,3)/2;draw();if(u<1)requestAnimationFrame(step);else{c.classList.add('done');done=true;startLoop()}}
+function go(){if(run)return;run=true;requestAnimationFrame(step)}
+function scrub(e){if(!done)return;var r=svg.getBoundingClientRect();if(!r.width)return;var f=(e.clientX-r.left)/r.width;if(e.pointerType!=='touch'&&(e.clientY<r.top-40||e.clientY>r.bottom+20)){sc=null;return}sc=1;sx=Math.max(.02,Math.min(1,f));clearTimeout(stm);if(e.pointerType==='touch')stm=setTimeout(function(){sc=null},2600)}
+sec.addEventListener('pointermove',scrub);sec.addEventListener('pointerdown',scrub);sec.addEventListener('pointerleave',function(e){if(e.pointerType!=='touch')sc=null});
+layout();addEventListener('resize',layout);
+if(!('IntersectionObserver' in window)){vis=true;go()}else{new IntersectionObserver(function(e){vis=e[0].isIntersecting;if(vis){go();startLoop()}},{threshold:.25}).observe(c)}})();</script>
 <script>(function(){var el=document.getElementById('implementation');if(!el||!('IntersectionObserver' in window))return;var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){el.classList.add('go');io.disconnect()}},{threshold:.45});io.observe(el)})();</script>
 </main>
 <section class="contact" id="contact" aria-labelledby="h-contact"><div class="wrap"><div><h2 id="h-contact">Make AI pay off. Starting with you.</h2><ul class="entry"><li><b>Free</b> 30-minute audit call: your numbers, reviewed live.</li><li><b>€1,500</b> CEO AI session: 1:1, you fluent in AI.</li></ul></div><div><div class="acts"><a class="btn btn-white" href="mailto:milan.obetko@gmail.com?subject=AI%20Advisor">Let's talk</a><a class="btn btn-line" href="https://www.linkedin.com/in/milanobetko" target="_blank" rel="noopener">Connect on LinkedIn</a></div><p class="det">milan.obetko@gmail.com<br>+421 911 719 998<br>Bratislava, Slovakia / Prague, Czech Republic</p></div></div></section><footer><div class="wrap"><span>&#169; 2026 Milan Obetko. Marketing &amp; Business Growth Leader, CEE &amp; DACH.</span><span><a href="https://milanobetko.com/">milanobetko.com</a></span></div></footer>
