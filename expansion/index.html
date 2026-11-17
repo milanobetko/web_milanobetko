@@ -75,6 +75,22 @@ h2{margin:0 0 14px;font-size:clamp(34px,4.6vw,58px);line-height:1;font-weight:80
 @media (max-width:900px){.lgs{grid-template-columns:repeat(3,1fr)}}
 .how4{margin-top:14px!important;font-size:17px!important;display:grid;grid-template-columns:1fr 1fr;gap:4px 24px}.how4 b{grid-column:1/-1}.how4 span{color:var(--t2)}@media (max-width:700px){.how4{grid-template-columns:1fr}}
 @media (max-width:900px){.lgs{grid-template-columns:repeat(4,1fr)!important;gap:8px}}
+.ex1{border:2px solid var(--mint);padding:26px 28px 30px;margin-top:30px}
+.exh{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;margin-bottom:14px}
+.exn,.alt .no2{font-size:14px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:6px 12px;white-space:nowrap}
+.exn{background:var(--mint);color:var(--ink)}
+.exh h3{margin:0;font-size:clamp(28px,3.4vw,42px);font-weight:800;letter-spacing:-.025em;line-height:1.05}
+.exs{font-size:.55em;font-weight:700;color:var(--t3);letter-spacing:0}
+.ex1 .story{margin-top:26px}
+.alt{margin-top:22px!important;grid-template-columns:1fr!important;gap:12px!important}.alt .no2{justify-self:start}
+.flow{display:flex;align-items:center;gap:12px;color:var(--hot);margin:22px 0 -26px 18px}.flow span{font-size:14px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.flow.in svg{animation:fl 1.6s ease-in-out infinite}@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+.rv.stg{opacity:1;transform:none}
+.stg>*{opacity:0;transform:translateX(-28px);transition:opacity .55s ease,transform .55s ease}
+.stg.in>*{opacity:1;transform:none}
+.stg.in>*:nth-child(2){transition-delay:.15s}.stg.in>*:nth-child(3){transition-delay:.3s}.stg.in>*:nth-child(4){transition-delay:.45s}.stg.in>*:nth-child(5){transition-delay:.6s}.stg.in>*:nth-child(6){transition-delay:.75s}
+@media (prefers-reduced-motion:reduce){.stg>*{opacity:1;transform:none;transition:none}.flow.in svg{animation:none}}
+@media (max-width:900px){.ex1{padding:20px 18px 24px}.flow{margin-left:10px}}
 .band{background:var(--panel)}
 .ph{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;margin:46px 0 16px;padding-top:18px;border-top:1px solid var(--line)}
 .ph .n{font-size:14px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);background:var(--hot);padding:4px 10px}
@@ -137,13 +153,14 @@ footer{padding:26px 0;color:var(--t3);font-size:15px}footer .wrap{display:flex;f
 <circle class="home-r" cx="356.3" cy="310.4" r="6"/><circle class="home" cx="356.3" cy="310.4" r="6"/></svg>
 <div class="chips" role="group" aria-label="Expansion scope"><button type="button" data-k="home" aria-pressed="true">Home</button><button type="button" data-k="cee" aria-pressed="false">CEE</button><button type="button" data-k="dach" aria-pressed="false">DACH</button><button type="button" data-k="eu" aria-pressed="false">EU-27</button><button type="button" data-k="emea" aria-pressed="false">EMEA</button><button type="button" data-k="world" aria-pressed="false">Global</button></div>
 <p class="cap" id="cap" aria-live="polite"></p></div></div>
-<div class="stats"><div><b>20+</b><span>brands and new markets launched</span></div><div><b>15+</b><span>markets in CEE and DACH</span></div><div><b>5x</b><span>international scope: EMEA &amp; global projects, Europe &amp; Asia</span></div><div class="h"><b>2 &rarr; 7</b><span>markets at Edimo, 9x profit in 12 months</span></div><div class="h"><b>4 &rarr; 27</b><span>markets, client under NDA</span></div></div>
+<div class="stats rv stg"><div><b>20+</b><span>brands and new markets launched</span></div><div><b>15+</b><span>markets in CEE and DACH</span></div><div><b>5x</b><span>international scope: EMEA &amp; global projects, Europe &amp; Asia</span></div><div class="h"><b>2 &rarr; 7</b><span>markets at Edimo, 9x profit in 12 months</span></div><div class="h"><b>4 &rarr; 27</b><span>markets, client under NDA</span></div></div>
 </div></section>
 
 <section id="practice"><div class="wrap">
 <p class="eyebrow">In practice</p><h2>Two real examples. <span class="hl">Step by step, or all at once.</span></h2>
+<div class="ex1 rv"><div class="exh"><span class="exn">Example 1 &middot; Step by step</span><h3>Edimo: 2 &rarr; 7 markets. <span class="exs">And 6 &rarr; 14 business units.</span></h3></div>
 <p class="sub"><b style="color:#fff">Edimo sells solar power for homes and companies:</b> an online shop, installations and wholesale. It was at home in Slovakia and Czechia. This is how it went from 2 countries to 7, one at a time.</p>
-<div class="story rv">
+<div class="story rv stg">
 <div class="st wide"><span class="no">1</span><h3>Austria</h3><p class="how">Online shop + installations</p>
 <p><b>Why first:</b> close to home, attractive margins, mature customers, and competitors we could match on price.</p>
 <p><b>What we did:</b> built a simple page that collects enquiries for installations. Launched the ads and tuned them week by week: dozens to hundreds of ad versions for different customer groups, their needs and their pains. Translated the online shop and adapted the product range for Austria.</p>
@@ -156,8 +173,8 @@ footer{padding:26px 0;color:var(--t3);font-size:15px}footer .wrap{display:flex;f
 <p>We entered with the online shop.</p></div>
 <div class="st"><span class="no">5</span><h3>Germany</h3><p class="how">Installations, online shop in preparation</p>
 <p>We launched installations and prepared the online shop, built on the foundations from Austria.</p></div>
-</div>
-<div class="alt rv"><div class="no2">Or all at once</div><div><h3>4 &rarr; 27 countries. <span class="hl">In one go.</span></h3><p><b>A second client, under NDA.</b> We cloned the online shop and the section for business customers into 13 languages, and started the campaigns in 27 European countries at the same time.</p>
+</div></div>
+<div class="alt rv"><div class="no2">Example 2 &middot; All at once</div><div><h3>4 &rarr; 27 countries. <span class="hl">In one go.</span></h3><p><b>A client under NDA.</b> We cloned the online shop and the section for business customers into 13 languages, and started the campaigns in 27 European countries at the same time.</p>
 <p class="how4"><b>How we decide how much each country gets:</b> <span>1. How big is the market?</span> <span>2. How many of the right people can we reach there?</span> <span>3. What does one new customer cost there?</span> <span>4. That sets the budget per country, and the weekly numbers move it.</span></p></div></div>
 <div class="moral rv"><div class="a"><b>What this means for you:</b> there are two ways in. One country at a time, each with the way in that fits it: a shop, installations, wholesale. Or many countries at once, from one shop in many languages. We choose together which one fits your business.</div><div class="b"><b>9x profit</b><br>at Edimo in the first 12 months, with +260% enquiries.</div></div>
 </div></section>
@@ -168,29 +185,31 @@ footer{padding:26px 0;color:var(--t3);font-size:15px}footer .wrap{display:flex;f
 
 <div class="ph rv"><span class="n">Step 1</span><h3>Expansion Deep Dive</h3><span class="m">10 working days &middot; fixed price</span></div>
 <p class="plain rv"><b>In plain words:</b> we find out which country to enter first and how to win there.</p>
-<div class="cards c3 rv">
+<div class="cards c3 rv stg">
 <div class="card"><small>Where are we now?</small><h4>Diagnosis.</h4><p>What to fix and where the opportunities are in your marketing mix for success on the new market. A structured review of the whole setup: positioning, funnel, channels, content, tools and data, budgets and processes.</p></div>
 <div class="card"><small>Where do we want to go?</small><h4>Strategy.</h4><p>Which market first, and why. Your positioning localised and fine-tuned: exactly how to win against local competitors. The biggest gaps and levers, for short- and long-term upside.</p></div>
 <div class="card"><small>How do we get there?</small><h4>Plan.</h4><p>A written, honest assessment and a market entry plan: what works, what to change, and the initiatives I would prioritise and why. Presented and discussed as a workshop.</p></div>
 </div>
 <div class="out rv"><b>You get: the Market Entry Blueprint.</b><span>100% senior attention. No juniors. Yours to run, with or without me.</span></div>
 
+<div class="flow rv" aria-hidden="true"><svg viewBox="0 0 24 56" width="24" height="56"><path d="M12 0v48" stroke="currentColor" stroke-width="3" stroke-dasharray="5 5"/><path d="M3 40l9 12 9-12" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg><span>then</span></div>
 <div class="ph rv"><span class="n">Step 2</span><h3>Launch</h3><span class="m">Built and run with your team</span></div>
 <p class="plain rv"><b>In plain words:</b> we open the market, so the first customers start to come.</p>
-<div class="cards c3 rv">
+<div class="cards c3 rv stg">
 <div class="card hotc"><small>Demand</small><h4>Acquisition Engine</h4><p>We map the market, find the decision makers and book weekly qualified meetings. Built and run with your team, then it is yours.</p><p class="f">Live in 3-5 weeks</p></div>
 <div class="card hotc"><small>Brand &amp; performance</small><h4>360 Integration</h4><p>From product and brand strategy through creative and media, brand and activation and shopper marketing, to customer experience. One plan in every market.</p><p class="f">B2C, B2B &amp; B2B2C</p></div>
 <div class="card hotc"><small>Content</small><h4>AI Localisation</h4><p>Content scaled across markets in 15+ languages, faster and cheaper, with proven AI workflows.</p><p class="f">15+ languages</p></div>
 </div>
 
+<div class="flow rv" aria-hidden="true"><svg viewBox="0 0 24 56" width="24" height="56"><path d="M12 0v48" stroke="currentColor" stroke-width="3" stroke-dasharray="5 5"/><path d="M3 40l9 12 9-12" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg><span>then</span></div>
 <div class="ph rv"><span class="n">Step 3</span><h3>Lead</h3><span class="m">Fractional or interim</span></div>
 <p class="plain rv"><b>In plain words:</b> a senior person runs it with you, for as long as you need.</p>
-<div class="cards c2 rv">
+<div class="cards c2 rv stg">
 <div class="card"><small>Leadership</small><h4>Expansion Lead</h4><p>I lead marketing, agencies and budget across your markets as part of your team, or I mentor your existing team to lead it.</p><p class="f">Fractional 20-40% of FTE, or a fixed-term mandate</p></div>
 <div class="card"><small>Partners</small><h4>Proven local partners</h4><p>A network of proven partners in Europe. No search. No pitching. Senior only.</p><p class="f">30+ agency partnerships</p></div>
 </div>
 
-<div class="price rv">
+<div class="price rv stg">
 <div><small>Step 1 &middot; Deep Dive</small><b>&euro;7,500</b><span>Fixed price. Delivered in 10 working days.</span></div>
 <div><small>Step 2 &middot; Launch</small><b>Fixed price</b><span>Confirmed after the first call.</span></div>
 <div><small>Step 3 &middot; Lead</small><b>20-40%</b><span>Of a full-time seat. Monthly retainer, stop any quarter.</span></div>
@@ -198,7 +217,7 @@ footer{padding:26px 0;color:var(--t3);font-size:15px}footer .wrap{display:flex;f
 </div></section>
 
 <section id="proof"><div class="wrap">
-<p class="eyebrow">Proof</p><h2>Done before. <span class="hl">In 15+ markets.</span></h2>
+<p class="eyebrow">Proof</p><h2>Done before, many times. <span class="hl">In 7, 13 and 27 markets.</span></h2>
 <div class="proof rv">
 <div class="big"><small>Edimo &middot; 2024 - 2025 &middot; B2C and B2B</small><h3>From 2 to 7 markets. From a 90% crash to 9x profit.</h3>
 <div class="g"><div><b>2 &rarr; 7</b><span>markets: AT, CH, RO, HU, DE added</span></div><div><b>9x</b><span>profit, first 12 months</span></div><div><b>+600%</b><span>POAS (profit on ad spend)</span></div><div><b>+260%</b><span>leads</span></div></div></div>
@@ -241,9 +260,9 @@ footer{padding:26px 0;color:var(--t3);font-size:15px}footer .wrap{display:flex;f
 (function(){var g=document.getElementById('gw'),caps={home:"<b>Home market.</b> Where you are strong today.",cee:"<b>CEE.</b> 8-10 countries.",dach:"<b>DACH.</b> 3 countries, 100M+ people.",eu:"<b>EU.</b> 27 countries.",emea:"<b>EMEA.</b> Europe, Middle East and Africa.",world:"<b>Global.</b> Going global."},order=['home','cee','dach','eu','emea','world'],i=0,auto=true,t;
 var cap=document.getElementById('cap'),bs=[].slice.call(document.querySelectorAll('.chips button'));
 function set(k){order.forEach(function(o){g.classList.remove('s-'+o)});g.classList.add('s-'+k);cap.innerHTML=caps[k];bs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.k===k?'true':'false')});i=order.indexOf(k)}
-bs.forEach(function(b){b.addEventListener('click',function(){auto=false;clearInterval(t);set(b.dataset.k)})});
+var rs;bs.forEach(function(b){b.addEventListener('click',function(){auto=false;set(b.dataset.k);clearTimeout(rs);rs=setTimeout(function(){auto=true},7000)})});
 var red=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(red){set('world')}else{set('home');setTimeout(function(){set('cee');t=setInterval(function(){if(!auto)return;i=(i+1)%order.length;set(order[i])},2600)},700)}
+set('home');setTimeout(function(){set('cee');t=setInterval(function(){if(!auto)return;i=(i+1)%order.length;set(order[i])},red?3600:2600)},700);
 var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12}):null;
 [].forEach.call(document.querySelectorAll('.rv'),function(el){io?io.observe(el):el.classList.add('in')});
 })();
