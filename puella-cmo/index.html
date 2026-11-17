@@ -170,6 +170,11 @@ footer a:hover{color:var(--white)}
 @media (prefers-reduced-motion:no-preference){.down .ar{animation:nudge 1.8s ease-in-out infinite}}
 @keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
 @media (max-width:560px){.brand .tag .tx{display:none}.top .btn{white-space:nowrap;font-size:13px;padding:10px 12px}}
+.nav .sm{display:none}
+.top .btn-cv{border-color:var(--acct);color:var(--white);gap:.3em}
+.top .btn-cv:hover{background:var(--acct);color:var(--ink)}
+@media (max-width:860px){.nav{gap:12px}}
+@media (max-width:560px){.nav{gap:8px}.top .btn-cv{padding:8px 10px}.nav .lg,.cv-x{display:none}.nav .sm{display:inline}}
 .case{margin:clamp(40px,5vw,64px) 0 0;padding-top:clamp(28px,3vw,40px);border-top:1px solid var(--line)}
 .case-t{margin:12px 0 0;font-size:clamp(26px,3vw,40px);font-weight:800;letter-spacing:-.025em;line-height:1.1;max-width:24ch}
 .case-s{margin:12px 0 0;font-size:clamp(16px,1.4vw,18px);line-height:1.5;color:var(--t2);max-width:64ch}
@@ -178,11 +183,15 @@ footer a:hover{color:var(--white)}
 .case-slides img{display:block;width:100%;height:auto}
 .case-links{margin:20px 0 0;display:flex;flex-wrap:wrap;gap:12px 28px}
 @media (max-width:760px){.case-slides{grid-template-columns:1fr;gap:10px}}
+.cv-pages{margin:24px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:860px}
+.cv-pages a{display:block;background:#FFFFFF;border-top:3px solid var(--acc)}
+.cv-pages img{display:block;width:100%;height:auto}
+@media (max-width:560px){.cv-pages{grid-template-columns:1fr;gap:10px}}
 .hero.refs-hero{padding-top:clamp(24px,3vw,40px)}
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap"><a class="brand" href="https://milanobetko.com/">Milan Obetko <span class="tag"><span class="tx">CMO · </span>Puella</span></a><nav class="nav" aria-label="Main"><ul><li><a href="#fakty">Fakty</a></li><li><a href="#co-hovoria">Referencie</a></li></ul><a class="btn btn-acc" href="#contact">Poďme sa porozprávať</a></nav></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="https://milanobetko.com/">Milan Obetko <span class="tag"><span class="tx">CMO · </span>Puella</span></a><nav class="nav" aria-label="Main"><ul><li><a href="#fakty">Fakty</a></li><li><a href="#co-hovoria">Referencie</a></li></ul><a class="btn btn-line btn-cv" href="Milan_Obetko_CV_Puella_CMO.pdf" target="_blank" rel="noopener">CV<span class="cv-x">(PDF)</span></a><a class="btn btn-acc" href="#contact"><span class="lg">Poďme sa porozprávať</span><span class="sm">Kontakt</span></a></nav></div></header>
 <main>
 <section class="facts-sec" id="fakty" aria-labelledby="h-fakty"><div class="wrap">
 <p class="eyebrow">CMO · Brand · Retencia <span>/ Puella</span></p>
@@ -199,12 +208,21 @@ footer a:hover{color:var(--white)}
 <div class="case" id="edimo">
 <p class="eyebrow">Posledný projekt <span>/ Edimo, CEE &amp; DACH, 2023-2025</span></p>
 <h2 class="case-t">Po 90&nbsp;% prepade 9x zisk za 12&nbsp;mesiacov.</h2>
-<p class="case-s">Trhy z 2 na 7, obchodné jednotky zo 6 na 13. Postavil som všetko nanovo popri bežiacej operatíve, vyškolil tímy a odovzdal to juniornejšej kolegyni, ktorá to dnes udržiava.</p>
+<p class="case-s">Trhy z 2 na 7, obchodné jednotky zo 6 na 14. Postavil som všetko nanovo popri bežiacej operatíve, vyškolil tímy a odovzdal to juniornejšej kolegyni, ktorá to dnes udržiava.</p>
 <div class="case-slides">
 <a href="edimo-1.jpg" target="_blank" rel="noopener"><img src="edimo-1.jpg" width="2000" height="1125" loading="lazy" alt="Edimo case study: východisko 2023, riešenie a výsledky 2024 a 2025"></a>
-<a href="edimo-2.jpg" target="_blank" rel="noopener"><img src="edimo-2.jpg" width="2000" height="1125" loading="lazy" alt="Edimo: z 6 na 13 obchodných jednotiek v 7 krajinách"></a>
+<a href="edimo-2.jpg" target="_blank" rel="noopener"><img src="edimo-2.jpg" width="2000" height="1125" loading="lazy" alt="Edimo: zo 6 na 14 obchodných jednotiek v 7 krajinách"></a>
 </div>
 <p class="case-links"><a class="lnk" href="Edimo_Case_Study_2023-2025.pdf" download>Stiahnuť case study (PDF) &#8595;</a><a class="lnk" href="/edimo-case-study.html">Celé case study na webe &#8594;</a></p>
+</div>
+<div class="case" id="cv">
+<p class="eyebrow">Životopis <span>/ CV, 2 strany</span></p>
+<h2 class="case-t">CV pre rolu CMO v Puelle.</h2>
+<div class="cv-pages">
+<a href="Milan_Obetko_CV_Puella_CMO.pdf" target="_blank" rel="noopener"><img src="cv-1.jpg" width="1240" height="1754" loading="lazy" alt="CV Milan Obetko, strana 1"></a>
+<a href="Milan_Obetko_CV_Puella_CMO.pdf" target="_blank" rel="noopener"><img src="cv-2.jpg" width="1240" height="1754" loading="lazy" alt="CV Milan Obetko, strana 2"></a>
+</div>
+<p class="case-links"><a class="lnk" href="Milan_Obetko_CV_Puella_CMO.pdf" download>Stiahnuť CV (PDF) &#8595;</a></p>
 </div>
 <a class="down" href="#co-hovoria"><span class="dl">36 referencií s menom</span><span class="dt">Čo hovoria ľudia, s ktorými som pracoval</span><span class="ar"><svg viewBox="0 0 48 28" fill="none" stroke="#FF5CAD" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5l19 18L43 5"/></svg><svg viewBox="0 0 48 28" fill="none" stroke="#FF5CAD" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5l19 18L43 5"/></svg><svg viewBox="0 0 48 28" fill="none" stroke="#FF5CAD" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5l19 18L43 5"/></svg></span></a>
 </div></section>
