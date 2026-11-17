@@ -272,6 +272,25 @@ footer a:hover{color:var(--acct)}
 .now-leg i{width:11px;height:11px;border-radius:50%;background:#D9D4CA}
 .now-leg .a i{background:var(--acc);box-shadow:0 0 12px rgba(220,108,74,.85)}
 @media (max-width:900px){.now-grid{grid-template-columns:1fr}.now-grid .lead{max-width:none}}
+/* Race: one process today vs the same process with AI, run in the same time. */
+.race .fs{margin:-8px 0 6px;font-size:16px;line-height:1.45;color:var(--t2)}
+.race .lane{display:flex;flex-direction:column;gap:8px}
+.race .lh{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.race .rl{font-size:15px;font-weight:700;color:var(--t3)}
+.race .ai .rl{color:var(--white)}
+.race .cnt{font-size:15px;font-weight:600;color:var(--t3);white-space:nowrap}
+.race .cnt b{font-size:24px;font-weight:800;color:var(--white);margin-right:5px;font-variant-numeric:tabular-nums}
+.race .ai .cnt b{color:var(--acct)}
+.race .track{position:relative;height:12px;background:#26231F;overflow:hidden}
+.race .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:#D9D4CA}
+.race .ai .fill{background:var(--acc);box-shadow:0 0 18px rgba(220,108,74,.75)}
+.race .sq{display:flex;flex-wrap:wrap;gap:6px;min-height:14px}
+.race .sq i{width:14px;height:14px;border:1.5px solid #5B564E;transition:background .2s,border-color .2s,box-shadow .2s}
+.race .sq i.on{background:#D9D4CA;border-color:#D9D4CA}
+.race .ai .sq i.on{background:var(--acc);border-color:var(--acc);box-shadow:0 0 10px rgba(220,108,74,.85)}
+.race .spd{display:flex;align-items:center;gap:14px;margin-top:2px;font-size:15px;font-weight:700;color:var(--t2)}
+.race .spd input{flex:1;min-width:0;accent-color:var(--acc);height:28px;cursor:pointer}
+.race .spd output{min-width:3.2ch;font-size:18px;font-weight:800;color:var(--acct);text-align:right}
 /* Motion. Three moving things, each tied to what the section says: light across the top of the page, the exponential curve drawing itself next to the sentence that claims it, and a point travelling the loop. They run regardless of the reduced-motion setting, at the owner's request. */
 .hero{position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;left:-25%;right:-25%;top:-300px;height:440px;background:radial-gradient(50% 50% at 50% 50%,rgba(220,108,74,.42),rgba(220,108,74,0) 70%);pointer-events:none;animation:heroglow 16s ease-in-out infinite alternate}
@@ -332,7 +351,7 @@ footer a:hover{color:var(--acct)}
 <article class="impl" id="implementation" aria-labelledby="h-impl">
 <div class="impl-grid">
 <div class="impl-txt"><p class="k">04  Pre Vaše procesy</p><h3 id="h-impl">AI Implementation</h3><p class="tag">AI, ktorá pracuje priamo vo Vašom biznise.</p><p class="d">Zapojím sa priamo do Vášho tímu predaja, marketingu a zákazníckeho servisu a najpomalšie procesy prestavím pomocou automatizácií a AI agentov. Tím zaškolím, aby ich vedel sám prevádzkovať, a po spustení ostávam k dispozícii.</p></div>
-<figure class="impl-fig" role="img" aria-label="Proces dnes v porovnaní s tým istým procesom prestavaným s AI: 2- až 10-krát rýchlejšie."><p class="fh">Vybrané procesy 2-10x rýchlejšie.</p><div class="row"><span class="rl">Proces dnes</span><div class="bar now"></div></div><div class="row"><span class="rl">Ten istý proces, prestavaný s AI</span><div class="bar ai"><div class="ai-in"><i class="s"></i><i class="r"></i></div></div><div class="ticks" aria-hidden="true"><span>10x</span><span>2x</span></div></div><figcaption>Celý front office: o desiatky percent produktívnejší s tým istým tímom.</figcaption></figure>
+<figure class="impl-fig race" id="race" role="img" aria-label="Ilustrácia: kým dnes proces zbehne raz, ten istý proces prestavaný s AI zbehne viackrát."><p class="fh">Vybrané procesy 2-10x rýchlejšie.</p><p class="fs">Kým dnes proces zbehne raz, s AI zbehne 2- až 10-krát.</p><div class="lane"><div class="lh"><span class="rl">Dnes</span><span class="cnt"><b id="rc1">0</b>hotovo</span></div><div class="track"><i class="fill" id="rf1"></i></div><div class="sq" id="rq1"></div></div><div class="lane ai"><div class="lh"><span class="rl">S AI</span><span class="cnt"><b id="rc2">0</b>hotovo</span></div><div class="track"><i class="fill" id="rf2"></i></div><div class="sq" id="rq2"></div></div><label class="spd"><span>Zrýchlenie</span><input type="range" id="rsp" min="2" max="10" step="1" value="5" aria-label="Zrýchlenie"><output id="rso" for="rsp">5x</output></label><figcaption>Celý front office: o desiatky percent produktívnejší s tým istým tímom.</figcaption></figure>
 </div>
 <div class="impl-foot"><div class="ipr"><b>Projektovo</b><span>rozsah a cenu určíme na prvom hovore</span></div><p class="iloop">Kroky slučky 03-04: Postaviť, Merať</p><a class="ibtn" href="#contact">Porozprávajme sa</a></div>
 </article></div></section>
@@ -441,6 +460,14 @@ function scrub(e){if(!done)return;var r=svg.getBoundingClientRect();if(!r.width)
 sec.addEventListener('pointermove',scrub);sec.addEventListener('pointerdown',scrub);sec.addEventListener('pointerleave',function(e){if(e.pointerType!=='touch')sc=null});
 layout();addEventListener('resize',layout);
 if(!('IntersectionObserver' in window)){vis=true;go()}else{new IntersectionObserver(function(e){vis=e[0].isIntersecting;if(vis){go();startLoop()}},{threshold:.25}).observe(c)}})();</script>
+<script>(function(){var f=document.getElementById('race');if(!f)return;var f1=document.getElementById('rf1'),f2=document.getElementById('rf2'),c1=document.getElementById('rc1'),c2=document.getElementById('rc2'),s1=document.getElementById('rq1'),s2=document.getElementById('rq2'),r=document.getElementById('rsp'),o=document.getElementById('rso'),k=+r.value,T=4.6,HOLD=1.6,t0=null,vis=false,raf=0,i;
+function sq(){s2.innerHTML='';for(i=0;i<k;i++)s2.appendChild(document.createElement('i'));s1.innerHTML='<i></i>'}
+function set(n1,n2,p1,p2){f1.style.width=(p1*100).toFixed(2)+'%';f2.style.width=(p2*100).toFixed(2)+'%';c1.textContent=n1;c2.textContent=n2;s1.firstChild.className=n1?'on':'';var q=s2.children;for(i=0;i<q.length;i++)q[i].className=i<n2?'on':''}
+function frame(ts){raf=0;if(!vis)return;var t=ts/1000;if(t0===null)t0=t;var e=t-t0;if(e>T+HOLD){t0=t;e=0}if(e>=T){set(1,k,1,1)}else{var ph=e/T,run=ph*k,n=Math.floor(run);set(0,n,ph,run-n)}raf=requestAnimationFrame(frame)}
+function go(){if(vis&&!raf)raf=requestAnimationFrame(frame)}
+r.addEventListener('input',function(){k=+r.value;o.textContent=k+'x';sq();t0=null});
+sq();o.textContent=k+'x';set(0,0,0,0);
+if('IntersectionObserver' in window){new IntersectionObserver(function(e){vis=e[0].isIntersecting;if(vis){t0=null;go()}},{threshold:.3}).observe(f)}else{vis=true;go()}})();</script>
 <script>(function(){var el=document.getElementById('implementation');if(!el||!('IntersectionObserver' in window))return;var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){el.classList.add('go');io.disconnect()}},{threshold:.45});io.observe(el)})();</script>
 </main>
 <section class="contact" id="contact" aria-labelledby="h-contact"><div class="wrap"><div><h2 id="h-contact">AI, ktorá sa vyplatí. Začíname pri Vás.</h2><ul class="entry"><li><b>Zadarmo</b> 30-minútový audit: Vaše čísla prejdeme naživo.</li><li><b>1 500 €</b> CEO AI session: individuálne, Vy plynulo s AI.</li></ul></div><div><div class="acts"><a class="btn btn-white" href="mailto:milan.obetko@gmail.com?subject=AI%20poradenstvo">Porozprávajme sa</a><a class="btn btn-line" href="https://www.linkedin.com/in/milanobetko" target="_blank" rel="noopener">Spojme sa na LinkedIne</a></div><p class="det">milan.obetko@gmail.com<br>+421 911 719 998<br>Bratislava, Slovensko / Praha, Česko</p></div></div></section><footer><div class="wrap"><span>&#169; 2026 Milan Obetko. Marketing a rast biznisu, CEE a DACH.</span><span><a href="https://milanobetko.com/">milanobetko.com</a></span></div></footer>
