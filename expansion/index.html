@@ -100,6 +100,21 @@ h2{margin:0 0 14px;font-size:clamp(34px,4.6vw,58px);line-height:1;font-weight:80
 .pts b{display:block;color:#fff;font-size:24px;font-weight:800;letter-spacing:-.015em;line-height:1.1}.pts span{display:block;margin-top:5px;color:var(--t2);font-size:17px;line-height:1.4}
 .res{margin:20px 0 0;font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--hot2)}
 @media (max-width:900px){.pts{grid-template-columns:1fr 1fr}}@media (max-width:600px){.exn,.alt .no2{white-space:normal;font-size:12.5px}}@media (max-width:480px){.pts{grid-template-columns:1fr}}
+.swipe,.rm{display:none}
+@media (max-width:700px){
+.rail{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-left:-20px!important;margin-right:-20px!important;padding:0 20px 8px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rail::-webkit-scrollbar{display:none}
+.rail>*{flex:0 0 86%;scroll-snap-align:start;margin-top:0!important;min-width:0}
+.exrail{margin-top:14px;align-items:stretch}
+.swipe{display:block;margin:22px 0 0;font-size:14px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--mint)}
+.exrail .st p:not(.how),.exrail .how4{display:none}
+.exrail .open .st p:not(.how),.exrail .open .how4{display:block}.exrail .open .how4{display:grid}
+.exrail .story{gap:18px}.exrail .st h3{font-size:23px}
+.rm{display:inline-block;margin-top:16px;font:inherit;font-size:15px;font-weight:800;color:var(--ink);background:var(--mint);border:0;padding:9px 16px;cursor:pointer}
+.alt .rm{background:var(--hot)}
+#proof .proof .big{display:none}#proof .proof{margin-top:20px}
+#proof .cards figure.q{display:none}#proof .cards{margin-top:16px}
+}
 .band{background:var(--panel)}
 .ph{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;margin:46px 0 16px;padding-top:18px;border-top:1px solid var(--line)}
 .ph .n{font-size:14px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);background:var(--hot);padding:4px 10px}
@@ -167,6 +182,8 @@ footer{padding:26px 0;color:var(--t3);font-size:15px}footer .wrap{display:flex;f
 
 <section id="practice"><div class="wrap">
 <p class="eyebrow">In practice</p><h2>Four real examples. <span class="hl">Step by step, all at once, revitalization, CEE growth.</span></h2>
+<p class="swipe">Swipe for all 4 examples &rarr;</p>
+<div class="rail exrail">
 <div class="ex1 rv"><div class="exh"><span class="exn">Example 1 &middot; Step by step</span><h3>Edimo: 2 &rarr; 7 markets. <span class="exs">And 6 &rarr; 14 business units.</span></h3></div>
 <p class="sub"><b style="color:#fff">Edimo sells solar power for homes and companies:</b> an online shop, installations and wholesale. It was at home in Slovakia and Czechia. This is how it went from 2 countries to 7, one at a time.</p>
 <div class="story rv stg">
@@ -182,15 +199,16 @@ footer{padding:26px 0;color:var(--t3);font-size:15px}footer .wrap{display:flex;f
 <p>We entered with the online shop.</p></div>
 <div class="st"><span class="no">5</span><h3>Germany</h3><p class="how">Installations, online shop in preparation</p>
 <p>We launched installations and prepared the online shop, built on the foundations from Austria.</p></div>
-</div></div>
+</div><button class="rm" type="button">Read more</button></div>
 <div class="alt rv"><div class="no2">Example 2 &middot; All at once</div><div><h3>GreenTech B2B e-commerce: 4 &rarr; 27 countries. <span class="hl">In one go.</span></h3><p><b>A client under NDA.</b> We cloned the online shop and the section for business customers into 13 languages, and started the campaigns in 27 European countries at the same time.</p>
-<p class="how4"><b>How we decide how much each country gets:</b> <span>1. How big is the market?</span> <span>2. How many of the right people can we reach there?</span> <span>3. What does one new customer cost there?</span> <span>4. That sets the budget per country, and the weekly numbers move it.</span></p></div></div>
+<p class="how4"><b>How we decide how much each country gets:</b> <span>1. How big is the market?</span> <span>2. How many of the right people can we reach there?</span> <span>3. What does one new customer cost there?</span> <span>4. That sets the budget per country, and the weekly numbers move it.</span></p><button class="rm" type="button">Read more</button></div></div>
 <div class="ex1 exb rv"><div class="exh"><span class="exn">Example 3 &middot; International revitalization</span><h3>Subway CEE: 13 markets, 3 years. <span class="exs">Through covid.</span></h3></div>
 <div class="pts rv stg"><div><b>Transformation</b><span>of how marketing supports the business.</span></div><div><b>Brand revitalization</b><span>after 10 years, in 24 months.</span></div><div><b>Digitalization</b><span>of marketing.</span></div><div><b>14 &rarr; 3</b><span>From 14 local agency partners to 3 regional ones, with one CEE hub in Prague.</span></div></div>
 <p class="res">34% savings &middot; +12% effectiveness and +16% efficiency in year one &middot; CEE KPIs +10 pts vs. Global, +5 pts vs. EMEA</p></div>
 <div class="ex1 exc rv"><div class="exh"><span class="exn">Example 4 &middot; CEE growth</span><h3>SkyEurope Airlines: from Slovakia across CEE. <span class="exs">2005 - 2007.</span></h3></div>
 <div class="pts rv stg"><div><b>New strategy</b><span>for Slovakia first.</span></div><div><b>Prague base</b><span>the most successful one, launched in just 2 months.</span></div><div><b>Hungary &amp; Poland</b><span>marketing optimised.</span></div><div><b>5 new markets</b><span>Romania, Bulgaria, Croatia, Slovenia and Austria. Agency pitches in 7 countries.</span></div></div>
 <p class="res">H1/2007: historically most profitable results, passengers +45.7%</p></div>
+</div>
 <div class="moral rv"><div class="a"><b>What this means for you:</b> there is no single way in. One country at a time. Many countries at once. Or first fixing what you already run across many markets. We choose together which one fits your business.</div><div class="b"><b>9x profit</b><br>at Edimo in the first 12 months, with +260% enquiries.</div></div>
 </div></section>
 
@@ -200,7 +218,7 @@ footer{padding:26px 0;color:var(--t3);font-size:15px}footer .wrap{display:flex;f
 
 <div class="ph rv"><span class="n">Step 1</span><h3>Expansion Deep Dive</h3><span class="m">10 working days &middot; fixed price</span></div>
 <p class="plain rv"><b>In plain words:</b> we find out which country to enter first and how to win there.</p>
-<div class="cards c3 rv stg">
+<div class="cards c3 rv stg rail">
 <div class="card"><small>Where are we now?</small><h4>Diagnosis.</h4><p>What to fix and where the opportunities are in your marketing mix for success on the new market. A structured review of the whole setup: positioning, funnel, channels, content, tools and data, budgets and processes.</p></div>
 <div class="card"><small>Where do we want to go?</small><h4>Strategy.</h4><p>Which market first, and why. Your positioning localised and fine-tuned: exactly how to win against local competitors. The biggest gaps and levers, for short- and long-term upside.</p></div>
 <div class="card"><small>How do we get there?</small><h4>Plan.</h4><p>A written, honest assessment and a market entry plan: what works, what to change, and the initiatives I would prioritise and why. Presented and discussed as a workshop.</p></div>
@@ -210,7 +228,7 @@ footer{padding:26px 0;color:var(--t3);font-size:15px}footer .wrap{display:flex;f
 <div class="flow rv" aria-hidden="true"><svg viewBox="0 0 1000 70" preserveAspectRatio="none"><path d="M330 2H670V26H998L500 68L2 26H330Z"/></svg><span>Then</span></div>
 <div class="ph rv"><span class="n">Step 2</span><h3>Launch</h3><span class="m">Built and run with your team</span></div>
 <p class="plain rv"><b>In plain words:</b> we open the market, so the first customers start to come.</p>
-<div class="cards c3 rv stg">
+<div class="cards c3 rv stg rail">
 <div class="card hotc"><small>Demand</small><h4>Acquisition Engine</h4><p>We map the market, find the decision makers and book weekly qualified meetings. Built and run with your team, then it is yours.</p><p class="f">Live in 3-5 weeks</p></div>
 <div class="card hotc"><small>Brand &amp; performance</small><h4>360 Integration</h4><p>From product and brand strategy through creative and media, brand and activation and shopper marketing, to customer experience. One plan in every market.</p><p class="f">B2C, B2B &amp; B2B2C</p></div>
 <div class="card hotc"><small>Content</small><h4>AI Localisation</h4><p>Content scaled across markets in 15+ languages, faster and cheaper, with proven AI workflows.</p><p class="f">15+ languages</p></div>
@@ -219,7 +237,7 @@ footer{padding:26px 0;color:var(--t3);font-size:15px}footer .wrap{display:flex;f
 <div class="flow rv" aria-hidden="true"><svg viewBox="0 0 1000 70" preserveAspectRatio="none"><path d="M330 2H670V26H998L500 68L2 26H330Z"/></svg><span>Then</span></div>
 <div class="ph rv"><span class="n">Step 3</span><h3>Lead</h3><span class="m">Fractional or interim</span></div>
 <p class="plain rv"><b>In plain words:</b> a senior person runs it with you, for as long as you need.</p>
-<div class="cards c2 rv stg">
+<div class="cards c2 rv stg rail">
 <div class="card"><small>Leadership</small><h4>Expansion Lead</h4><p>I lead marketing, agencies and budget across your markets as part of your team, or I mentor your existing team to lead it.</p><p class="f">Fractional 20-40% of FTE, or a fixed-term mandate</p></div>
 <div class="card"><small>Partners</small><h4>Proven local partners</h4><p>A network of proven partners in Europe. No search. No pitching. Senior only.</p><p class="f">30+ agency partnerships</p></div>
 </div>
@@ -276,6 +294,7 @@ var red=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)')
 set('home');setTimeout(function(){set('cee');t=setInterval(function(){if(!auto)return;i=(i+1)%order.length;set(order[i])},1200)},500);
 var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.18,rootMargin:'0px 0px -8% 0px'}):null;
 [].forEach.call(document.querySelectorAll('.rv'),function(el){io?io.observe(el):el.classList.add('in')});
+  [].forEach.call(document.querySelectorAll('.rm'),function(b){b.addEventListener('click',function(){var c=b.closest('.ex1,.alt');var o=c.classList.toggle('open');b.textContent=o?'Show less':'Read more'})});
 })();
 </script>
 </body></html>
