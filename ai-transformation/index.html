@@ -147,7 +147,7 @@ h2{margin:0;font-size:clamp(36px,5vw,66px);line-height:.98;font-weight:800;lette
 @media (max-width:900px){.cards.three{grid-template-columns:1fr}}
 @media (min-width:901px){.cards.three .card .pr{flex-direction:column;align-items:flex-start;gap:8px}}
 /* AI Implementation band: the one build offer, set apart from the three advisory cards by scale. Same black ground; orange only on the rebuilt-process bar and the action. */
-.impl{margin-top:clamp(28px,4vw,40px);border:1px solid #5B564E;background:radial-gradient(90% 120% at 100% 0%,rgba(19,185,138,.13),rgba(19,185,138,0) 60%),#11100F;color:var(--white)}
+.impl{margin-top:clamp(28px,4vw,40px);border:1px solid #5B564E;background:radial-gradient(90% 120% at 100% 0%,rgba(226,78,40,.13),rgba(226,78,40,0) 60%),#11100F;color:var(--white)}
 .impl-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);padding:clamp(28px,4.4vw,60px) clamp(24px,4.4vw,60px) clamp(28px,4vw,52px);align-items:end}
 .impl-txt{display:flex;flex-direction:column;gap:14px;min-width:0}
 .impl .k{margin:0;font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--t3)}
@@ -162,8 +162,8 @@ h2{margin:0;font-size:clamp(36px,5vw,66px);line-height:.98;font-weight:800;lette
 .impl-fig .bar.now{background:#D9D4CA}
 .impl-fig .bar.ai{background:linear-gradient(var(--line),var(--line)) left bottom/100% 1px no-repeat}
 .impl-fig .ai-in{display:flex;width:50%;height:100%}
-.impl-fig .ai-in .s{flex:0 0 20%;background:var(--acc);box-shadow:0 0 26px rgba(19,185,138,.7),0 0 70px rgba(19,185,138,.35)}
-.impl-fig .ai-in .r{flex:1;background:repeating-linear-gradient(-45deg,rgba(19,185,138,.75) 0 2px,transparent 2px 8px)}
+.impl-fig .ai-in .s{flex:0 0 20%;background:var(--acc);box-shadow:0 0 26px rgba(226,78,40,.7),0 0 70px rgba(226,78,40,.35)}
+.impl-fig .ai-in .r{flex:1;background:repeating-linear-gradient(-45deg,rgba(226,78,40,.75) 0 2px,transparent 2px 8px)}
 .impl-fig .ticks{display:flex;justify-content:space-between;width:40%;margin-left:10%;font-size:15px;font-weight:800;color:var(--acct)}
 .impl-fig figcaption{margin-top:6px;padding-top:16px;border-top:1px solid var(--line);font-size:18px;line-height:1.45;font-weight:600;text-wrap:balance}
 .impl.go .ai-in{animation:implshrink 1.5s cubic-bezier(.2,.7,.1,1) .25s backwards}
@@ -221,7 +221,7 @@ footer a:hover{color:var(--acct)}
 .lp-canvas .d{font-size:23px;color:var(--t2)}
 .lp-canvas .p{margin-top:6px;display:inline-block;background:var(--acc);font-size:20px;font-weight:600;padding:7px 14px}
 .lp-canvas .hub{position:absolute;left:810px;top:435px;width:300px;height:300px;border-radius:50%;background:var(--acc);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px}
-.lp-canvas .hub .h1{font-size:20px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#06241D}
+.lp-canvas .hub .h1{font-size:20px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#2E0F06}
 .lp-canvas .hub .h2{margin-top:8px;font-size:40px;line-height:1.02;font-weight:800;letter-spacing:-.02em}
 .lp-canvas .hub .h3{margin-top:10px;font-size:21px;line-height:1.25}
 .lp-m{display:none}
@@ -230,7 +230,7 @@ footer a:hover{color:var(--acct)}
 @media (max-width:800px){
  .lp-stage{display:none}.lp-m{display:block;margin-top:28px}
  .hubm{background:var(--acc);padding:22px 22px 24px}
- .hubm .h1{font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#06241D}
+ .hubm .h1{font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#2E0F06}
  .hubm .h2{margin-top:6px;font-size:32px;line-height:1.05;font-weight:800;letter-spacing:-.02em}
  .hubm .h3{margin-top:6px;font-size:17px}
  .lp-m ol{list-style:none;margin:0;padding:0;position:relative}
@@ -246,7 +246,7 @@ footer a:hover{color:var(--acct)}
 </style>
 <style>
 /* Theme: warm black, bone type, one orange. Orange marks the single focal thing in each view (the action, the loop's centre, the rebuilt process); everything else stays bone on black. */
-:root{--acc:#13B98A;--acct:#2FD3AC;--on:#05231C;--ink:#0C0B0A;--line:#39352F}
+:root{--acc:#E24E28;--acct:#F06B45;--on:#1A0A05;--ink:#0C0B0A;--line:#39352F}
 .eyebrow{color:var(--t3)}
 .card{background:#11100F;color:var(--white);border:1px solid var(--line)}
 .card .k{color:var(--t3)}
@@ -254,10 +254,10 @@ footer a:hover{color:var(--acct)}
 .card .pr{border-top:1px solid var(--line)}
 .lp-canvas .k,.lp-m .c .k{color:var(--t3)}
 .lp-canvas .p,.lp-m .c .p{background:transparent;box-shadow:inset 0 0 0 1.5px #6B655C;color:var(--t2)}
-.lp-canvas .hub{color:var(--on);box-shadow:0 0 90px rgba(19,185,138,.38)}
+.lp-canvas .hub{color:var(--on);box-shadow:0 0 90px rgba(226,78,40,.38)}
 .hubm{color:var(--on)}
 .lp-m ol::before{background:#6B655C}
-.contact{background:radial-gradient(70% 140% at 50% 0%,rgba(19,185,138,.16),rgba(19,185,138,0) 62%),#11100F;color:var(--white);border-top:1px solid var(--line)}
+.contact{background:radial-gradient(70% 140% at 50% 0%,rgba(226,78,40,.16),rgba(226,78,40,0) 62%),#11100F;color:var(--white);border-top:1px solid var(--line)}
 .contact .btn-white{background:var(--acc);color:var(--on)}
 .contact .btn-white:hover{filter:brightness(1.12)}
 /* Why now: a market drawn as a slowly turning network. Companies switch to orange one after another along their links; the one marked You stays bone. */
@@ -269,7 +269,7 @@ footer a:hover{color:var(--acct)}
 .now-leg{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px 28px;font-size:16px;font-weight:600;color:var(--t2)}
 .now-leg li{display:flex;align-items:center;gap:10px}
 .now-leg i{width:11px;height:11px;border-radius:50%;background:#D9D4CA}
-.now-leg .a i{background:var(--acc);box-shadow:0 0 12px rgba(19,185,138,.85)}
+.now-leg .a i{background:var(--acc);box-shadow:0 0 12px rgba(226,78,40,.85)}
 @media (max-width:900px){.now-grid{grid-template-columns:1fr}.now-grid .lead{max-width:none}}
 /* Race: one process today vs the same process with AI, run in the same time. */
 .race .fs{margin:-8px 0 6px;font-size:16px;line-height:1.45;color:var(--t2)}
@@ -282,19 +282,19 @@ footer a:hover{color:var(--acct)}
 .race .ai .cnt b{color:var(--acct)}
 .race .track{position:relative;height:12px;background:#26231F;overflow:hidden}
 .race .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:#D9D4CA}
-.race .ai .fill{background:var(--acc);box-shadow:0 0 18px rgba(19,185,138,.75)}
+.race .ai .fill{background:var(--acc);box-shadow:0 0 18px rgba(226,78,40,.75)}
 .race .sq{display:flex;flex-wrap:wrap;gap:6px;min-height:14px}
 .race .sq i{width:14px;height:14px;border:1.5px solid #5B564E;transition:background .2s,border-color .2s,box-shadow .2s}
 .race .sq i.on{background:#D9D4CA;border-color:#D9D4CA}
-.race .ai .sq i.on{background:var(--acc);border-color:var(--acc);box-shadow:0 0 10px rgba(19,185,138,.85)}
+.race .ai .sq i.on{background:var(--acc);border-color:var(--acc);box-shadow:0 0 10px rgba(226,78,40,.85)}
 .race .spd{display:flex;align-items:center;gap:14px;margin-top:2px;font-size:15px;font-weight:700;color:var(--t2)}
 .race .spd input{flex:1;min-width:0;accent-color:var(--acc);height:28px;cursor:pointer}
 .race .spd output{min-width:3.2ch;font-size:18px;font-weight:800;color:var(--acct);text-align:right}
 /* Motion. Three moving things, each tied to what the section says: light across the top of the page, the exponential curve drawing itself next to the sentence that claims it, and a point travelling the loop. They run regardless of the reduced-motion setting, at the owner's request. */
 .hero{position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;left:-25%;right:-25%;top:-300px;height:440px;background:radial-gradient(50% 50% at 50% 50%,rgba(19,185,138,.42),rgba(19,185,138,0) 70%);pointer-events:none;animation:heroglow 16s ease-in-out infinite alternate}
+.hero::before{content:"";position:absolute;left:-25%;right:-25%;top:-300px;height:440px;background:radial-gradient(50% 50% at 50% 50%,rgba(226,78,40,.42),rgba(226,78,40,0) 70%);pointer-events:none;animation:heroglow 16s ease-in-out infinite alternate}
 @keyframes heroglow{from{transform:translateX(-22%)}to{transform:translateX(22%) scaleX(1.2)}}
-.hero::after{content:"";position:absolute;left:0;top:-52px;width:72%;height:104px;background:radial-gradient(50% 50% at 50% 50%,rgba(79,224,189,.9),rgba(19,185,138,.5) 32%,rgba(19,185,138,0) 70%);filter:blur(7px);pointer-events:none;animation:herostreak 14s ease-in-out infinite alternate}
+.hero::after{content:"";position:absolute;left:0;top:-52px;width:72%;height:104px;background:radial-gradient(50% 50% at 50% 50%,rgba(255,138,94,.9),rgba(226,78,40,.5) 32%,rgba(226,78,40,0) 70%);filter:blur(7px);pointer-events:none;animation:herostreak 14s ease-in-out infinite alternate}
 @keyframes herostreak{from{transform:translateX(-25%)}to{transform:translateX(64%)}}
 .hero .wrap{position:relative;z-index:1}
 /* Hero terrain: the company drawn as a landscape of its processes. Peaks rise and fall; the orange point keeps moving to the highest one, which is what the offer does: find where AI pays off most. */
@@ -310,34 +310,34 @@ footer a:hover{color:var(--acct)}
 .effc .ln{fill:none;stroke:#D9D4CA;stroke-width:2;stroke-linecap:round}
 .effc .ex{fill:none;stroke:var(--acc);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
 .effc .eg{fill:none;stroke:var(--acc);stroke-width:12;stroke-linecap:round;stroke-linejoin:round;opacity:.28;filter:blur(8px)}
-.effc .ed{fill:var(--acc);filter:drop-shadow(0 0 10px rgba(19,185,138,.95)) drop-shadow(0 0 26px rgba(19,185,138,.6))}
+.effc .ed{fill:var(--acc);filter:drop-shadow(0 0 10px rgba(226,78,40,.95)) drop-shadow(0 0 26px rgba(226,78,40,.6))}
 .effc.done .ed{animation:effpulse 3.2s ease-in-out infinite}
-.effc .ga{fill:#13B98A;opacity:0}
-.effc .pg{fill:none;stroke:#4FE0BD;stroke-width:12;stroke-linecap:round;filter:blur(7px);opacity:0}
-.effc .pu{fill:none;stroke:#BFF3E6;stroke-width:3.5;stroke-linecap:round;opacity:0}
+.effc .ga{fill:#E24E28;opacity:0}
+.effc .pg{fill:none;stroke:#FF8A5E;stroke-width:12;stroke-linecap:round;filter:blur(7px);opacity:0}
+.effc .pu{fill:none;stroke:#FFC3A8;stroke-width:3.5;stroke-linecap:round;opacity:0}
 .effc .sl{fill:none;stroke:rgba(236,232,225,.55);stroke-width:1;stroke-dasharray:3 4;opacity:0;transition:opacity .25s}
-.effc .sa{fill:var(--acc);filter:drop-shadow(0 0 10px rgba(19,185,138,.95));opacity:0;transition:opacity .25s}
+.effc .sa{fill:var(--acc);filter:drop-shadow(0 0 10px rgba(226,78,40,.95));opacity:0;transition:opacity .25s}
 .effc .sb{fill:#ECE8E1;opacity:0;transition:opacity .25s}
 .effc .gt{fill:#FFFFFF;font:700 15px Jost,sans-serif;text-anchor:end;opacity:0}
 @media (pointer:fine){.eff{cursor:crosshair}}
 @media (max-width:900px){.effc{touch-action:pan-y}}
-@keyframes effpulse{50%{filter:drop-shadow(0 0 16px rgba(19,185,138,1)) drop-shadow(0 0 44px rgba(19,185,138,.85))}}
+@keyframes effpulse{50%{filter:drop-shadow(0 0 16px rgba(226,78,40,1)) drop-shadow(0 0 44px rgba(226,78,40,.85))}}
 .effc .el{position:absolute;font-size:15px;font-weight:700;letter-spacing:.01em;white-space:nowrap;opacity:0;transition:opacity .6s ease}
 .effc.done .el{opacity:1}
 .effc .l1{right:0;color:var(--t3)}
 .effc .l2{right:26px;top:13px;color:var(--acct)}
 @media (max-width:900px){.eff p{padding-bottom:0}.effc{position:relative;left:auto;right:auto;height:190px;margin-top:22px}}
-.lp-canvas .trav{transform-origin:960px 585px;animation:lpspin 20s linear infinite;filter:drop-shadow(0 0 14px rgba(19,185,138,.95))}
+.lp-canvas .trav{transform-origin:960px 585px;animation:lpspin 20s linear infinite;filter:drop-shadow(0 0 14px rgba(226,78,40,.95))}
 @keyframes lpspin{to{transform:rotate(360deg)}}
 .lp-canvas .nd{animation:lpnode 20s linear infinite}
-@keyframes lpnode{0%,5%{fill:#13B98A}16%,96%{fill:#D9D4CA}100%{fill:#13B98A}}
+@keyframes lpnode{0%,5%{fill:#E24E28}16%,96%{fill:#D9D4CA}100%{fill:#E24E28}}
 .lp-canvas .lb .k{animation:lpk 20s linear infinite}
-@keyframes lpk{0%,7%{color:#2FD3AC}18%,96%{color:#C6C0B6}100%{color:#2FD3AC}}
+@keyframes lpk{0%,7%{color:#F06B45}18%,96%{color:#C6C0B6}100%{color:#F06B45}}
 .lp-canvas .nd2,.lp-canvas .lb:nth-of-type(2) .k{animation-delay:4s}
 .lp-canvas .nd3,.lp-canvas .lb:nth-of-type(3) .k{animation-delay:8s}
 .lp-canvas .nd4,.lp-canvas .lb:nth-of-type(4) .k{animation-delay:12s}
 .lp-canvas .nd5,.lp-canvas .lb:nth-of-type(5) .k{animation-delay:16s}
-.lp-m ol::after{content:"";position:absolute;left:13px;top:0;width:15px;height:15px;border-radius:50%;background:var(--acc);box-shadow:0 0 14px rgba(19,185,138,.95),0 0 34px rgba(19,185,138,.6);animation:lpdown 9s linear infinite}
+.lp-m ol::after{content:"";position:absolute;left:13px;top:0;width:15px;height:15px;border-radius:50%;background:var(--acc);box-shadow:0 0 14px rgba(226,78,40,.95),0 0 34px rgba(226,78,40,.6);animation:lpdown 9s linear infinite}
 @keyframes lpdown{from{top:0}to{top:calc(100% - 15px)}}
 
 </style>
@@ -354,7 +354,7 @@ footer a:hover{color:var(--acct)}
 </div>
 <div class="impl-foot"><div class="ipr"><b>Hands-on</b><span>scope &amp; price confirmed after the Booster</span></div><p class="iloop">Loop steps 03-04: Build, Measure</p><a class="ibtn" href="#contact">Let's talk</a></div>
 </article></div></section>
-<section class="sec alt" id="loop" aria-labelledby="h-loop"><div class="wrap"><div class="sec-head"><p class="eyebrow">How it works</p><h2 id="h-loop">The AI Value <span class="hl">Loop.</span></h2></div><p class="lead" style="max-width:56ch">One loop, from the first bottleneck to AI that runs across your marketing. Run hands-on with you.</p><div class="lp-stage" id="lpst"><div class="lp-canvas" id="lpcv"><svg width="1920" height="1080" viewBox="0 0 1920 1080"><circle cx="960" cy="585" r="300" fill="none" stroke="#1D1B18" stroke-width="30"/><path d="M1017.2 290.5 A300 300 0 0 1 1222.4 439.6" fill="none" stroke="#D9D4CA" stroke-width="4" marker-end="url(#ah)"/><path d="M1257.8 548.4 A300 300 0 0 1 1179.4 789.6" fill="none" stroke="#D9D4CA" stroke-width="4" marker-end="url(#ah)"/><path d="M1086.8 856.9 A300 300 0 0 1 833.2 856.9" fill="none" stroke="#D9D4CA" stroke-width="4" marker-end="url(#ah)"/><path d="M740.6 789.6 A300 300 0 0 1 662.2 548.4" fill="none" stroke="#D9D4CA" stroke-width="4" marker-end="url(#ah)"/><path d="M697.6 439.6 A300 300 0 0 1 902.8 290.5" fill="none" stroke="#D9D4CA" stroke-width="4" marker-end="url(#ah)"/><defs><marker id="ah" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L10 6 L1 11" fill="none" stroke="#D9D4CA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><circle class="nd nd1" cx="960.0" cy="285.0" r="16" fill="#D9D4CA"/><circle class="nd nd2" cx="1245.3" cy="492.3" r="16" fill="#D9D4CA"/><circle class="nd nd3" cx="1136.3" cy="827.7" r="16" fill="#D9D4CA"/><circle class="nd nd4" cx="783.7" cy="827.7" r="16" fill="#D9D4CA"/><circle class="nd nd5" cx="674.7" cy="492.3" r="16" fill="#D9D4CA"/><defs><linearGradient id="trl" gradientUnits="userSpaceOnUse" x1="767.2" y1="355.2" x2="960" y2="285"><stop offset="0" stop-color="#13B98A" stop-opacity="0"/><stop offset="1" stop-color="#13B98A"/></linearGradient></defs><g class="trav"><path d="M767.2 355.2 A300 300 0 0 1 960 285" fill="none" stroke="url(#trl)" stroke-width="7" stroke-linecap="round"/><circle cx="960" cy="285" r="13" fill="#13B98A"/></g></svg>
+<section class="sec alt" id="loop" aria-labelledby="h-loop"><div class="wrap"><div class="sec-head"><p class="eyebrow">How it works</p><h2 id="h-loop">The AI Value <span class="hl">Loop.</span></h2></div><p class="lead" style="max-width:56ch">One loop, from the first bottleneck to AI that runs across your marketing. Run hands-on with you.</p><div class="lp-stage" id="lpst"><div class="lp-canvas" id="lpcv"><svg width="1920" height="1080" viewBox="0 0 1920 1080"><circle cx="960" cy="585" r="300" fill="none" stroke="#1D1B18" stroke-width="30"/><path d="M1017.2 290.5 A300 300 0 0 1 1222.4 439.6" fill="none" stroke="#D9D4CA" stroke-width="4" marker-end="url(#ah)"/><path d="M1257.8 548.4 A300 300 0 0 1 1179.4 789.6" fill="none" stroke="#D9D4CA" stroke-width="4" marker-end="url(#ah)"/><path d="M1086.8 856.9 A300 300 0 0 1 833.2 856.9" fill="none" stroke="#D9D4CA" stroke-width="4" marker-end="url(#ah)"/><path d="M740.6 789.6 A300 300 0 0 1 662.2 548.4" fill="none" stroke="#D9D4CA" stroke-width="4" marker-end="url(#ah)"/><path d="M697.6 439.6 A300 300 0 0 1 902.8 290.5" fill="none" stroke="#D9D4CA" stroke-width="4" marker-end="url(#ah)"/><defs><marker id="ah" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L10 6 L1 11" fill="none" stroke="#D9D4CA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><circle class="nd nd1" cx="960.0" cy="285.0" r="16" fill="#D9D4CA"/><circle class="nd nd2" cx="1245.3" cy="492.3" r="16" fill="#D9D4CA"/><circle class="nd nd3" cx="1136.3" cy="827.7" r="16" fill="#D9D4CA"/><circle class="nd nd4" cx="783.7" cy="827.7" r="16" fill="#D9D4CA"/><circle class="nd nd5" cx="674.7" cy="492.3" r="16" fill="#D9D4CA"/><defs><linearGradient id="trl" gradientUnits="userSpaceOnUse" x1="767.2" y1="355.2" x2="960" y2="285"><stop offset="0" stop-color="#E24E28" stop-opacity="0"/><stop offset="1" stop-color="#E24E28"/></linearGradient></defs><g class="trav"><path d="M767.2 355.2 A300 300 0 0 1 960 285" fill="none" stroke="url(#trl)" stroke-width="7" stroke-linecap="round"/><circle cx="960" cy="285" r="13" fill="#E24E28"/></g></svg>
 <div class="lb" style="left:660px;top:95px;width:600px;text-align:center;align-items:center"><div class="k">01  FIND</div><div class="t">Find the bottleneck</div><div class="d">Where AI pays off most</div><div class="p">AI Value Booster</div></div><div class="lb" style="left:1289px;top:440px;width:520px;text-align:left;align-items:flex-start"><div class="k">02  PRIORITISE</div><div class="t">Prioritise by return</div><div class="d">What to build first</div><div class="p">AI Value Booster</div></div><div class="lb" style="left:1200px;top:822px;width:520px;text-align:left;align-items:flex-start"><div class="k">03  BUILD & DEPLOY</div><div class="t">Build and deploy</div><div class="d">Systems and processes that run</div><div class="p">Pilot &amp; embed</div></div><div class="lb" style="left:200px;top:822px;width:520px;text-align:right;align-items:flex-end"><div class="k">04  MEASURE & IMPROVE</div><div class="t">Measure and improve</div><div class="d">Results tracked, systems tuned</div><div class="p">Pilot &amp; embed</div></div><div class="lb" style="left:111px;top:440px;width:520px;text-align:right;align-items:flex-end"><div class="k">05  SPREAD</div><div class="t">Spread across the team</div><div class="d">Everyone works the new way</div><div class="p">Pilot &amp; embed</div></div>
 <div class="hub"><div class="h1">At the centre</div><div class="h2">You + me</div><div class="h3">Hands-on, leading the loop</div></div>
 </div></div><div class="lp-m"><div class="hubm"><div class="h1">At the centre</div><div class="h2">You + me</div><div class="h3">Hands-on, leading the loop</div></div><ol><li><span class="n">01</span><div class="c"><div class="k">01  FIND</div><div class="t">Find the bottleneck</div><div class="d">Where AI pays off most</div><div class="p">AI Value Booster</div></div></li><li><span class="n">02</span><div class="c"><div class="k">02  PRIORITISE</div><div class="t">Prioritise by return</div><div class="d">What to build first</div><div class="p">AI Value Booster</div></div></li><li><span class="n">03</span><div class="c"><div class="k">03  BUILD &amp; DEPLOY</div><div class="t">Build and deploy</div><div class="d">Systems and processes that run</div><div class="p">Pilot &amp; embed</div></div></li><li><span class="n">04</span><div class="c"><div class="k">04  MEASURE &amp; IMPROVE</div><div class="t">Measure and improve</div><div class="d">Results tracked, systems tuned</div><div class="p">Pilot &amp; embed</div></div></li><li><span class="n">05</span><div class="c"><div class="k">05  SPREAD</div><div class="t">Spread across the team</div><div class="d">Everyone works the new way</div><div class="p">Pilot &amp; embed</div></div></li></ol><p class="back">Then back to 01, with the next bottleneck.</p></div></div></section>
@@ -377,14 +377,14 @@ x.strokeStyle='rgba(217,212,202,'+(.07+.24*fade).toFixed(3)+')';x.lineWidth=1;x.
 var p1=[],p2=[];for(c=0;c<C;c++){k=j*C+c;if(px[k]<-80||px[k]>W+80)continue;if(c<C-1){h=(hh[k]+hh[k+1])/2;if(h>.2)p2.push(k,k+1);else if(h>.07)p1.push(k,k+1)}h=(hh[k]+hh[k-C])/2;if(h>.2)p2.push(k,k-C);else if(h>.07)p1.push(k,k-C)}
 if(p1.length){x.beginPath();for(i=0;i<p1.length;i+=2){x.moveTo(px[p1[i]],py[p1[i]]);x.lineTo(px[p1[i+1]],py[p1[i+1]])}x.strokeStyle='rgba(236,232,225,'+(.34*fade).toFixed(3)+')';x.stroke()}
 if(p2.length){x.beginPath();for(i=0;i<p2.length;i+=2){x.moveTo(px[p2[i]],py[p2[i]]);x.lineTo(px[p2[i+1]],py[p2[i+1]])}x.strokeStyle='rgba(236,232,225,'+(.8*fade).toFixed(3)+')';x.stroke()}
-if(Math.abs(wz-zs)<D*.5){x.beginPath();row(j);x.strokeStyle='rgba(19,185,138,'+(.8*fade).toFixed(3)+')';x.lineWidth=1.6;x.stroke()}}
+if(Math.abs(wz-zs)<D*.5){x.beginPath();row(j);x.strokeStyle='rgba(226,78,40,'+(.8*fade).toFixed(3)+')';x.lineWidth=1.6;x.stroke()}}
 x.beginPath();row(0);x.strokeStyle='rgba(217,212,202,.26)';x.lineWidth=1;x.stroke();
 var sx,sy,g;for(i=0;i<B.length;i++){if(i===top)continue;b=B[i];h=ht(b.x,b.z,t);sx=W/2+f*b.x/b.z;sy=hz+f*(CH-h)/b.z;x.beginPath();x.arc(sx,sy,2.6,0,6.3);x.fillStyle='rgba(236,232,225,.75)';x.fill()}
 b=PB.A>.2?PB:B[top];if(mx===null||red){mx=b.x;mz=b.z}else{var ms=b===PB?.16:.04;mx+=(b.x-mx)*ms;mz+=(b.z-mz)*ms}
 h=ht(mx,mz,t);sx=W/2+f*mx/mz;sy=hz+f*(CH-h)/mz;
-g=x.createRadialGradient(sx,sy,0,sx,sy,44);g.addColorStop(0,'rgba(19,185,138,.6)');g.addColorStop(1,'rgba(19,185,138,0)');x.fillStyle=g;x.beginPath();x.arc(sx,sy,44,0,6.3);x.fill();
-x.beginPath();x.arc(sx,sy,5.5,0,6.3);x.fillStyle='#2FD3AC';x.fill();
-var sm=W<620,L=sm?36:50;x.beginPath();x.moveTo(sx,sy-10);x.lineTo(sx,sy-L);x.strokeStyle='rgba(47,211,172,.9)';x.lineWidth=1;x.stroke();
+g=x.createRadialGradient(sx,sy,0,sx,sy,44);g.addColorStop(0,'rgba(226,78,40,.6)');g.addColorStop(1,'rgba(226,78,40,0)');x.fillStyle=g;x.beginPath();x.arc(sx,sy,44,0,6.3);x.fill();
+x.beginPath();x.arc(sx,sy,5.5,0,6.3);x.fillStyle='#F06B45';x.fill();
+var sm=W<620,L=sm?36:50;x.beginPath();x.moveTo(sx,sy-10);x.lineTo(sx,sy-L);x.strokeStyle='rgba(240,107,69,.9)';x.lineWidth=1;x.stroke();
 x.font='700 '+(sm?12:14)+'px Jost,sans-serif';x.textAlign='center';x.textBaseline='alphabetic';x.fillStyle='#ECE8E1';x.fillText('Where AI pays off most',Math.max(86,Math.min(W>900?W*.6:W-86,sx)),sy-L-8)}
 function size(){var r=cv.getBoundingClientRect(),d=Math.min(2,window.devicePixelRatio||1);W=r.width;H=r.height;if(!W||!H)return;cv.width=Math.round(W*d);cv.height=Math.round(H*d);x.setTransform(d,0,0,d,0,0);var sm=W<620;D=sm?.1:.15;R=sm?37:25;f=H*.8*Z0/CH;hz=Math.max(H*.2,(sm?36:50)+30);var xm=W/2*3/f*1.12;C=Math.ceil(2*xm/D)+1;X0=-(C-1)*D/2;for(var i=0;i<B.length;i++)B[i].x=B[i].u*(W/2)*B[i].z/f;mx=null;if(red)draw(7)}
 function loop(ts){raf=0;if(!on||document.hidden)return;draw(ts/1000);raf=requestAnimationFrame(loop)}
@@ -411,17 +411,17 @@ function cl(v){return v<0?0:v>1?1:v}
 function draw(ct){if(!W||!H)return;lastCt=ct;var i,a,b,c=cyc,fk=ct>c.end+c.hold?cl(1-(ct-c.end-c.hold)/c.fade):1,ca=Math.cos(ang),sa=Math.sin(ang),ct2=Math.cos(tilt),st2=Math.sin(tilt),cx=W/2,cy=H/2,ya=youT===null?0:cl((ct-youT)/.4)*fk;
 for(i=0;i<N;i++){var p=P[i],x1=p.x*ca+p.z*sa,z1=-p.x*sa+p.z*ca,y2=p.y*ct2-z1*st2,z2=p.y*st2+z1*ct2,k=3.4/(3.4+z2);Q[i]={x:cx+x1*S*k,y:cy+y2*S*k,k:k,z:z2,f:cl((1.35-z2)/2.7),a:i&&c.at[i]>=0?cl((ct-c.at[i])/.35)*fk:0,i:i}}
 Q[0].a=ya;x.clearRect(0,0,W,H);x.lineCap='round';
-for(i=0;i<L.length;i++){a=Q[L[i][0]];b=Q[L[i][1]];var f=(a.f+b.f)/2,la=Math.min(a.a,b.a);x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.lineWidth=1;x.strokeStyle='rgba(217,212,202,'+(.08+.2*f).toFixed(3)+')';x.stroke();if(la>0){x.strokeStyle='rgba(19,185,138,'+(la*(.25+.5*f)).toFixed(3)+')';x.stroke()}}
-if(fk===1)for(i=1;i<N;i++){if(c.par[i]<0)continue;var pr=(ct-(c.at[i]-STEP))/STEP;if(pr<=0||pr>=1)continue;a=Q[c.par[i]];b=Q[i];var hx=a.x+(b.x-a.x)*pr,hy=a.y+(b.y-a.y)*pr;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(hx,hy);x.lineWidth=1.8;x.strokeStyle='rgba(47,211,172,.95)';x.stroke();var g0=x.createRadialGradient(hx,hy,0,hx,hy,14);g0.addColorStop(0,'rgba(79,224,189,.9)');g0.addColorStop(1,'rgba(19,185,138,0)');x.fillStyle=g0;x.beginPath();x.arc(hx,hy,14,0,6.3);x.fill()}
+for(i=0;i<L.length;i++){a=Q[L[i][0]];b=Q[L[i][1]];var f=(a.f+b.f)/2,la=Math.min(a.a,b.a);x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.lineWidth=1;x.strokeStyle='rgba(217,212,202,'+(.08+.2*f).toFixed(3)+')';x.stroke();if(la>0){x.strokeStyle='rgba(226,78,40,'+(la*(.25+.5*f)).toFixed(3)+')';x.stroke()}}
+if(fk===1)for(i=1;i<N;i++){if(c.par[i]<0)continue;var pr=(ct-(c.at[i]-STEP))/STEP;if(pr<=0||pr>=1)continue;a=Q[c.par[i]];b=Q[i];var hx=a.x+(b.x-a.x)*pr,hy=a.y+(b.y-a.y)*pr;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(hx,hy);x.lineWidth=1.8;x.strokeStyle='rgba(240,107,69,.95)';x.stroke();var g0=x.createRadialGradient(hx,hy,0,hx,hy,14);g0.addColorStop(0,'rgba(255,138,94,.9)');g0.addColorStop(1,'rgba(226,78,40,0)');x.fillStyle=g0;x.beginPath();x.arc(hx,hy,14,0,6.3);x.fill()}
 var O=Q.slice().sort(function(m,n){return n.z-m.z}),rb=Math.max(2.6,S*.026);
 for(i=0;i<N;i++){var q=O[i],r=rb*P[q.i].r*q.k;
 if(q.i===0){youR=r;var pu=ct>c.end&&fk===1&&!ya?((ct-c.end)%1.6)/1.6:-1;if(pu>=0){x.beginPath();x.arc(q.x,q.y,r+6+pu*30,0,6.3);x.strokeStyle='rgba(236,232,225,'+(.55*(1-pu)).toFixed(3)+')';x.lineWidth=1.2;x.stroke()}
-x.beginPath();x.arc(q.x,q.y,r,0,6.3);x.fillStyle='#FFFFFF';x.fill();if(ya){var gy=x.createRadialGradient(q.x,q.y,0,q.x,q.y,r*5);gy.addColorStop(0,'rgba(19,185,138,'+(.6*ya).toFixed(3)+')');gy.addColorStop(1,'rgba(19,185,138,0)');x.fillStyle=gy;x.beginPath();x.arc(q.x,q.y,r*5,0,6.3);x.fill();x.beginPath();x.arc(q.x,q.y,r,0,6.3);x.fillStyle='rgba(33,196,153,'+ya.toFixed(3)+')';x.fill();var by=(ct-youT)/.8;if(by>0&&by<1){x.beginPath();x.arc(q.x,q.y,r+by*36,0,6.3);x.strokeStyle='rgba(47,211,172,'+(.85*(1-by)).toFixed(3)+')';x.lineWidth=1.4;x.stroke()}}x.beginPath();x.arc(q.x,q.y,r+6,0,6.3);x.strokeStyle=ya>.5?'rgba(47,211,172,.95)':'rgba(236,232,225,.85)';x.lineWidth=1.2;x.stroke();
+x.beginPath();x.arc(q.x,q.y,r,0,6.3);x.fillStyle='#FFFFFF';x.fill();if(ya){var gy=x.createRadialGradient(q.x,q.y,0,q.x,q.y,r*5);gy.addColorStop(0,'rgba(226,78,40,'+(.6*ya).toFixed(3)+')');gy.addColorStop(1,'rgba(226,78,40,0)');x.fillStyle=gy;x.beginPath();x.arc(q.x,q.y,r*5,0,6.3);x.fill();x.beginPath();x.arc(q.x,q.y,r,0,6.3);x.fillStyle='rgba(232,94,51,'+ya.toFixed(3)+')';x.fill();var by=(ct-youT)/.8;if(by>0&&by<1){x.beginPath();x.arc(q.x,q.y,r+by*36,0,6.3);x.strokeStyle='rgba(240,107,69,'+(.85*(1-by)).toFixed(3)+')';x.lineWidth=1.4;x.stroke()}}x.beginPath();x.arc(q.x,q.y,r+6,0,6.3);x.strokeStyle=ya>.5?'rgba(240,107,69,.95)':'rgba(236,232,225,.85)';x.lineWidth=1.2;x.stroke();
 x.font='700 '+(W<420?14:16)+'px Jost,sans-serif';x.textBaseline='middle';x.textAlign='left';x.fillStyle='#FFFFFF';x.fillText(ya>.5?'You, on AI':'You',q.x+r+13,q.y+1);continue}
-if(q.a>0){var g=x.createRadialGradient(q.x,q.y,0,q.x,q.y,r*4.6);g.addColorStop(0,'rgba(19,185,138,'+(.5*q.a*(.4+.6*q.f)).toFixed(3)+')');g.addColorStop(1,'rgba(19,185,138,0)');x.fillStyle=g;x.beginPath();x.arc(q.x,q.y,r*4.6,0,6.3);x.fill();
-var bu=(ct-c.at[q.i])/.7;if(fk===1&&bu>0&&bu<1){x.beginPath();x.arc(q.x,q.y,r+bu*22,0,6.3);x.strokeStyle='rgba(47,211,172,'+(.7*(1-bu)).toFixed(3)+')';x.lineWidth=1.2;x.stroke()}}
+if(q.a>0){var g=x.createRadialGradient(q.x,q.y,0,q.x,q.y,r*4.6);g.addColorStop(0,'rgba(226,78,40,'+(.5*q.a*(.4+.6*q.f)).toFixed(3)+')');g.addColorStop(1,'rgba(226,78,40,0)');x.fillStyle=g;x.beginPath();x.arc(q.x,q.y,r*4.6,0,6.3);x.fill();
+var bu=(ct-c.at[q.i])/.7;if(fk===1&&bu>0&&bu<1){x.beginPath();x.arc(q.x,q.y,r+bu*22,0,6.3);x.strokeStyle='rgba(240,107,69,'+(.7*(1-bu)).toFixed(3)+')';x.lineWidth=1.2;x.stroke()}}
 x.beginPath();x.arc(q.x,q.y,r,0,6.3);x.fillStyle='rgba(217,212,202,'+(.38+.62*q.f).toFixed(3)+')';x.fill();
-if(q.a>0){x.fillStyle='rgba(33,196,153,'+q.a.toFixed(3)+')';x.fill()}}}
+if(q.a>0){x.fillStyle='rgba(232,94,51,'+q.a.toFixed(3)+')';x.fill()}}}
 function size(){var r=cv.getBoundingClientRect(),d=Math.min(2,window.devicePixelRatio||1);W=r.width;H=r.height;if(!W||!H)return;cv.width=Math.round(W*d);cv.height=Math.round(H*d);x.setTransform(d,0,0,d,0,0);S=Math.min(W/2.95,H/2.25);if(red)draw(cyc.end+1)}
 function loop(ts){raf=0;if(!on||document.hidden){lt=null;return}var t=ts/1000;if(lt!==null&&!drag)ang+=(t-lt)*.11;lt=t;if(T0===null)T0=t;var ct=t-T0;if(ct>cyc.end+cyc.hold+cyc.fade){plan();T0=t;ct=0;youT=null}draw(ct);raf=requestAnimationFrame(loop)}
 function start(){if(!red&&!raf)raf=requestAnimationFrame(loop)}
