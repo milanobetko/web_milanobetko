@@ -288,8 +288,8 @@ function partScreen(p){
 }
 function mailPlan(){
  var d=['Spoločne vyplniť kontakty, miesta stretnutia, náhradný kontakt, pravidlá spojenia a úlohy','Pripraviť vodu podľa počtu osôb a jedlo na tri dni v každej domácnosti','Skontrolovať lieky, lekárničky, hygienu a teplé oblečenie','Pripraviť doklady, hotovosť, papierové mapy a kontakty','Pripraviť osobnú evakuačnú batožinu pre každého a rozdeliť spoločné vybavenie','Overiť núdzový prístup k účtom, offline zálohy a dohodnúť overovaciu frázu','Vyskúšať rádio, baterky, powerbanky, SMS a prejsť si postup odchodu'];
- var b='Plán B: príprava na 7 dní\n\n'+d.map(function(t,i){return 'Deň '+(i+1)+': '+t}).join('\n')+'\n\nKaždé tri mesiace krátka kontrola zásob a batérií, raz ročne spoločné prejdenie celého plánu.\n\nCelý plán: https://milanobetko.com/plan-b';
- return 'mailto:?subject='+encodeURIComponent('Plán B: príprava na 7 dní')+'&body='+encodeURIComponent(b);
+ var b='Plán B: príprava za 7 dní\n\n'+d.map(function(t,i){return 'Deň '+(i+1)+': '+t}).join('\n')+'\n\nKaždé tri mesiace krátka kontrola zásob a batérií, raz ročne spoločné prejdenie celého plánu.\n\nCelý plán: https://milanobetko.com/plan-b';
+ return 'mailto:?subject='+encodeURIComponent('Plán B: príprava za 7 dní')+'&body='+encodeURIComponent(b);
 }
 function render(){
  var h='';
