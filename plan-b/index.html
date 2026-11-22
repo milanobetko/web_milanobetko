@@ -225,7 +225,7 @@ function renderNav(){
 }
 function introScreen(){
  var started=answered()>0&&!S.done;
- return '<section class="screen"><div class="lab">Plán B</div><h1 style="margin-top:10px"><span class="hlA">Pripraveným</span> šťastie praje</h1><p class="sub">Alebo: Zľahčovanie, obavy, zámerná nevedomosť ani nádej nie sú riešením.</p>'+
+ return '<section class="screen"><div class="lab">Plán B</div><h1 style="margin-top:10px"><span class="hlG">Pripraveným</span> šťastie praje</h1><p class="sub">Alebo: Zľahčovanie, obavy, zámerná nevedomosť ani nádej nie sú riešením.</p>'+
  '<div class="cards"><button class="pcard A" data-go="partA"><div class="row"><span class="badge">A</span><span class="t">Mimoriadne situácie</span></div><div class="d">Prvých 72 hodín: výpadky, povodeň, sirény.</div></button>'+
  '<button class="pcard B" data-go="partB"><div class="row"><span class="badge">B</span><span class="t">Hrozby AI doby</span></div><div class="d">Heslá, podvody a informácie bez internetu.</div></button></div>'+
  '<button class="btn" id="start">'+(S.done?'Pozrieť výsledok':started?'Pokračovať v teste':'Spustiť test (1 minúta)')+'</button>'+
