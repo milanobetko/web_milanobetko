@@ -138,7 +138,7 @@ table{border-collapse:collapse;width:100%;font-size:16px}
 th,td{border:1px solid var(--ink);padding:8px 10px;text-align:left;vertical-align:top}
 th{background:var(--panel);font-family:var(--mo);font-size:14px}
 .num{font-family:var(--mo);font-weight:700}
-nav.bot{position:fixed;left:0;right:0;bottom:0;transform:translate3d(0,0,0);-webkit-transform:translate3d(0,0,0);will-change:transform;background:var(--paper);border-top:2px solid var(--ink);z-index:6;padding-bottom:env(safe-area-inset-bottom)}
+nav.bot{position:relative;flex:0 0 auto;background:var(--paper);border-top:2px solid var(--ink);z-index:6;padding-bottom:env(safe-area-inset-bottom)}
 nav.bot .in{max-width:720px;margin:0 auto;display:grid;grid-template-columns:.8fr 1.1fr 1.1fr}
 nav.bot button{background:var(--paper);border:0;border-right:2px solid var(--ink);min-height:60px;padding:6px 4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
 nav.bot button:last-child{border-right:0}
@@ -149,20 +149,23 @@ nav.bot button[aria-current="page"]{background:var(--ink);color:var(--paper)}
 nav.bot button[aria-current="page"] .ns{color:var(--paper)}
 nav.bot button.A:not([aria-current]) .nl{background:var(--yel);padding:0 6px}
 nav.bot button.B:not([aria-current]) .nl{background:var(--pnk);padding:0 6px}
-footer.foot{border-top:1px solid var(--ink);padding:22px 0 130px;font-size:16px;color:var(--grey)}
+footer.foot{border-top:1px solid var(--ink);padding:22px 0 30px;font-size:16px;color:var(--grey)}
 footer.foot p{margin:0 0 8px}
 @media (min-width:760px){main{padding-top:44px}}
+html,body{height:100%;overflow:hidden}
+body{display:flex;flex-direction:column;height:100vh;height:100dvh}
+.sc{flex:1 1 auto;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
 </style>
 <meta property="og:url" content="https://milanobetko.com/plan-b/">
 <link rel="canonical" href="https://milanobetko.com/plan-b/">
 </head>
 <body>
-<header class="top"><div class="wrap"><button class="brand" id="home" aria-label="Plán B, späť na úvod">PLÁN B</button><span class="ver">verzia 22. 11. 2026</span></div></header>
+<div class="sc" id="sc"><header class="top"><div class="wrap"><button class="brand" id="home" aria-label="Plán B, späť na úvod">PLÁN B</button><span class="ver">verzia 22. 11. 2026</span></div></header>
 <main><div class="wrap" id="app" tabindex="-1" aria-live="polite"></div></main>
 <footer class="foot"><div class="wrap">
 <p><strong>Tvoje odpovede ostávajú len v tomto zariadení.</strong> Stránka nič neodosiela, nepoužíva cookies ani analytiku.</p>
 <p>Verzia príručky z 22. novembra 2026. Pri udalosti majú prednosť pokyny záchranných zložiek a úradov.</p>
-</div></footer>
+</div></footer></div>
 <nav class="bot" aria-label="Hlavná navigácia"><div class="in" id="nav"></div></nav>
 <script>
 /* LOGIC START */
@@ -220,7 +223,7 @@ var $=function(s){return document.querySelector(s)};
 var app=$('#app'),nav=$('#nav');
 function answered(){return S.ans.filter(function(a){return a!==undefined&&a!==null}).length}
 function firstOpen(){for(var i=0;i<6;i++){if(S.ans[i]===undefined||S.ans[i]===null)return i}return 5}
-function go(screen,extra){S.screen=screen;if(extra)for(var k in extra)S[k]=extra[k];render();window.scrollTo(0,0);app.focus({preventScroll:true})}
+function go(screen,extra){S.screen=screen;if(extra)for(var k in extra)S[k]=extra[k];render();document.getElementById('sc').scrollTop=0;app.focus({preventScroll:true})}
 function renderNav(){
  var items=[['test',S.done?'Výsledok':'Test',S.done?'Tvoje skóre':'1 minúta',''],['partA','A','Mimoriadne situácie','A'],['partB','B','Hrozby AI doby','B']];
  var cur=S.screen;if(cur==='intro'||cur==='q'||cur==='block'||cur==='result')cur='test';
@@ -305,8 +308,8 @@ function pick(a){
  S.ans[S.i]=a;save();
  var rows=app.querySelectorAll('.arow');rows.forEach(function(r){r.classList.toggle('on',r.getAttribute('data-a')===a)});
  setTimeout(function(){
-  if(S.i===5){S.done=true;save();S.screen='result';render();window.scrollTo(0,0);app.focus({preventScroll:true})}
-  else{S.i++;save();S.screen='q';render();window.scrollTo(0,0);app.focus({preventScroll:true})}
+  if(S.i===5){S.done=true;save();S.screen='result';render();document.getElementById('sc').scrollTop=0;app.focus({preventScroll:true})}
+  else{S.i++;save();S.screen='q';render();document.getElementById('sc').scrollTop=0;app.focus({preventScroll:true})}
  },260);
 }
 document.addEventListener('click',function(e){
