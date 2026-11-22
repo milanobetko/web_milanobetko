@@ -9,11 +9,6 @@
 <meta property="og:title" content="Plán B | Pripraveným šťastie praje">
 <meta property="og:description" content="Test pripravenosti na mimoriadne situácie a hrozby AI doby. 6 otázok, 1 minúta, výsledok s konkrétnymi krokmi.">
 <meta property="og:image" content="https://milanobetko.com/plan-b/og-image.png">
-<meta property="og:url" content="https://milanobetko.com/plan-b/">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://milanobetko.com/plan-b/">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -59,6 +54,8 @@ h3{font-size:24px}
 .pcard .t{font-family:var(--hd);font-weight:700;font-size:26px;line-height:1;text-transform:uppercase}
 .pcard .d{font-size:16px;margin-top:8px}
 .btn{display:block;width:100%;border:2px solid var(--ink);background:var(--ink);color:var(--paper);padding:7px 18px;min-height:40px;font-family:var(--mo);font-weight:700;font-size:18px;text-align:center}
+.share{margin:22px 0 16px;padding:16px;background:var(--panel);border:2px solid var(--ink)}
+.sq{margin:10px 0 14px;padding:12px;background:var(--paper);border:2px solid var(--ink);font-family:var(--mo);font-size:16px;line-height:1.5;white-space:pre-wrap;word-break:break-word;user-select:all}
 .btn.alt{background:var(--paper);color:var(--ink)}
 .btn.sm{width:auto;display:inline-block;min-height:48px;padding:10px 16px;font-size:16px}
 .ref{font:inherit;font-size:15px;background:none;border:0;padding:0;margin:0;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;color:var(--ink);cursor:pointer}
@@ -154,6 +151,8 @@ footer.foot{border-top:1px solid var(--ink);padding:22px 0 130px;font-size:16px;
 footer.foot p{margin:0 0 8px}
 @media (min-width:760px){main{padding-top:44px}}
 </style>
+<meta property="og:url" content="https://milanobetko.com/plan-b/">
+<link rel="canonical" href="https://milanobetko.com/plan-b/">
 </head>
 <body>
 <header class="top"><div class="wrap"><button class="brand" id="home" aria-label="Plán B, späť na úvod">PLÁN B</button><span class="ver">verzia 22. 11. 2026</span></div></header>
@@ -177,6 +176,7 @@ var PTS={yes:2,part:1,no:0};
 function calc(ans,p){var pts=0,max=0;QS.forEach(function(q,i){if(q.p!==p)return;var a=ans[i];if(a==='na')return;max+=2;if(a in PTS)pts+=PTS[a]});return {pts:pts,max:max,pct:max?Math.round(pts/max*100):0}}
 function band(pct){return pct>=75?'Si pripravený':pct>=40?'Si na dobrej ceste':'Začínaš'}
 function gaps(ans,p){var no=[],pa=[];QS.forEach(function(q,i){if(q.p!==p)return;if(ans[i]==='no')no.push(q);else if(ans[i]==='part')pa.push(q)});return no.concat(pa).slice(0,3)}
+function shareText(ans){var m={yes:'🟩',part:'🟨',no:'⬛'},r={A:'',B:''};QS.forEach(function(q,i){r[q.p]+=(m[ans[i]]||'⬛')});return 'Plán B '+r.A+' '+r.B+'\nPripravenosť: A '+calc(ans,'A').pct+' %, B '+calc(ans,'B').pct+' %\nA Ty? https://milanobetko.com/plan-b'}
 /* LOGIC END */
 </script>
 <script>
@@ -257,6 +257,7 @@ function resultScreen(){
  var cs={A:cA,B:cB};
  var h='<section class="screen"><div class="lab">Výsledok</div><h2 style="margin:8px 0 20px">Tvoja <span class="hl'+order[0]+'">pripravenosť</span></h2>';
  order.forEach(function(p){h+=scoreCard(p,cs[p],gaps(S.ans,p))});
+ h+='<div class="share"><div class="lab" style="color:var(--ink)">Pošli ďalej</div><pre class="sq" id="sqtxt">'+shareText(S.ans)+'</pre><button class="btn" id="shr" style="background:var(--grn);color:var(--ink)">Zdieľať výsledok</button><p class="note" id="shrnote" style="margin-top:8px">Pošli to rodine, kamarátom alebo kolegom. Uvidia len štvorčeky a percentá.</p></div>';
  h+='<div id="retake"><button class="btn alt" id="rt">Urobiť test znova</button></div></section>';
  return h;
 }
@@ -324,6 +325,10 @@ document.addEventListener('click',function(e){
  if(t.id==='back'){if(S.i===0)go('intro');else go('q',{i:S.i-1});return}
  if(t.id==='back2'){go('q',{i:2});return}
  if(t.id==='cont'){go('q',{i:3});return}
+ if(t.id==='shr'){var tx=shareText(S.ans),nt=$('#shrnote');
+  var cp=function(){try{navigator.clipboard.writeText(tx).then(function(){nt.textContent='Skopírované. Vlož to do správy.'},function(){nt.textContent='Označ text vyššie a skopíruj ho.'})}catch(e){nt.textContent='Označ text vyššie a skopíruj ho.'}};
+  if(navigator.share){navigator.share({text:tx}).catch(function(err){if(err&&err.name!=='AbortError')cp()})}else cp();
+  return}
  if(t.id==='rt'){$('#retake').innerHTML='<div class="confirm"><strong>Naozaj vymazať odpovede a začať znova?</strong><div class="btns"><button class="btn sm" id="rtyes">Áno, vymazať</button><button class="btn sm alt" id="rtno">Zrušiť</button></div></div>';return}
  if(t.id==='rtno'){render();return}
  if(t.id==='rtyes'){clr();go('q',{i:0});return}
