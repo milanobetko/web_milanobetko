@@ -28,31 +28,31 @@ button{font:inherit;color:inherit;cursor:pointer}
 :focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .wrap{max-width:720px;margin:0 auto;padding:0 20px}
-header.top{border-bottom:2px solid var(--ink);background:var(--paper);position:sticky;top:0;z-index:5}
-header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:52px}
+header.top{border-bottom:2px solid var(--ink);background:var(--paper)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:44px}
 .brand{font-family:var(--mo);font-weight:700;font-size:16px;letter-spacing:.14em;background:none;border:0;padding:8px 0}
 .ver{font-family:var(--mo);font-size:14px;color:var(--grey)}
-main{padding:28px 0 120px;min-height:70vh}
+main{padding:16px 0 40px;min-height:70vh}
 .screen{animation:in .28s ease-out}
 @keyframes in{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.screen{animation:none}.fill{transition:none!important}}
 .lab{font-family:var(--mo);font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
 h1,h2,h3{font-family:var(--hd);font-weight:700;line-height:1.02;margin:0;text-transform:uppercase}
-h1{font-size:clamp(46px,13vw,76px)}
+h1{font-size:clamp(40px,11vw,72px)}
 h2{font-size:clamp(32px,8vw,44px)}
 h3{font-size:24px}
 .hlA{background:var(--yel);padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .hlG{background:var(--grn);padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .hlB{background:var(--pnk);padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
-.sub{font-style:italic;font-size:19px;margin:18px 0 28px;max-width:30ch}
-.cards{display:grid;gap:10px;margin:0 0 26px}
-.pcard{display:block;width:100%;text-align:left;border:2px solid var(--ink);padding:14px 16px;min-height:48px}
+.sub{font-style:italic;font-size:19px;margin:10px 0 18px;max-width:30ch}
+.cards{display:grid;gap:8px;margin:0 0 18px}
+.pcard{display:block;width:100%;text-align:left;border:2px solid var(--ink);padding:10px 14px;min-height:48px}
 .pcard.A,.badge.A{background:var(--yel)}.pcard.B,.badge.B{background:var(--pnk)}
 .pcard .row{display:flex;gap:12px;align-items:center}
 .badge{width:36px;height:36px;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--mo);font-weight:700;flex:none;background:var(--paper)}
 .pcard.A .badge,.pcard.B .badge{background:var(--paper)}
 .pcard .t{font-family:var(--hd);font-weight:700;font-size:26px;line-height:1;text-transform:uppercase}
-.pcard .d{font-size:16px;margin-top:8px}
+.pcard .d{font-size:16px;margin-top:4px}
 .btn{display:block;width:100%;border:2px solid var(--ink);background:var(--ink);color:var(--paper);padding:7px 18px;min-height:40px;font-family:var(--mo);font-weight:700;font-size:18px;text-align:center}
 .share{margin:22px 0 16px;padding:16px;background:var(--panel);border:2px solid var(--ink)}
 .sq{margin:10px 0 14px;padding:12px;background:var(--paper);border:2px solid var(--ink);font-family:var(--mo);font-size:16px;line-height:1.5;white-space:pre-wrap;word-break:break-word;user-select:all}
@@ -101,12 +101,13 @@ h3{font-size:24px}
 .ok{background:var(--panel);border:1px solid var(--ink);padding:12px 14px}
 .confirm{border:2px solid var(--ink);padding:14px;margin-top:16px;background:var(--panel)}
 .confirm .btns{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
-.parthead{padding:20px 18px;border:2px solid var(--ink);margin-bottom:22px}
+.parthead{padding:10px 16px;border:2px solid var(--ink);margin-bottom:14px}
+.parthead h2{font-size:30px}
 .parthead.A{background:var(--yel)}.parthead.B{background:var(--pnk)}
-.parthead .claim{margin:0 0 14px;font-weight:700}
-.parthead .ph{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.parthead .claim{margin:0 0 6px;font-weight:700}
+.parthead .ph{display:flex;align-items:center;gap:10px;margin-bottom:4px}
 .parthead p{margin:12px 0 0;font-size:18px}
-.intro p{margin:0 0 14px;max-width:62ch}
+.intro p{margin:0 0 8px;max-width:62ch;line-height:1.4}
 .lead{font-family:var(--tx);font-weight:700}
 .leadp{font-family:var(--tx)}
 .video{border:2px solid var(--ink);margin:22px 0 8px;background:var(--panel)}
@@ -140,7 +141,7 @@ th{background:var(--panel);font-family:var(--mo);font-size:14px}
 .num{font-family:var(--mo);font-weight:700}
 nav.bot{position:-webkit-sticky;position:sticky;bottom:0;background:var(--paper);border-top:2px solid var(--ink);z-index:6;padding-bottom:env(safe-area-inset-bottom)}
 nav.bot .in{max-width:720px;margin:0 auto;display:grid;grid-template-columns:.8fr 1.1fr 1.1fr}
-nav.bot button{background:var(--paper);border:0;border-right:2px solid var(--ink);min-height:60px;padding:6px 4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+nav.bot button{background:var(--paper);border:0;border-right:2px solid var(--ink);min-height:52px;padding:4px 4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
 nav.bot button:last-child{border-right:0}
 nav.bot .nl{font-family:var(--mo);font-weight:700;font-size:14px}
 nav.bot .ns{font-size:14px;color:var(--grey);line-height:1.1;text-align:center}
@@ -228,7 +229,7 @@ function renderNav(){
 }
 function introScreen(){
  var started=answered()>0&&!S.done;
- return '<section class="screen"><div class="lab">Plán B</div><h1 style="margin-top:10px"><span class="hlG">Pripraveným</span> šťastie praje</h1><p class="sub">Alebo: Zľahčovanie, obavy, zámerná nevedomosť ani nádej nie sú riešením.</p>'+
+ return '<section class="screen"><h1><span class="hlG">Pripraveným</span> šťastie praje</h1><p class="sub">Alebo: Zľahčovanie, obavy, zámerná nevedomosť ani nádej nie sú riešením.</p>'+
  '<div class="cards"><button class="pcard A" data-go="partA"><div class="row"><span class="badge">A</span><span class="t">Mimoriadne situácie</span></div><div class="d">Prvých 72 hodín: výpadky, povodeň, sirény.</div></button>'+
  '<button class="pcard B" data-go="partB"><div class="row"><span class="badge">B</span><span class="t">Hrozby AI doby</span></div><div class="d">Heslá, podvody a informácie bez internetu.</div></button></div>'+
  '<button class="btn" id="start">'+(S.done?'Pozrieť výsledok':started?'Pokračovať v teste':'Spustiť test (1 minúta)')+'</button>'+
