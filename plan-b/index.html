@@ -56,6 +56,8 @@ h3{font-size:24px}
 .btn{display:block;width:100%;border:2px solid var(--ink);background:var(--ink);color:var(--paper);padding:7px 18px;min-height:40px;font-family:var(--mo);font-weight:700;font-size:18px;text-align:center}
 .share{margin:22px 0 16px;padding:16px;background:var(--panel);border:2px solid var(--ink)}
 .sq{margin:10px 0 14px;padding:12px;background:var(--paper);border:2px solid var(--ink);font-family:var(--mo);font-size:16px;line-height:1.5;white-space:pre-wrap;word-break:break-word;user-select:all}
+.sharep{margin-top:26px}
+.btn.shp{background:var(--grn);color:var(--ink)}
 .btn.alt{background:var(--paper);color:var(--ink)}
 .btn.sm{width:auto;display:inline-block;min-height:48px;padding:10px 16px;font-size:16px}
 .ref{font:inherit;font-size:15px;background:none;border:0;padding:0;margin:0;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;color:var(--ink);cursor:pointer}
@@ -177,6 +179,7 @@ function calc(ans,p){var pts=0,max=0;QS.forEach(function(q,i){if(q.p!==p)return;
 function band(pct){return pct>=75?'Si pripravený':pct>=40?'Si na dobrej ceste':'Začínaš'}
 function gaps(ans,p){var no=[],pa=[];QS.forEach(function(q,i){if(q.p!==p)return;if(ans[i]==='no')no.push(q);else if(ans[i]==='part')pa.push(q)});return no.concat(pa).slice(0,3)}
 function shareText(ans){var m={yes:'🟩',part:'🟨',no:'⬛'},r={A:'',B:''};QS.forEach(function(q,i){r[q.p]+=(m[ans[i]]||'⬛')});return 'Plán B '+r.A+' '+r.B+'\nPripravenosť: A '+calc(ans,'A').pct+' %, B '+calc(ans,'B').pct+' %\nA Ty? https://milanobetko.com/plan-b'}
+var PAGETXT='Plán B 🟩🟨⬛ 🟨⬛🟨\nPripravenosť na prvých 72 hodín a hrozby AI doby? Test na 1 minútu:\nhttps://milanobetko.com/plan-b';
 /* LOGIC END */
 </script>
 <script>
@@ -230,7 +233,7 @@ function introScreen(){
  '<button class="pcard B" data-go="partB"><div class="row"><span class="badge">B</span><span class="t">Hrozby AI doby</span></div><div class="d">Heslá, podvody a informácie bez internetu.</div></button></div>'+
  '<button class="btn" id="start">'+(S.done?'Pozrieť výsledok':started?'Pokračovať v teste':'Spustiť test (1 minúta)')+'</button>'+
  (S.done?'<div id="retake"><button class="lnk" id="rt">Urobiť test znova</button></div>':started?'<div id="retake"><button class="lnk" id="rt">Začať test odznova</button></div>':'<button class="lnk" data-go="partA">Preskočiť test a čítať</button>')+
- '<p class="note">6 otázok, odpoveď jedným ťuknutím. Bez registrácie a bez zbierania údajov.</p></section>';
+ '<p class="note">6 otázok, odpoveď jedným ťuknutím. Bez registrácie a bez zbierania údajov.</p><div class="sharep"><button class="btn shp" data-shp="1">Poslať blízkym</button><p class="note shpnote" style="margin-top:8px">Pošli odkaz rodine, kamarátom alebo kolegom.</p></div></section>';
 }
 function qScreen(){
  var q=QS[S.i],n=S.i+1,cur=S.ans[S.i];
@@ -257,7 +260,7 @@ function resultScreen(){
  var cs={A:cA,B:cB};
  var h='<section class="screen"><div class="lab">Výsledok</div><h2 style="margin:8px 0 20px">Tvoja <span class="hl'+order[0]+'">pripravenosť</span></h2>';
  order.forEach(function(p){h+=scoreCard(p,cs[p],gaps(S.ans,p))});
- h+='<div class="share"><div class="lab" style="color:var(--ink)">Pošli ďalej</div><pre class="sq" id="sqtxt">'+shareText(S.ans)+'</pre><button class="btn" id="shr" style="background:var(--grn);color:var(--ink)">Zdieľať výsledok</button><p class="note" id="shrnote" style="margin-top:8px">Pošli to rodine, kamarátom alebo kolegom. Uvidia len štvorčeky a percentá.</p></div>';
+ h+='<div class="share"><div class="lab" style="color:var(--ink)">Poslať blízkym</div><pre class="sq" id="sqtxt">'+shareText(S.ans)+'</pre><button class="btn" id="shr" style="background:var(--grn);color:var(--ink)">Zdieľať výsledok</button><p class="note" id="shrnote" style="margin-top:8px">Pošli to rodine, kamarátom alebo kolegom. Uvidia len štvorčeky a percentá.</p></div>';
  h+='<div id="retake"><button class="btn alt" id="rt">Urobiť test znova</button></div></section>';
  return h;
 }
@@ -280,7 +283,7 @@ function partScreen(p){
  if(!S.done)h+='<div class="hint" style="margin-top:18px">Chceš vedieť, ktoré kroky sú pre teba najdôležitejšie? <button class="lnk" style="display:inline;width:auto;padding:0;margin:0" data-go="'+(answered()>0?'q':'intro')+'">Urob test (1 minúta)</button>.</div>';
  var ft=SEC[p].filter(function(s){return s.foot});
  if(ft.length)h+='<div class="foot">'+ft.map(function(s){return '<div id="s-'+s.id+'"><h3>'+s.t+'</h3><div class="dbody" style="padding:12px 0 0">'+s.h+'</div></div>'}).join('')+'</div>';
- return h+'</section>';
+ return h+'<div class="sharep"><button class="btn shp" data-shp="1">Poslať blízkym</button><p class="note shpnote" style="margin-top:8px">Pošli odkaz rodine, kamarátom alebo kolegom.</p></div></section>';
 }
 function mailPlan(){
  var d=['Spoločne vyplniť kontakty, miesta stretnutia, náhradný kontakt, pravidlá spojenia a úlohy','Pripraviť vodu podľa počtu osôb a jedlo na tri dni v každej domácnosti','Skontrolovať lieky, lekárničky, hygienu a teplé oblečenie','Pripraviť doklady, hotovosť, papierové mapy a kontakty','Pripraviť osobnú evakuačnú batožinu pre každého a rozdeliť spoločné vybavenie','Overiť núdzový prístup k účtom, offline zálohy a dohodnúť overovaciu frázu','Vyskúšať rádio, baterky, powerbanky, SMS a prejsť si postup odchodu'];
@@ -325,7 +328,7 @@ document.addEventListener('click',function(e){
  if(t.id==='back'){if(S.i===0)go('intro');else go('q',{i:S.i-1});return}
  if(t.id==='back2'){go('q',{i:2});return}
  if(t.id==='cont'){go('q',{i:3});return}
- if(t.id==='shr'){var tx=shareText(S.ans),nt=$('#shrnote');
+ if(t.id==='shr'||t.hasAttribute('data-shp')){var isP=t.hasAttribute('data-shp'),tx=isP?PAGETXT:shareText(S.ans),nt=isP?t.parentNode.querySelector('.shpnote'):$('#shrnote');
   var cp=function(){try{navigator.clipboard.writeText(tx).then(function(){nt.textContent='Skopírované. Vlož to do správy.'},function(){nt.textContent='Označ text vyššie a skopíruj ho.'})}catch(e){nt.textContent='Označ text vyššie a skopíruj ho.'}};
   if(navigator.share){navigator.share({text:tx}).catch(function(err){if(err&&err.name!=='AbortError')cp()})}else cp();
   return}
