@@ -419,8 +419,7 @@ fbq('init',PIXEL_ID);fbq('track','PageView');})();
   try { set(localStorage.getItem('aistart-notes') === 'off'); } catch (e) {}
   btn.addEventListener('click', function () { var off = !document.body.classList.contains('notes-off'); set(off); try { localStorage.setItem('aistart-notes', off ? 'off' : 'on'); } catch (e) {} });
   var f = document.getElementById('reserve');
-  /* Formular: Web3Forms (web3forms.com). Doplnte access key, ktory pride na hallo@milanobetko.com.
-     Kym je prazdny, rezervacia otvori predvyplneny e-mail. */
+  /* Formular: Web3Forms (web3forms.com), rezervacie chodia na hallo@milanobetko.com. */
   var WEB3FORMS_KEY = '7a766b51-9688-40db-805c-19e0addf7f5e';
   var thanks = document.getElementById('thanks'), err = document.getElementById('err'), sendBtn = f.querySelector('button[type=submit]');
   var v = function (id) { return f.querySelector(id).value.trim(); };
@@ -435,13 +434,6 @@ fbq('init',PIXEL_ID);fbq('track','PageView');})();
     err.textContent = 'Doplňte meno, platný e-mail a súhlas.';
     err.hidden = !!ok; thanks.hidden = true;
     if (!ok) return;
-    if (!WEB3FORMS_KEY) {
-      var body = 'Meno: ' + v('#r-name') + '\nE-mail: ' + v('#r-email') + '\nRola: ' + (v('#r-role') || '-');
-      thanks.textContent = 'Ďakujeme. Otvorí sa vám e-mail s rezerváciou, stačí ho odoslať. Ozveme sa s termínom.';
-      done();
-      window.location.href = 'mailto:hallo@milanobetko.com?subject=' + encodeURIComponent('Rezervácia AI Start') + '&body=' + encodeURIComponent(body);
-      return;
-    }
     sendBtn.disabled = true; sendBtn.textContent = 'Odosielam…';
     fetch('https://api.web3forms.com/submit', {
       method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
