@@ -387,7 +387,8 @@ fbq('init',PIXEL_ID);fbq('track','PageView');})();
 <select id="r-role" name="role"><option value="">Vyberte</option><option>Manažér alebo vedúci tímu</option><option>Špecialista</option><option>Podnikateľ alebo majiteľ firmy</option><option>Iná</option></select>
 </div>
 <label class="check" for="r-ok"><input id="r-ok" required="" type="checkbox"/><span>Súhlasím so spracovaním kontaktu na účely tejto rezervácie.</span></label>
-<button class="btn btn-primary" type="submit">Rezervovať miesto</button>
+<div style="position:absolute;left:-9999px" aria-hidden="true"><input type="checkbox" id="r-hp" name="botcheck" tabindex="-1" autocomplete="off"></div>
+        <button class="btn btn-primary" type="submit">Rezervovať miesto</button>
 <p class="thanks" hidden="" id="thanks">Ďakujeme. Otvorí sa vám e-mail s rezerváciou, stačí ho odoslať. Ozveme sa s termínom.</p>
 <p hidden="" id="err" style="color:var(--orange-text);font-weight:600">Doplňte meno, platný e-mail a súhlas.</p>
 </form>
@@ -418,16 +419,42 @@ fbq('init',PIXEL_ID);fbq('track','PageView');})();
   try { set(localStorage.getItem('aistart-notes') === 'off'); } catch (e) {}
   btn.addEventListener('click', function () { var off = !document.body.classList.contains('notes-off'); set(off); try { localStorage.setItem('aistart-notes', off ? 'off' : 'on'); } catch (e) {} });
   var f = document.getElementById('reserve');
+  /* Formular: Web3Forms (web3forms.com). Doplnte access key, ktory pride na hallo@milanobetko.com.
+     Kym je prazdny, rezervacia otvori predvyplneny e-mail. */
+  var WEB3FORMS_KEY = '';
+  var thanks = document.getElementById('thanks'), err = document.getElementById('err'), sendBtn = f.querySelector('button[type=submit]');
+  var v = function (id) { return f.querySelector(id).value.trim(); };
+  function done() {
+    err.hidden = true; thanks.hidden = false; f.querySelectorAll('input, select, button').forEach(function (x) { x.disabled = true; });
+    if (window.fbq) fbq('track', 'Lead', { content_name: 'AI Start rezervacia' });
+  }
   f.addEventListener('submit', function (e) {
     e.preventDefault();
-    var ok = f.querySelector('#r-name').value.trim() && /\S+@\S+\.\S+/.test(f.querySelector('#r-email').value) && f.querySelector('#r-ok').checked;
-    document.getElementById('err').hidden = !!ok;
-    document.getElementById('thanks').hidden = !ok;
+    if (f.querySelector('#r-hp').checked) return;
+    var ok = v('#r-name') && /\S+@\S+\.\S+/.test(v('#r-email')) && f.querySelector('#r-ok').checked;
+    err.textContent = 'Doplňte meno, platný e-mail a súhlas.';
+    err.hidden = !!ok; thanks.hidden = true;
     if (!ok) return;
-    if (window.fbq) fbq('track', 'Lead', { content_name: 'AI Start rezervacia' });
-    var v = function (id) { return f.querySelector(id).value.trim(); };
-    var body = 'Meno: ' + v('#r-name') + '\nE-mail: ' + v('#r-email') + '\nRola: ' + (v('#r-role') || '-');
-    window.location.href = 'mailto:hallo@milanobetko.com?subject=' + encodeURIComponent('Rezervácia AI Start') + '&body=' + encodeURIComponent(body);
+    if (!WEB3FORMS_KEY) {
+      var body = 'Meno: ' + v('#r-name') + '\nE-mail: ' + v('#r-email') + '\nRola: ' + (v('#r-role') || '-');
+      thanks.textContent = 'Ďakujeme. Otvorí sa vám e-mail s rezerváciou, stačí ho odoslať. Ozveme sa s termínom.';
+      done();
+      window.location.href = 'mailto:hallo@milanobetko.com?subject=' + encodeURIComponent('Rezervácia AI Start') + '&body=' + encodeURIComponent(body);
+      return;
+    }
+    sendBtn.disabled = true; sendBtn.textContent = 'Odosielam…';
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ access_key: WEB3FORMS_KEY, subject: 'Rezervácia AI Start: ' + v('#r-name'), from_name: 'AI Start (milanobetko.com)',
+        name: v('#r-name'), email: v('#r-email'), rola: v('#r-role') || '-', suhlas: 'áno', stranka: location.href })
+    }).then(function (r) { return r.json(); }).then(function (d) {
+      if (!d.success) throw new Error(d.message);
+      thanks.textContent = 'Ďakujeme, miesto je rezervované. Ozveme sa s termínom.';
+      done();
+    }).catch(function () {
+      sendBtn.disabled = false; sendBtn.textContent = 'Rezervovať miesto';
+      err.textContent = 'Odoslanie sa nepodarilo. Napíšte prosím na hallo@milanobetko.com.'; err.hidden = false;
+    });
   });
 })();
 </script>
