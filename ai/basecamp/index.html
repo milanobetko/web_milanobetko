@@ -1,0 +1,1035 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI BaseCamp | Milan Obetko</title>
+<meta name="description" content="AI BaseCamp je boutique program pre firmy. Váš človek si v ňom postaví a rozbehne vlastný AI projekt, odnesie si akčný plán implementácie a vo firme sa stane AI ambasádorom.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://milanobetko.com/ai/basecamp/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://milanobetko.com/ai/basecamp/">
+<meta property="og:site_name" content="Milan Obetko">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:title" content="AI BaseCamp: za 10 týždňov rozbehnutý AI projekt vo vašej firme">
+<meta property="og:description" content="AI BaseCamp je boutique program pre firmy. Váš človek si v ňom postaví a rozbehne vlastný AI projekt, odnesie si akčný plán implementácie a vo firme sa stane AI ambasádorom.">
+<meta property="og:image" content="https://milanobetko.com/ai/basecamp/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>html,body{margin:0;padding:0}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: Black First. Black ground, white type, lime for action, orange for the one thing to look at.
+   Single committed dark look (brand board 01); a white band for logos and a lime band for the close. */
+:root {
+  --bg: #000000;
+  --surface: #111111;
+  --surface-2: #1D1D1D;
+  --fg: #FFFFFF;
+  --muted: #A6A6A6;
+  --line: #2E2E2E;
+  --lime: #DCFB60;
+  --orange: #E2550B;
+  --paper: #FFFFFF;
+  --ink: #000000;
+  --ink-muted: #444444;
+  --todo-bg: #2E2600; --todo-fg: #FFE27A; --todo-line: #A88100;
+  --note-bg: #0E1B2B; --note-fg: #C3D8F5; --note-line: #2C4A70;
+  --f: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--f); font-size: 17px; line-height: 1.5; }
+.wrap { max-width: 1120px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--f); font-weight: 700; line-height: 1.04; margin: 0; text-wrap: balance; letter-spacing: -0.025em; }
+h1 { font-size: clamp(2.5rem, 6.6vw, 5rem); }
+h2 { font-size: clamp(1.9rem, 4.4vw, 3.2rem); }
+h3 { font-size: 1.3rem; line-height: 1.15; letter-spacing: -0.015em; }
+h1 em, h2 em { font-style: normal; color: var(--orange); }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--lime); outline-offset: 2px; }
+.cap { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.lead { font-size: 1.15rem; color: var(--muted); max-width: 60ch; }
+.lead strong { color: var(--fg); font-weight: 600; }
+section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+section.tight { padding-top: 0; }
+.sec-head { display: grid; gap: 1rem; margin-bottom: 2.5rem; max-width: 780px; }
+.bar { display: block; width: 44px; height: 10px; background: var(--lime); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0.7rem 1.5rem; border-radius: 100px; font: 600 1rem var(--f); text-decoration: none; border: 2px solid transparent; cursor: pointer; }
+.btn-primary { background: var(--lime); color: var(--ink); }
+.btn-primary:hover { filter: brightness(1.06); }
+.btn-ghost { border-color: var(--fg); color: var(--fg); background: transparent; }
+.btn-ghost:hover { background: var(--surface-2); }
+.btn-dark { background: var(--ink); color: var(--lime); }
+.box { display: inline-block; border: 1px solid #5A5A5A; padding: 0.35rem 0.7rem; font-size: 0.9rem; font-weight: 500; }
+
+/* Review tools */
+.reviewbar { background: var(--note-bg); color: var(--note-fg); border-bottom: 1px solid var(--note-line); font-size: 0.9rem; }
+.reviewbar .wrap { display: flex; flex-wrap: wrap; gap: 0.6rem 1.25rem; align-items: center; justify-content: space-between; padding-block: 0.6rem; }
+.reviewbar button { font: 600 0.85rem var(--f); padding: 0.4rem 0.8rem; border: 1px solid var(--note-fg); background: transparent; color: var(--note-fg); cursor: pointer; min-height: 36px; }
+.legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; align-items: center; }
+.todo { display: inline-block; background: var(--todo-bg); color: var(--todo-fg); border: 1px dashed var(--todo-line); padding: 0.05em 0.45em; font-size: 0.82em; font-weight: 500; line-height: 1.5; letter-spacing: 0; text-transform: none; }
+.note { background: var(--note-bg); color: var(--note-fg); border: 1px solid var(--note-line); padding: 0.75rem 1rem; font-size: 0.9rem; max-width: 780px; margin-top: 1.5rem; }
+.note strong { font-weight: 600; }
+body.notes-off .note, body.notes-off .open-list { display: none; }
+
+/* Nav */
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.1rem; flex-wrap: wrap; }
+.brand { display: inline-flex; align-items: center; gap: 0.6rem; font-weight: 600; font-size: 1.45rem; text-decoration: none; letter-spacing: -0.03em; }
+.brand svg { width: 213px; height: 36px; flex: none; color: var(--fg); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.95rem; flex-wrap: wrap; }
+.nav-links a { text-decoration: none; color: var(--muted); }
+.nav-links a:hover { color: var(--fg); }
+.nav .btn { min-height: 42px; padding: 0.45rem 1.1rem; font-size: 0.95rem; }
+@media (max-width: 780px) { .nav-links { display: none; } }
+
+/* Hero */
+.hero { padding-block: clamp(1.5rem, 4vw, 3rem) 0; }
+.hero-copy { display: grid; gap: 1.5rem; max-width: 900px; }
+.badge { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; justify-self: start; }
+.badge::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 0 5px rgba(226, 85, 11, 0.25); flex: none; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.mesh { display: block; width: 100%; margin-top: 1rem; }
+.hero-grid { display: grid; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+body.hero-b .hero-grid { grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr); padding-bottom: clamp(2rem, 5vw, 3.5rem); }
+body.hero-b .hero h1 { font-size: clamp(2.4rem, 5.4vw, 4.2rem); }
+.hero-face { margin: 0; display: grid; gap: 0.9rem; min-width: 0; }
+.hero-face img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.hero-face figcaption { display: grid; gap: 0.35rem; justify-items: start; color: var(--muted); font-size: 0.95rem; }
+.hero-face figcaption b { color: var(--fg); font-size: 1.2rem; letter-spacing: -0.02em; }
+@media (max-width: 820px) { body.hero-b .hero-grid { grid-template-columns: 1fr; } .hero-face { max-width: 340px; } }
+.hero-switch { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-bottom: 1.5rem; padding: 0.6rem; border: 1px solid var(--note-line); background: var(--note-bg); color: var(--note-fg); font-size: 0.9rem; }
+.hero-switch button { font: 600 0.85rem var(--f); padding: 0.45rem 0.8rem; min-height: 40px; border: 1px solid var(--note-fg); background: transparent; color: var(--note-fg); cursor: pointer; }
+.hero-switch button[aria-pressed="true"] { background: var(--note-fg); color: var(--note-bg); }
+body.notes-off .hero-switch { display: none; }
+.facts { border-block: 1px solid var(--line); }
+.facts .wrap { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.fact { padding: 1.4rem 1rem 1.6rem 0; display: grid; gap: 0.25rem; min-width: 0; }
+.fact + .fact { padding-left: 1.25rem; border-left: 1px solid var(--line); }
+.fact b { font-size: clamp(1.6rem, 4.4vw, 2.8rem); font-weight: 700; line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.fact b i { font-style: normal; color: var(--lime); }
+.fact span { color: var(--muted); font-size: 0.92rem; }
+.fact s { color: var(--muted); font-weight: 500; font-size: 0.5em; margin-right: 0.35em; text-decoration-color: var(--orange); }
+@media (max-width: 560px) { .facts .wrap { grid-template-columns: 1fr 1fr; } .fact:nth-child(3) { grid-column: 1 / -1; border-left: 0; padding-left: 0; border-top: 1px solid var(--line); } }
+
+/* Logos: white band */
+.logos { background: var(--paper); color: var(--ink); padding-block: 2.25rem; }
+.logos .wrap { display: grid; gap: 1.1rem; }
+.logos .cap { color: var(--ink-muted); }
+.logo-row { display: flex; flex-wrap: wrap; gap: 0.5rem 1.75rem; list-style: none; margin: 0; padding: 0; }
+.logo-row li { font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; color: var(--ink); }
+.logos .note { margin-top: 0.5rem; }
+
+/* Cards */
+.cards3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+@media (max-width: 820px) { .cards3 { grid-template-columns: 1fr; } }
+.problem { border-top: 1px solid var(--fg); padding-top: 1.1rem; display: grid; gap: 0.7rem; align-content: start; }
+.problem .num { font-size: 3.4rem; font-weight: 700; line-height: 0.9; color: var(--orange); letter-spacing: -0.04em; }
+.problem p { color: var(--muted); }
+
+/* Two-column feature rows */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 5vw, 4rem); align-items: center; }
+@media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
+.split .copy { display: grid; gap: 1.1rem; min-width: 0; }
+.chart svg { width: 100%; height: auto; display: block; }
+.chart text { font-family: var(--f); font-weight: 600; font-size: 17px; }
+
+/* Speed widget */
+.speed { border: 1px solid var(--line); background: var(--surface); padding: clamp(1.25rem, 3.5vw, 2rem); display: grid; gap: 1.5rem; min-width: 0; }
+.speed-row { display: grid; gap: 0.6rem; }
+.speed-head { display: flex; justify-content: space-between; align-items: baseline; font-weight: 600; }
+.speed-head .who { color: var(--muted); }
+.speed-row.ai .who { color: var(--fg); }
+.speed-head b { font-size: 2rem; line-height: 1; font-variant-numeric: tabular-nums; margin-right: 0.3rem; }
+.speed-row.ai .speed-head b { color: var(--orange); }
+.track { height: 16px; background: var(--surface-2); overflow: hidden; }
+.track i { display: block; height: 100%; width: 0; background: #D4D4D4; }
+.speed-row.ai .track i { background: var(--orange); }
+.pips { display: flex; gap: 6px; flex-wrap: wrap; min-height: 18px; }
+.pips i { width: 18px; height: 18px; border: 1px solid #5A5A5A; }
+.pips i.on { background: var(--orange); border-color: var(--orange); box-shadow: 0 0 10px rgba(226, 85, 11, 0.7); }
+.speed-row:not(.ai) .pips i.on { background: #D4D4D4; border-color: #D4D4D4; box-shadow: none; }
+.speed-ctl { display: grid; grid-template-columns: auto minmax(0, 1fr) 3ch; gap: 1rem; align-items: center; font-weight: 600; }
+.speed-ctl output { color: var(--orange); font-size: 1.4rem; text-align: right; font-variant-numeric: tabular-nums; }
+input[type="range"] { accent-color: var(--orange); width: 100%; min-width: 0; height: 28px; }
+.speed-foot { border-top: 1px solid var(--line); padding-top: 1.25rem; font-size: 1.2rem; font-weight: 600; line-height: 1.25; }
+.claim h2 span { display: block; }
+
+/* Network */
+.net { border: 1px solid var(--line); background: var(--surface); padding: clamp(0.75rem, 2vw, 1.5rem); }
+.net svg { width: 100%; height: auto; display: block; }
+.net .edge { stroke: #4A4A4A; stroke-width: 1.2; transition: stroke 0.4s; }
+.net .edge.on { stroke: var(--orange); }
+.net .node { fill: #BDBDBD; transition: fill 0.4s; }
+.net .node.on { fill: var(--orange); }
+.net .halo { fill: var(--orange); opacity: 0; transition: opacity 0.4s; }
+.net .halo.on { opacity: 0.18; }
+.net .you { fill: var(--fg); stroke: var(--fg); }
+.net .you-ring { fill: none; stroke: var(--fg); stroke-width: 2; }
+.net text { fill: var(--fg); font: 600 15px var(--f); }
+.seg { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.25rem; }
+.seg button { font: 600 1rem var(--f); min-height: 48px; padding: 0.5rem 1.1rem; background: transparent; color: var(--fg); border: 2px solid #3A3A3A; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--lime); border-color: var(--lime); color: var(--ink); }
+.seg-cap { margin-top: 1rem; color: var(--muted); min-height: 3em; }
+.seg-cap b { color: var(--fg); }
+
+/* Loop: ring + timeline */
+.loop { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: clamp(1.5rem, 5vw, 4rem); align-items: start; }
+@media (max-width: 900px) { .loop { grid-template-columns: 1fr; } }
+.ring-col { display: grid; gap: 1.25rem; position: sticky; top: 1rem; }
+@media (max-width: 900px) { .ring-col { position: static; max-width: 460px; margin-inline: auto; width: 100%; } }
+.ring svg { width: 100%; height: auto; display: block; }
+.ring .trk { fill: none; stroke: var(--surface-2); stroke-width: 20; }
+.ring .arc { fill: none; stroke: #E8E8E8; stroke-width: 2; }
+.ring .nd { fill: #E0E0E0; cursor: pointer; transition: fill 0.3s; }
+.ring .nd.on { fill: var(--orange); }
+.ring .glow { fill: var(--orange); opacity: 0; transition: opacity 0.3s; }
+.ring .glow.on { opacity: 0.3; }
+.ring .lbl { fill: var(--muted); font: 600 15px var(--f); letter-spacing: 0.1em; text-anchor: middle; dominant-baseline: central; }
+.ring .lbl.on { fill: var(--fg); }
+.ring .core { fill: var(--orange); }
+.ring .c1 { fill: #000; font: 600 11px var(--f); letter-spacing: 0.2em; text-anchor: middle; }
+.ring .c2 { fill: #fff; font: 700 25px var(--f); text-anchor: middle; letter-spacing: -0.02em; }
+.ring .c3 { fill: #000; font: 500 13px var(--f); text-anchor: middle; }
+.weeks { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 4px; }
+.weeks i { font-style: normal; text-align: center; font-size: 0.72rem; font-weight: 600; padding: 0.5rem 0; background: var(--surface-2); color: var(--muted); transition: background 0.3s, color 0.3s; }
+.weeks i.on { background: var(--lime); color: var(--ink); }
+.tl { list-style: none; margin: 0; padding: 0; }
+.tl li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 1.1rem; position: relative; padding-bottom: 2rem; cursor: pointer; }
+.tl li::before { content: ""; position: absolute; left: calc(1.5rem - 2px); top: 3rem; bottom: 0; width: 4px; background: #5C5650; }
+.tl li:last-child { padding-bottom: 0; }
+.tl li:last-child::before { display: none; }
+.tl .pin { width: 3rem; height: 3rem; border-radius: 50%; background: var(--fg); color: var(--ink); display: grid; place-items: center; font-weight: 700; font-size: 0.95rem; transition: background 0.3s, color 0.3s; }
+.tl li.on .pin { background: var(--orange); color: var(--fg); }
+.tl .body { display: grid; gap: 0.45rem; min-width: 0; justify-items: start; }
+.tl .body p { color: var(--muted); }
+.tl .body .sub { color: var(--fg); font-size: 1.05rem; }
+.tl .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.3rem; }
+.tl-foot { margin-top: 1.5rem; color: var(--muted); }
+
+/* Flow diagram */
+.flow { display: grid; gap: 0; min-width: 0; }
+.flow .cap { margin-bottom: 0.7rem; }
+.grid-dots { display: grid; grid-template-columns: repeat(16, minmax(0, 1fr)); gap: 6px; }
+.grid-dots i { aspect-ratio: 1; background: #262626; }
+.grid-dots i.on { background: var(--lime); }
+.stem { height: 34px; display: grid; grid-template-columns: repeat(3, 1fr); padding-inline: 12%; }
+.stem i { border-left: 1px solid #6B7A2E; justify-self: center; }
+.stem.one { grid-template-columns: 1fr; }
+.flow-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.flow-row span { border: 1px solid #4A4A4A; background: var(--surface); padding: 0.8rem 0.6rem; font-weight: 500; font-size: 0.92rem; min-width: 0; overflow-wrap: anywhere; }
+.flow-row span.pick { border-color: var(--lime); }
+.flow-row span.dash { border-style: dashed; color: var(--muted); background: transparent; }
+.flow-out { background: var(--lime); color: var(--ink); padding: 1.1rem 1.2rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+.flow-next { border: 1px dashed var(--lime); padding: 1rem 1.2rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; align-items: baseline; margin-top: 12px; }
+.flow-next b { font-size: 1.1rem; }
+.flow-next span { color: var(--muted); }
+.outs { display: grid; gap: 0; }
+.outs div { display: grid; gap: 0.5rem; padding-block: 1.25rem; border-top: 1px solid var(--line); justify-items: start; }
+.outs div:last-child { border-bottom: 1px solid var(--line); }
+.outs p { color: var(--muted); }
+.outs .box { color: var(--lime); border-color: var(--lime); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+
+/* Path */
+.path { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1.25rem; }
+.path li { display: grid; gap: 0.6rem; align-content: start; border-top: 1px solid var(--line); padding-top: 1rem; position: relative; }
+.path li::before { content: ""; position: absolute; top: -6px; left: 0; width: 11px; height: 11px; border-radius: 50%; background: var(--fg); }
+.path li:last-child::before { background: var(--orange); box-shadow: 0 0 0 5px rgba(226, 85, 11, 0.25); }
+.path .when { color: var(--lime); }
+.path p { color: var(--muted); font-size: 0.95rem; }
+@media (max-width: 900px) { .path { grid-template-columns: 1fr; gap: 1.75rem; } }
+
+/* Pricing */
+.price-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+@media (max-width: 860px) { .price-grid { grid-template-columns: 1fr; } }
+.price-card { border: 1px solid var(--line); background: var(--surface); padding: clamp(1.25rem, 3.5vw, 2rem); display: grid; gap: 1.25rem; }
+.seats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+.seat { border: 1px solid #4A4A4A; padding: 0.8rem 0.2rem; display: grid; gap: 0.2rem; justify-items: center; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); min-width: 0; }
+.seat b { font-size: 1.05rem; letter-spacing: -0.02em; color: var(--fg); white-space: nowrap; }
+.seat.early { border-color: var(--lime); }
+.seat.early b { color: var(--lime); }
+@media (max-width: 440px) { .seat b { font-size: 0.82rem; } .seat { font-size: 0.55rem; letter-spacing: 0.04em; } .seats { gap: 5px; } }
+.price-card p { color: var(--muted); }
+.price-card p b { color: var(--fg); }
+.incl { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; }
+.incl li { display: grid; grid-template-columns: 1.1rem minmax(0, 1fr); gap: 0.6rem; }
+.incl li::before { content: ""; width: 0.6rem; height: 0.6rem; margin-top: 0.5rem; background: var(--lime); }
+
+/* Lecturer */
+.lecturer { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+@media (max-width: 760px) { .lecturer { grid-template-columns: 1fr; } }
+.photo { aspect-ratio: 4 / 5; max-width: 100%; background: var(--surface-2); overflow: hidden; }
+.photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.photo .init { font-size: 5rem; font-weight: 700; color: #3A3A3A; line-height: 1; }
+.photo .todo { position: absolute; bottom: 1rem; left: 1rem; }
+.bio { display: grid; gap: 1.25rem; min-width: 0; }
+.bio .role { color: var(--muted); font-size: 1.1rem; }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; border-block: 1px solid var(--line); padding-block: 1.1rem; }
+.stats div { display: grid; gap: 0.2rem; min-width: 0; }
+.stats b { font-size: 2rem; font-weight: 700; line-height: 1; letter-spacing: -0.03em; }
+.stats span { font-size: 0.85rem; color: var(--muted); }
+@media (max-width: 560px) { .stats { grid-template-columns: 1fr 1fr; } }
+.cv { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.45rem; color: var(--muted); }
+.cv b { color: var(--fg); font-weight: 600; }
+.proof { margin-top: 2.5rem; border: 1px solid var(--line); background: var(--surface); padding: clamp(1.25rem, 3.5vw, 2.25rem); display: grid; gap: 1.5rem; }
+blockquote { margin: 0; display: grid; gap: 0.9rem; }
+blockquote p { font-size: clamp(1.3rem, 2.8vw, 1.9rem); font-weight: 500; line-height: 1.2; letter-spacing: -0.02em; }
+blockquote footer { color: var(--muted); }
+.case { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; border-top: 1px solid var(--line); padding-top: 1.25rem; }
+.case div { display: grid; gap: 0.2rem; }
+.case b { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: var(--lime); }
+.case span { color: var(--muted); font-size: 0.9rem; }
+@media (max-width: 560px) { .case { grid-template-columns: 1fr; } }
+
+.addon { border: 1px solid var(--line); padding: 1.25rem; display: grid; gap: 0.5rem; align-content: start; }
+.addon .p { font-size: 1.7rem; font-weight: 700; letter-spacing: -0.03em; }
+.addon p { color: var(--muted); font-size: 0.95rem; }
+
+.faq { border-top: 1px solid var(--line); max-width: 840px; }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { cursor: pointer; padding: 1.1rem 2.2rem 1.1rem 0; font-weight: 600; font-size: 1.15rem; list-style: none; position: relative; letter-spacing: -0.01em; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 0.2rem; top: 0.95rem; color: var(--lime); font-size: 1.3rem; font-weight: 500; }
+.faq details[open] summary::after { content: "−"; }
+.faq details p { color: var(--muted); padding-bottom: 1.2rem; max-width: 65ch; }
+
+/* Final: lime band */
+.final { background: var(--lime); color: var(--ink); padding-block: clamp(3.5rem, 8vw, 6rem); }
+.final-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: clamp(1.5rem, 5vw, 4rem); align-items: start; }
+@media (max-width: 860px) { .final-grid { grid-template-columns: 1fr; } }
+.final h2 { font-size: clamp(2.3rem, 6vw, 4.4rem); }
+.final-copy { display: grid; gap: 1.25rem; }
+.final .lead { color: #26300A; }
+.final .barx { display: block; width: 44px; height: 10px; background: var(--orange); }
+.callbox { border-top: 2px solid var(--ink); padding-top: 1rem; display: grid; gap: 0.6rem; justify-items: start; }
+.callbox .cap { color: #26300A; }
+.contact { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; }
+.contact code { font: 600 1.05rem var(--f); user-select: all; overflow-wrap: anywhere; }
+.contact button { font: 600 0.8rem var(--f); background: transparent; color: var(--ink); border: 1px solid var(--ink); border-radius: 100px; padding: 0.35rem 0.8rem; cursor: pointer; min-height: 36px; }
+form { background: var(--ink); color: var(--fg); padding: clamp(1.25rem, 3vw, 2rem); display: grid; gap: 1rem; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 480px) { .row2 { grid-template-columns: 1fr; } }
+label { display: grid; gap: 0.35rem; font-size: 0.9rem; font-weight: 600; min-width: 0; }
+input:not([type="range"]), textarea { font: 400 1rem var(--f); color: var(--fg); background: var(--surface-2); border: 1px solid #4A4A4A; padding: 0.7rem 0.75rem; width: 100%; min-width: 0; border-radius: 0; }
+textarea { min-height: 5rem; resize: vertical; }
+.form-msg { font-size: 0.9rem; color: var(--muted); }
+
+.open-list { background: var(--note-bg); color: var(--note-fg); border-top: 1px solid var(--note-line); padding-block: 2.5rem; }
+.open-list h2 { font-size: 1.6rem; margin-bottom: 1rem; }
+.open-list ol { margin: 0; padding-left: 1.3rem; display: grid; gap: 0.4rem; max-width: 780px; }
+footer.site { color: var(--muted); border-top: 1px solid var(--line); font-size: 0.9rem; }
+footer.site .wrap { display: flex; flex-wrap: wrap; gap: 0.75rem 2rem; justify-content: space-between; padding-block: 1.5rem; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* v6: sharper. Square corners, thick rules, solid rectangular buttons, underlined text links. */
+h1, h2 { letter-spacing: -0.04em; line-height: 1; }
+h2 { font-size: clamp(2.1rem, 5vw, 3.6rem); }
+.sec-head { border-top: 6px solid var(--fg); padding-top: 1.5rem; max-width: none; }
+.sec-head > * { max-width: 820px; }
+.cap { letter-spacing: 0.22em; font-weight: 700; }
+.btn { border-radius: 0; font-weight: 700; min-height: 56px; padding: 0.8rem 1.7rem; font-size: 1.05rem; }
+.btn-ghost, .btn-ghost:hover { border: 0; background: none; padding-inline: 0; text-decoration: underline; text-decoration-color: var(--orange); text-decoration-thickness: 4px; text-underline-offset: 10px; }
+.btn-ghost:hover { text-decoration-color: var(--lime); }
+.cta-row { gap: 0.75rem 2rem; align-items: center; }
+.contact button { border-radius: 0; border-width: 2px; font-weight: 700; }
+.badge { border: 2px solid var(--fg); padding: 0.65rem 0.9rem; color: var(--fg); }
+.badge::before { content: ""; width: 12px; height: 12px; border-radius: 0; box-shadow: none; background: var(--orange); }
+.tick { display: inline-flex; align-items: center; gap: 0.7rem; border: 2px solid var(--fg); padding: 0.7rem 1rem; font-weight: 700; justify-self: start; }
+.tick svg { width: 22px; height: 22px; flex: none; color: var(--lime); }
+.tl .pin { border-radius: 0; }
+.path li::before { border-radius: 0; width: 12px; height: 12px; }
+.hero-face img, .photo { box-shadow: 16px 16px 0 var(--orange); }
+.hero-face, .photo { margin: 0 16px 16px 0; }
+.hero-face figcaption { margin-top: 0.6rem; }
+.facts { border-top: 6px solid var(--fg); }
+
+/* Logos: white tiles on black */
+.logos { background: var(--bg); color: var(--fg); padding-block: clamp(2.5rem, 6vw, 4rem) 0; }
+.logos .cap { color: var(--muted); }
+.logo-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 10px; }
+.logo-grid li { background: #fff; display: grid; place-items: center; min-width: 0; }
+.logo-grid img { display: block; width: 100%; height: auto; }
+@media (max-width: 900px) { .logo-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; } }
+
+/* Proof: numbers, case, references */
+.nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.25rem clamp(1.25rem, 4vw, 3rem); }
+.nums div { border-top: 6px solid var(--fg); padding-top: 1rem; display: grid; gap: 0.5rem; align-content: start; min-width: 0; }
+.nums b { font-size: clamp(2.8rem, 7vw, 4.6rem); font-weight: 700; line-height: 0.95; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; }
+.nums span { color: var(--muted); font-size: 1.05rem; line-height: 1.35; max-width: 26ch; }
+.nums div:first-child { border-top-color: var(--orange); }
+.nums div:first-child b { color: var(--orange); }
+@media (max-width: 760px) { .nums { grid-template-columns: 1fr 1fr; } }
+.case-card { margin-top: 3rem; border: 2px solid #4A4A4A; padding: clamp(1.25rem, 3.5vw, 2.5rem); display: grid; gap: 1.5rem; }
+.case-card h3 { font-size: clamp(1.6rem, 3.6vw, 2.4rem); letter-spacing: -0.035em; }
+.case { border-top: 0; padding-top: 0; gap: 1.5rem; }
+.case div { border-top: 6px solid var(--lime); padding-top: 0.9rem; }
+.refs { margin-top: 3rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem clamp(1.25rem, 3vw, 2.5rem); }
+@media (max-width: 900px) { .refs { grid-template-columns: 1fr; } }
+.ref { margin: 0; border-left: 6px solid var(--orange); padding-left: 1.4rem; display: grid; gap: 1rem; align-content: start; }
+.ref p { font-size: 1.2rem; font-weight: 500; line-height: 1.35; letter-spacing: -0.01em; }
+.ref footer { display: grid; gap: 0.1rem; color: var(--muted); }
+.ref footer b { color: var(--fg); font-size: 1.05rem; }
+
+/* v7: heavier geometric face for headings and big numbers; Space Grotesk stays for text. */
+:root { --fh: "Jost", "Space Grotesk", "Helvetica Neue", Arial, sans-serif; }
+h1, h2, h3, .nums b, .fact b, .case b, .problem .num, .addon .p { font-family: var(--fh); font-weight: 800; letter-spacing: -0.025em; }
+h1 { line-height: 0.98; }
+h3 { font-weight: 700; letter-spacing: -0.01em; }
+.nums b { letter-spacing: -0.03em; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="logo" viewBox="32 35 646 109"><g fill="#E2550B" transform="translate(-41 -121)">
+    <path d="M 77,253 L 120,190 L 133,204 L 101,253 Z" />
+    <path d="M 109,253 L 170,160 L 230,253 L 202,253 L 170,203 L 136,253 Z" />
+  </g><g fill="currentColor" transform="translate(199 59) scale(0.25)">
+    <path d="M0 0 C1.895 1.517 3.771 3.058 5.625 4.625 C6.463 5.324 7.301 6.022 8.164 6.742 C13.135 11.05 17.702 15.697 22.188 20.5 C22.45 20.78 22.45 20.78 23.779 22.196 C26.036 24.657 27.557 26.421 28.625 29.625 C21.354 35.796 13.785 40.75 5.625 45.625 C4.635 46.285 3.645 46.945 2.625 47.625 C-0.849 47.535 -2.103 46.894 -4.594 44.438 C-5.347 43.509 -6.099 42.581 -6.875 41.625 C-12.342 35.33 -18.324 31.061 -25.375 26.625 C-26.209 26.091 -27.043 25.558 -27.902 25.008 C-30.59 23.505 -33.207 22.48 -36.125 21.5 C-37.089 21.167 -38.053 20.835 -39.047 20.492 C-59.744 15.099 -80.913 19.016 -99.375 29.25 C-111.854 37.08 -120.133 47.452 -126.375 60.625 C-126.862 61.56 -127.35 62.494 -127.852 63.457 C-135.335 79.018 -136.016 98.22 -130.704 114.565 C-123.503 134.729 -112.464 150.86 -92.754 160.438 C-75.274 168.265 -54.595 170.238 -36.062 164.621 C-26.002 160.652 -15.922 155.477 -9.047 146.984 C-7.848 145.51 -6.614 144.065 -5.375 142.625 C-4.715 142.625 -4.055 142.625 -3.375 142.625 C-3.107 141.986 -2.839 141.346 -2.562 140.688 C-1.375 138.625 -1.375 138.625 1.625 137.625 C7.117 140.292 11.906 144.548 16.742 148.242 C20.27 150.918 23.756 153.449 27.625 155.625 C27.034 159.125 25.765 160.913 23.375 163.5 C21.263 165.812 19.282 168.073 17.375 170.562 C8.767 180.948 -4.196 189.105 -16.375 194.625 C-16.735 194.799 -16.735 194.799 -18.559 195.68 C-31.816 201.607 -45.816 202.993 -60.188 203.062 C-61.378 203.072 -62.569 203.082 -63.796 203.093 C-78.982 202.946 -93.702 199.133 -107.375 192.625 C-108.402 192.178 -109.43 191.73 -110.488 191.27 C-135.045 180.006 -151.779 159.088 -162.375 134.625 C-163.98 130.012 -165.215 125.367 -166.375 120.625 C-166.674 119.621 -166.973 118.617 -167.281 117.582 C-173.38 94.852 -170.003 68.872 -160.375 47.625 C-160.086 46.984 -159.797 46.344 -159.5 45.684 C-155.412 36.742 -150.967 29 -144.375 21.625 C-143.723 20.831 -143.07 20.037 -142.398 19.219 C-109.257 -20.005 -42.366 -31.083 0 0 Z " transform="translate(1242.375,61.375)" id="glyph-1" />
+    <path d="M0 0 C0.326 0 0.326 0 1.975 0 C4.215 0.004 6.455 0.023 8.695 0.043 C10.313 0.051 11.93 0.059 13.548 0.067 C18.439 0.095 23.33 0.143 28.221 0.194 C31.484 0.227 34.747 0.257 38.01 0.286 C46.448 0.36 54.885 0.45 63.323 0.551 C66.436 0.588 69.55 0.621 72.663 0.652 C76.399 0.688 80.135 0.735 83.871 0.788 C85.259 0.807 86.648 0.822 88.036 0.834 C104.724 0.981 124.114 3.595 136.594 15.992 C137.6 17.17 138.58 18.372 139.527 19.598 C140.82 21.23 140.82 21.23 143.32 23.418 C147.227 27.813 149.465 32.877 151.82 38.23 C152.166 39.013 152.511 39.795 152.867 40.602 C157.361 52.833 155.937 68.502 150.82 80.23 C146.567 87.608 140.611 95.335 132.82 99.23 C132.82 100.88 132.82 102.53 132.82 104.23 C133.284 104.395 133.284 104.395 135.633 105.23 C147.121 110.267 155.571 118.885 161.23 130 C166.367 143.165 166.733 161.815 161.781 174.996 C160.586 177.509 159.273 179.858 157.82 182.23 C157.377 182.988 156.933 183.746 156.477 184.527 C147.259 199.378 132.741 208.332 116.048 212.731 C102.567 215.754 89.108 215.524 75.371 215.496 C73.022 215.497 70.672 215.499 68.323 215.502 C63.429 215.505 58.535 215.501 53.641 215.491 C47.362 215.48 41.083 215.486 34.803 215.498 C29.966 215.506 25.129 215.503 20.291 215.498 C17.974 215.497 15.657 215.498 13.34 215.503 C10.117 215.508 6.893 215.5 3.669 215.489 C2.711 215.493 1.752 215.497 0.765 215.502 C-0.111 215.496 -0.987 215.49 -1.889 215.484 C-2.65 215.484 -3.41 215.483 -4.194 215.482 C-6.18 215.23 -6.18 215.23 -9.18 213.23 C-9.481 210.413 -9.584 207.814 -9.561 204.993 C-9.565 204.131 -9.57 203.269 -9.575 202.381 C-9.587 199.476 -9.577 196.571 -9.568 193.666 C-9.572 191.59 -9.577 189.514 -9.584 187.438 C-9.598 181.788 -9.592 176.137 -9.583 170.487 C-9.575 164.584 -9.582 158.682 -9.587 152.78 C-9.592 142.867 -9.585 132.954 -9.571 123.041 C-9.554 111.565 -9.56 100.09 -9.576 88.614 C-9.59 78.777 -9.592 68.94 -9.584 59.103 C-9.579 53.221 -9.579 47.339 -9.589 41.457 C-9.597 35.928 -9.591 30.4 -9.574 24.871 C-9.57 22.837 -9.571 20.802 -9.578 18.768 C-9.586 16.001 -9.576 13.235 -9.561 10.468 C-9.567 9.654 -9.574 8.84 -9.581 8.002 C-9.557 5.766 -9.557 5.766 -9.18 2.23 C-5.63 -0.136 -4.208 -0.015 0 0 Z M28.82 33.23 C26.67 36.456 26.568 37.321 26.562 41.037 C26.555 42.012 26.549 42.986 26.542 43.99 C26.546 45.04 26.551 46.09 26.555 47.172 C26.553 48.25 26.551 49.329 26.549 50.44 C26.548 52.721 26.551 55.001 26.56 57.282 C26.57 60.783 26.56 64.283 26.547 67.783 C26.548 69.996 26.551 72.209 26.555 74.422 C26.551 75.474 26.547 76.526 26.542 77.61 C26.549 78.581 26.555 79.552 26.562 80.553 C26.563 81.41 26.565 82.267 26.566 83.15 C26.82 85.23 26.82 85.23 28.82 87.23 C31.564 87.484 31.564 87.484 35.103 87.489 C35.747 87.493 36.391 87.496 37.054 87.5 C39.19 87.509 41.325 87.503 43.461 87.496 C44.946 87.497 46.431 87.499 47.916 87.502 C51.033 87.505 54.15 87.501 57.267 87.491 C61.253 87.48 65.238 87.486 69.224 87.498 C72.294 87.506 75.363 87.503 78.433 87.498 C79.901 87.497 81.37 87.498 82.839 87.503 C84.9 87.508 86.96 87.5 89.021 87.489 C90.191 87.488 91.362 87.486 92.569 87.484 C100.605 86.857 107.587 82.844 113.133 77.105 C117.346 71.822 119.295 64.838 118.758 58.105 C116.722 49.693 113.762 43.612 106.445 38.605 C95.956 33.111 86.596 33.066 74.984 33.027 C73.669 33.022 72.353 33.016 70.997 33.01 C68.229 33 65.46 32.994 62.692 32.99 C59.141 32.985 55.59 32.961 52.039 32.932 C48.646 32.909 45.253 32.907 41.859 32.902 C40.582 32.89 39.305 32.878 37.99 32.865 C36.814 32.868 35.639 32.871 34.428 32.874 C33.391 32.87 32.354 32.867 31.285 32.863 C30.472 32.984 29.658 33.106 28.82 33.23 Z M63.852 120.305 C59.3 120.375 54.748 120.458 50.197 120.551 C48.364 120.587 46.53 120.621 44.697 120.652 C42.105 120.697 39.514 120.755 36.922 120.816 C36.133 120.828 35.345 120.84 34.532 120.851 C29.049 121.002 29.049 121.002 26.82 123.23 C26.566 125.577 26.566 125.577 26.562 128.551 C26.555 129.662 26.549 130.773 26.542 131.918 C26.546 133.123 26.551 134.329 26.555 135.57 C26.553 136.803 26.551 138.036 26.549 139.307 C26.547 142.589 26.555 145.87 26.566 149.152 C26.57 151.164 26.566 153.176 26.56 155.188 C26.547 159.045 26.549 162.901 26.555 166.758 C26.551 167.961 26.547 169.164 26.542 170.404 C26.549 171.518 26.555 172.633 26.562 173.781 C26.563 174.763 26.565 175.745 26.566 176.757 C26.82 179.23 26.82 179.23 28.82 182.23 C31.586 182.618 31.586 182.618 35.159 182.635 C35.485 182.638 35.485 182.638 37.131 182.655 C39.293 182.674 41.455 182.67 43.617 182.664 C45.128 182.669 46.638 182.674 48.149 182.68 C51.327 182.689 54.504 182.686 57.682 182.677 C61.717 182.665 65.75 182.685 69.785 182.714 C72.913 182.733 76.041 182.732 79.169 182.727 C80.654 182.727 82.138 182.733 83.623 182.745 C96.297 182.837 108.996 181.797 118.984 173.164 C121.844 170.153 123.93 166.913 125.82 163.23 C126.184 162.627 126.547 162.024 126.922 161.402 C129.346 155.542 128.641 147.997 126.875 142.043 C124.635 136.859 122.192 132.912 117.82 129.23 C117.345 128.737 116.869 128.243 116.379 127.734 C105.756 117.485 86.375 119.934 72.836 120.16 C72.204 120.171 71.572 120.182 70.921 120.194 C68.565 120.235 66.208 120.27 63.852 120.305 Z " transform="translate(404.1796875,45.76953125)" id="glyph-2" />
+    <path d="M0 0 C0.862 -0.005 1.723 -0.009 2.611 -0.014 C3.417 -0.012 4.224 -0.01 5.055 -0.008 C5.769 -0.007 6.483 -0.006 7.218 -0.004 C9.125 0.125 9.125 0.125 12.125 1.125 C16.044 7.596 18.299 15.204 20.896 22.292 C22.58 26.832 24.531 31.095 26.781 35.387 C29.248 40.414 31.263 45.637 33.367 50.824 C34.916 54.638 36.54 58.415 38.188 62.188 C40.619 67.821 42.832 73.511 44.946 79.27 C46.584 83.729 48.316 88.143 50.09 92.55 C51.099 95.06 52.096 97.574 53.09 100.09 C56.226 108.007 59.374 115.886 62.969 123.609 C68.373 135.367 68.373 135.367 70.062 141.562 C71.074 144.955 72.36 147.869 73.875 151.062 C76.864 157.39 79.34 163.829 81.75 170.395 C83.451 175.01 85.273 179.569 87.125 184.125 C89.284 189.476 91.416 194.829 93.395 200.25 C94.136 202.153 94.997 203.969 95.875 205.812 C97.173 209.251 97.267 210.699 96.125 214.125 C90.012 215.625 83.848 215.092 77.613 214.883 C75.434 214.812 73.255 214.758 71.076 214.705 C69.693 214.662 68.309 214.619 66.926 214.574 C66.298 214.555 66.298 214.555 63.118 214.46 C60.125 214.125 60.125 214.125 58.125 212.125 C57.414 210.312 57.414 210.312 56.75 208.125 C55.12 203.015 53.169 198.082 51.125 193.125 C50.743 192.198 50.362 191.271 49.969 190.316 C48.698 187.248 47.414 184.186 46.125 181.125 C45.994 180.814 45.994 180.814 45.333 179.243 C44.517 177.306 43.696 175.372 42.875 173.438 C42.375 172.258 41.875 171.079 41.359 169.863 C40.125 167.125 40.125 167.125 39.125 166.125 C36.219 166.014 33.337 165.968 30.43 165.964 C29.974 165.961 29.974 165.961 27.666 165.949 C24.634 165.934 21.602 165.927 18.57 165.922 C16.471 165.916 14.373 165.91 12.274 165.905 C7.867 165.894 3.46 165.888 -0.947 165.885 C-6.602 165.879 -12.257 165.855 -17.912 165.827 C-22.25 165.808 -26.587 165.803 -30.924 165.801 C-33.009 165.798 -35.095 165.79 -37.18 165.777 C-40.094 165.76 -43.007 165.762 -45.921 165.769 C-46.355 165.764 -46.355 165.764 -48.547 165.741 C-54.438 165.782 -54.438 165.782 -56.53 167.423 C-58.314 169.681 -59.13 172.166 -60.076 174.859 C-60.892 177.174 -61.786 179.444 -62.707 181.719 C-63.028 182.514 -63.349 183.31 -63.679 184.13 C-64.012 184.953 -64.345 185.777 -64.688 186.625 C-67.59 193.832 -70.4 201.064 -73.06 208.363 C-74.772 213.022 -74.772 213.022 -75.875 214.125 C-83.648 215.3 -91.533 215.279 -99.375 215.25 C-100.445 215.254 -101.515 215.258 -102.617 215.262 C-103.641 215.26 -104.664 215.259 -105.719 215.258 C-106.638 215.257 -107.558 215.256 -108.506 215.254 C-110.875 215.125 -110.875 215.125 -113.875 214.125 C-114.219 210.337 -113.44 207.81 -111.855 204.395 C-110.578 201.439 -109.554 198.417 -108.5 195.375 C-106.607 190.008 -104.479 184.86 -102.062 179.711 C-100.568 176.456 -99.255 173.145 -97.965 169.805 C-97.022 167.488 -96.021 165.217 -94.992 162.938 C-92.834 158.107 -90.927 153.201 -89.062 148.25 C-88.718 147.345 -88.374 146.439 -88.02 145.506 C-86.314 141.002 -84.638 136.49 -83.012 131.957 C-80.122 123.916 -77.125 116.206 -73.148 108.621 C-71.731 105.842 -70.622 103.05 -69.582 100.113 C-68.753 97.782 -67.852 95.486 -66.938 93.188 C-66.64 92.436 -66.342 91.684 -66.035 90.91 C-65.054 88.554 -64.022 86.235 -62.969 83.91 C-60.857 79.183 -59.061 74.371 -57.312 69.5 C-55.318 63.962 -53.234 58.518 -50.875 53.125 C-50.222 51.524 -49.575 49.92 -48.938 48.312 C-48.767 47.884 -48.767 47.884 -47.902 45.715 C-47.247 44.062 -46.593 42.408 -45.941 40.754 C-43.582 34.791 -41.074 28.901 -38.527 23.016 C-37.314 20.187 -36.149 17.341 -35.004 14.484 C-34.847 14.096 -34.847 14.096 -34.056 12.131 C-33.443 10.605 -32.836 9.077 -32.235 7.547 C-30.097 2.236 -30.097 2.236 -27.875 1.125 C-25.41 0.882 -22.971 0.698 -20.5 0.562 C-19.76 0.521 -19.02 0.479 -18.257 0.436 C-12.172 0.126 -6.093 0.018 0 0 Z M-9.875 46.125 C-12.56 51.981 -14.956 57.873 -17.125 63.938 C-21.567 76.172 -26.391 88.253 -31.438 100.25 C-34.492 107.511 -37.296 114.871 -40.134 122.218 C-41.031 124.527 -41.948 126.828 -42.875 129.125 C-38.703 131.128 -35.318 131.37 -30.715 131.355 C-30.02 131.355 -29.325 131.355 -28.609 131.355 C-26.344 131.351 -24.078 131.333 -21.812 131.312 C-20.248 131.306 -18.683 131.299 -17.118 131.293 C-3.026 131.214 11.048 130.766 25.125 130.125 C25.915 127.835 26.294 126.589 25.451 124.274 C25.095 123.653 24.738 123.031 24.371 122.391 C22.183 118.327 20.646 114.245 19.188 109.875 C17.191 103.925 14.914 98.151 12.474 92.369 C9.597 85.451 6.934 78.446 4.23 71.459 C0.872 62.846 -2.701 54.377 -6.875 46.125 C-7.865 46.125 -8.855 46.125 -9.875 46.125 Z " transform="translate(142.875,45.875)" id="glyph-3" />
+    <path d="M0 0 C1.428 0 2.857 0.012 4.285 0.032 C4.661 0.033 4.661 0.033 6.563 0.04 C8.968 0.052 11.372 0.077 13.777 0.102 C15.406 0.112 17.035 0.121 18.664 0.129 C22.66 0.151 26.656 0.186 30.652 0.227 C32.248 3.419 31.792 6.876 31.786 10.382 C31.788 11.235 31.79 12.088 31.792 12.967 C31.799 15.842 31.798 18.717 31.797 21.592 C31.8 23.647 31.804 25.701 31.807 27.756 C31.816 33.348 31.818 38.941 31.819 44.534 C31.82 49.197 31.824 53.859 31.827 58.521 C31.835 69.517 31.838 80.512 31.837 91.508 C31.837 102.866 31.847 114.224 31.863 125.583 C31.876 135.321 31.881 145.06 31.881 154.798 C31.88 160.621 31.883 166.443 31.894 172.265 C31.904 177.739 31.904 183.213 31.896 188.686 C31.895 190.699 31.898 192.712 31.904 194.725 C31.911 197.465 31.907 200.205 31.899 202.945 C31.904 203.748 31.909 204.552 31.915 205.379 C31.891 209.199 31.823 210.97 29.652 214.227 C26.75 214.599 26.75 214.599 23.07 214.59 C22.419 214.591 21.767 214.591 21.097 214.592 C19.717 214.59 18.338 214.58 16.958 214.563 C14.858 214.54 12.758 214.543 10.658 214.549 C-0.031 214.505 -0.031 214.505 -5.348 212.227 C-5.395 184.881 -5.43 157.535 -5.452 130.189 C-5.462 117.492 -5.476 104.796 -5.499 92.1 C-5.519 81.037 -5.532 69.975 -5.536 58.912 C-5.539 53.051 -5.545 47.19 -5.56 41.33 C-5.573 35.819 -5.577 30.308 -5.574 24.798 C-5.575 22.77 -5.579 20.742 -5.587 18.714 C-5.596 15.956 -5.594 13.198 -5.589 10.44 C-5.594 9.629 -5.6 8.817 -5.606 7.982 C-5.565 0.377 -5.565 0.377 0 0 Z " transform="translate(264.34814453125,46.77294921875)" id="glyph-4" />
+    <path d="M0 0 C1.187 0.017 2.374 0.034 3.598 0.051 C21.329 0.75 35.667 7.812 47.906 20.574 C50.511 23.592 52.248 26.425 54 30 C54.516 30.784 55.031 31.567 55.562 32.375 C60.551 41.485 61.15 50.936 61.161 61.114 C61.166 62.224 61.171 63.333 61.176 64.477 C61.191 68.135 61.198 71.794 61.203 75.453 C61.209 77.996 61.215 80.538 61.22 83.081 C61.23 87.724 61.236 92.367 61.239 97.011 C61.243 103.847 61.261 110.682 61.29 117.518 C61.314 123.444 61.322 129.369 61.324 135.295 C61.327 137.817 61.335 140.338 61.348 142.86 C61.365 146.374 61.363 149.889 61.356 153.403 C61.366 154.453 61.375 155.502 61.384 156.583 C61.382 157.06 61.382 157.06 61.367 159.472 C61.369 160.303 61.37 161.134 61.372 161.99 C61.311 162.322 61.311 162.322 61 164 C57.513 166.324 56.095 166.257 51.977 166.266 C50.791 166.268 49.605 166.271 48.383 166.273 C47.143 166.266 45.903 166.258 44.625 166.25 C43.393 166.258 42.16 166.265 40.891 166.273 C39.702 166.271 38.514 166.268 37.289 166.266 C36.746 166.264 36.746 166.264 33.999 166.259 C30.957 165.996 28.752 165.285 26 164 C26.021 162.907 26.041 161.814 26.062 160.688 C26 157 26 157 25 154 C21.711 154.605 19.78 155.727 17.188 157.812 C5.617 166.691 -6.254 169.683 -20.786 169.412 C-22.828 169.375 -24.869 169.371 -26.912 169.371 C-43.201 169.227 -58.033 164.447 -70 153 C-79.549 140.562 -84.746 126.836 -83 111 C-80.075 97.689 -73.421 85.857 -62 78 C-58.094 75.767 -54.106 73.835 -50 72 C-49.322 71.68 -48.644 71.361 -47.945 71.031 C-33.494 64.829 -15.935 66.767 -0.625 66.875 C1.865 66.885 4.354 66.894 6.844 66.902 C12.896 66.924 18.948 66.958 25 67 C25.027 64.912 25.046 62.823 25.062 60.734 C25.074 59.571 25.086 58.408 25.098 57.21 C24.845 48.917 19.708 43.506 14 38 C5.522 30.727 -8.493 31.371 -19 32 C-28.324 32.95 -36.045 36.697 -43 43 C-43.165 43.33 -43.165 43.33 -44 45 C-44.66 45 -45.32 45 -46 45 C-46.33 45.99 -46.66 46.98 -47 48 C-47.99 48.33 -48.98 48.66 -50 49 C-51.709 48.102 -53.413 47.188 -55.061 46.18 C-56.96 45.025 -58.885 43.985 -60.859 42.965 C-61.18 42.798 -61.18 42.798 -62.801 41.951 C-64.114 41.268 -65.429 40.589 -66.746 39.912 C-72.972 36.648 -72.972 36.648 -75 34 C-75.438 31.625 -75.438 31.625 -75 29 C-73.125 26.375 -73.125 26.375 -71 24 C-70.34 23.01 -69.68 22.02 -69 21 C-68.34 21 -67.68 21 -67 21 C-66.67 20.01 -66.34 19.02 -66 18 C-64.028 16.407 -62.096 14.973 -60 13.562 C-59.407 13.161 -58.814 12.759 -58.203 12.345 C-40.502 0.582 -20.657 -0.43 0 0 Z M-44.75 105.5 C-48.375 111.137 -48.201 117.599 -47 124 C-43.79 130.914 -38.032 135.339 -31 138 C-17.716 141.6 -3.326 140.609 9 134.25 C16.238 129.894 21.388 124.642 25 117 C25.994 112.401 26.164 107.948 26.188 103.25 C26.202 101.935 26.216 100.62 26.23 99.266 C26 96 26 96 24 94 C21.305 93.799 18.715 93.72 16.02 93.734 C15.214 93.732 14.409 93.731 13.58 93.729 C11.866 93.727 10.152 93.731 8.438 93.739 C5.868 93.75 3.298 93.739 0.729 93.727 C-33.88 93.693 -33.88 93.693 -44.75 105.5 Z " transform="translate(1367,95)" id="glyph-5" />
+    <path d="M0 0 C2.487 0.006 4.969 -0.041 7.455 -0.091 C22.299 -0.207 37.43 2.907 49.119 12.631 C49.471 12.916 49.471 12.916 51.252 14.354 C63.234 24.413 69.443 37.25 70.915 52.843 C71.252 57.445 71.275 62.036 71.28 66.649 C71.285 67.701 71.29 68.752 71.295 69.836 C71.31 73.278 71.317 76.72 71.322 80.163 C71.328 82.565 71.334 84.967 71.34 87.37 C71.35 92.386 71.356 97.402 71.359 102.418 C71.365 108.859 71.389 115.3 71.417 121.741 C71.436 126.692 71.441 131.644 71.443 136.595 C71.446 138.972 71.454 141.348 71.467 143.724 C71.484 147.033 71.482 150.341 71.476 153.649 C71.485 154.636 71.494 155.623 71.504 156.64 C71.501 157.088 71.501 157.088 71.487 159.358 C71.488 160.14 71.49 160.921 71.491 161.727 C71.368 162.355 71.246 162.984 71.119 163.631 C66.332 166.823 60.837 165.965 55.24 165.947 C53.126 165.944 51.014 165.967 48.9 165.993 C47.557 165.995 46.213 165.996 44.869 165.995 C43.647 165.998 42.425 166.001 41.166 166.004 C38.119 165.631 38.119 165.631 36.209 164.339 C34.439 161.565 34.939 158.821 35.119 155.631 C30.818 155.631 30.207 155.971 26.932 158.381 C22.509 161.457 18.119 163.659 13.119 165.631 C12.794 165.776 12.794 165.776 11.15 166.506 C-5.693 173.244 -28.52 170.404 -44.881 163.631 C-55.213 158.904 -64.397 151.594 -69.041 140.936 C-75.05 124.446 -75.563 110.813 -68.881 94.631 C-62.552 82.743 -50.212 74.611 -37.756 70.444 C-22.295 66.129 -6.976 66.407 8.932 66.569 C12.234 66.597 15.537 66.621 18.839 66.64 C20.879 66.652 22.919 66.67 24.959 66.693 C25.415 66.697 25.415 66.697 27.724 66.713 C28.125 66.717 28.125 66.717 30.157 66.738 C32.119 66.631 32.119 66.631 34.119 65.631 C36.051 59.146 34.848 52.027 31.811 46.061 C26.809 38.984 20.17 34.925 11.826 32.788 C-1.827 30.443 -15.565 30.964 -27.318 38.819 C-28.164 39.417 -29.01 40.015 -29.881 40.631 C-30.871 40.961 -31.861 41.291 -32.881 41.631 C-34.006 44.131 -34.006 44.131 -34.881 46.631 C-35.881 47.631 -35.881 47.631 -38.631 47.881 C-42.351 47.595 -43.828 46.716 -46.881 44.631 C-53.462 40.854 -53.462 40.854 -55.709 39.663 C-59.851 37.43 -62.74 35.057 -65.881 31.631 C-63.911 28.941 -61.905 26.281 -59.881 23.631 C-59.653 23.327 -59.653 23.327 -58.498 21.788 C-44.585 4.297 -21.11 -0.112 0 0 Z M-32.881 102.631 C-33.425 103.111 -33.969 103.59 -34.529 104.084 C-38.771 108.725 -38.659 114.21 -38.428 120.249 C-37.603 125.348 -35.628 128.185 -31.881 131.631 C-31.386 132.121 -30.891 132.611 -30.381 133.116 C-23.395 139.054 -12.707 140.215 -3.834 139.917 C5.96 138.971 14.946 137.301 23.119 131.631 C24.006 131.054 24.893 130.476 25.807 129.881 C33.804 122.1 36.133 114.139 36.369 103.256 C36.39 99.274 36.382 98.025 34.119 94.631 C16.345 90.308 -18.78 89.587 -32.881 102.631 Z " transform="translate(657.880859375,95.36865234375)" id="glyph-6" />
+    <path d="M0 0 C2.383 0.014 4.763 -0.02 7.146 -0.058 C25.229 -0.149 43.575 5.806 56.697 18.639 C57.207 19.133 57.717 19.628 58.242 20.137 C60.507 22.503 61.879 24.561 63.021 27.635 C62.884 30.576 62.884 30.576 60.888 33.162 C57.65 35.764 54.355 38.028 50.822 40.201 C44.19 44.339 44.19 44.339 41.607 46.35 C39.884 47.576 39.884 47.576 37.384 47.576 C34.884 46.576 34.884 46.576 33.13 44.276 C26.773 36.635 16.63 32.724 6.974 31.752 C6.464 31.723 6.464 31.723 3.884 31.576 C2.937 31.508 1.989 31.44 1.013 31.369 C-7.399 31.047 -15.372 32.376 -22.116 37.576 C-22.776 37.576 -23.436 37.576 -24.116 37.576 C-24.425 38.36 -24.734 39.144 -25.053 39.951 C-26.116 42.576 -26.116 42.576 -27.116 44.576 C-27.598 48.677 -27.44 51.677 -25.303 55.201 C-17.209 65.251 0.396 66.75 12.384 69.014 C30.425 72.55 49.367 78.279 60.576 93.94 C61.843 96.129 62.911 98.241 63.884 100.576 C64.147 101.182 64.147 101.182 65.478 104.244 C67.199 108.921 67.421 113.315 67.384 118.264 C67.379 119.14 67.374 120.015 67.369 120.917 C67.073 132.04 63.363 141.253 55.884 149.576 C55.349 150.191 54.814 150.806 54.263 151.44 C50.027 156.009 45.426 158.81 39.884 161.576 C38.894 162.133 37.904 162.69 36.884 163.264 C33.737 164.641 30.781 165.389 27.423 166.049 C24.884 166.576 24.884 166.576 21.498 167.612 C15.253 169.179 8.847 168.96 2.447 168.951 C1.78 168.951 1.113 168.951 0.426 168.951 C-10.262 168.917 -19.983 168.033 -30.116 164.576 C-31.192 164.226 -32.268 163.875 -33.377 163.514 C-45.031 159.216 -56.763 150.649 -63.553 140.076 C-65.351 136.05 -66.078 133.909 -65.116 129.576 C-62.729 127.356 -60.027 126.007 -57.116 124.576 C-56.781 124.397 -56.781 124.397 -55.084 123.487 C-43.536 117.414 -43.536 117.414 -39.131 117.709 C-36.277 118.937 -35.032 120.836 -33.116 123.264 C-24.419 133.195 -12.718 136.394 0.091 137.823 C10.276 138.187 20.182 136.545 27.884 129.576 C30.946 125.954 31.804 123.395 31.884 118.576 C30.627 113.92 28.422 110.572 24.447 107.826 C15.865 103.099 5.998 101.309 -3.502 99.354 C-13.624 97.176 -23.482 94.369 -33.116 90.576 C-34.312 90.123 -35.508 89.669 -36.741 89.201 C-48.086 83.739 -56.49 76.464 -61.116 64.576 C-64.609 51.731 -62.807 35.751 -56.366 24.264 C-51.25 16.421 -45.462 11.7 -37.116 7.576 C-36.666 7.339 -36.666 7.339 -34.391 6.14 C-23.34 0.865 -12.054 -0.098 0 0 Z " transform="translate(817.11572265625,95.423583984375)" id="glyph-7" />
+    <path d="M0 0 C2.067 0.008 4.132 -0.02 6.199 -0.052 C24.522 -0.151 41.654 6.302 55.045 18.886 C71.604 35.518 78.441 56.696 78.455 79.696 C78.467 80.771 78.479 81.846 78.492 82.954 C78.494 83.988 78.496 85.022 78.498 86.087 C78.502 87.02 78.506 87.954 78.51 88.916 C78.267 91.446 78.267 91.446 76.267 95.446 C37.657 95.776 -0.953 96.106 -40.733 96.446 C-42.513 103.567 -38.292 110.543 -34.92 116.821 C-25.661 127.932 -14.077 133.987 0.275 135.833 C14.61 136.399 28.466 131.687 39.08 122.071 C39.581 121.568 40.083 121.066 40.599 120.548 C42.985 118.972 44.458 119.06 47.267 119.446 C49.556 120.731 49.556 120.731 51.892 122.509 C56.473 125.911 61.197 128.88 66.115 131.77 C68.267 133.446 68.267 133.446 69.271 135.411 C69.266 138.319 68.131 139.249 66.142 141.321 C65.817 141.668 65.817 141.668 64.17 143.423 C63.542 144.09 62.914 144.758 62.267 145.446 C61.405 146.523 60.549 147.605 59.705 148.696 C49.416 160.304 31.126 166.261 16.267 168.446 C11.998 168.658 7.729 168.631 3.455 168.634 C2.317 168.646 1.18 168.658 0.008 168.671 C-6.536 168.682 -12.429 168.204 -18.733 166.446 C-19.582 166.246 -20.432 166.046 -21.307 165.841 C-41.05 160.403 -55.332 148.031 -66.733 131.446 C-67.317 130.627 -67.901 129.809 -68.502 128.966 C-71.743 124.067 -73.756 119.003 -75.545 113.446 C-75.752 112.806 -75.96 112.165 -76.173 111.505 C-78.948 102.234 -78.914 92.675 -78.92 83.071 C-78.932 82.024 -78.945 80.978 -78.957 79.899 C-78.999 57.26 -70.545 37.51 -54.733 21.446 C-54.109 20.738 -53.485 20.031 -52.842 19.302 C-46.031 11.818 -36.789 6.878 -27.083 4.121 C-25.531 3.675 -23.987 3.196 -22.455 2.683 C-14.99 0.338 -7.769 -0.048 0 0 Z M-29.916 42.438 C-33.536 46.439 -36.255 50.668 -38.733 55.446 C-39.31 56.477 -39.888 57.509 -40.483 58.571 C-41.756 61.499 -42.093 63.297 -41.733 66.446 C-39.776 68.403 -36.015 67.661 -33.339 67.699 C-32.952 67.706 -32.952 67.706 -30.993 67.744 C-28.421 67.791 -25.848 67.83 -23.276 67.868 C-22.399 67.882 -21.522 67.896 -20.619 67.91 C-15.978 67.983 -11.338 68.051 -6.697 68.114 C-1.898 68.179 2.9 68.264 7.699 68.353 C11.383 68.418 15.067 68.47 18.752 68.517 C20.521 68.543 22.29 68.573 24.059 68.609 C26.535 68.657 29.01 68.686 31.485 68.711 C31.851 68.72 31.851 68.72 33.704 68.767 C37.856 68.784 40.257 68.397 43.267 65.446 C42.657 55.88 37.399 48.698 31.002 41.817 C13.94 27.022 -13.253 27.236 -29.916 42.438 Z " transform="translate(977.732666015625,95.553955078125)" id="glyph-8" />
+    <path d="M0 0 C1.746 2.008 3.291 4.034 4.785 6.234 C6.288 8.419 8.056 10.205 10 12 C12.766 9.317 15.168 6.411 17.598 3.426 C17.829 3.191 17.829 3.191 19 2 C19.66 2 20.32 2 21 2 C21.33 1.01 21.66 0.02 22 -1 C24.087 -2.45 26.1 -3.71 28.312 -4.938 C28.948 -5.29 29.583 -5.643 30.237 -6.006 C45.995 -14.525 64.889 -16.264 82.441 -12.473 C84.715 -11.785 86.826 -10.958 89 -10 C89.968 -9.576 90.936 -9.152 91.934 -8.715 C105.581 -2.325 113.925 7.292 120 21 C125.347 36.095 125.691 51.305 125.523 67.133 C125.517 69.472 125.512 71.811 125.509 74.151 C125.496 80.236 125.452 86.32 125.402 92.405 C125.366 97.396 125.353 102.388 125.341 107.38 C125.326 113.339 125.301 119.298 125.273 125.258 C125.269 126.392 125.264 127.526 125.259 128.694 C125.242 131.883 125.219 135.073 125.193 138.262 C125.189 139.21 125.184 140.157 125.18 141.133 C125.171 141.999 125.163 142.864 125.154 143.756 C125.148 144.508 125.143 145.26 125.137 146.034 C125 148 125 148 124 151 C119.015 152.662 113.825 152.264 108.603 152.295 C107.244 152.307 105.886 152.327 104.527 152.357 C102.561 152.399 100.595 152.413 98.629 152.426 C98.041 152.433 98.041 152.433 95.069 152.47 C92 152 92 152 89.833 150.56 C87.066 146.695 87.503 143.211 87.609 138.573 C87.615 137.617 87.621 136.662 87.627 135.678 C87.642 133.604 87.667 131.529 87.699 129.455 C87.75 126.162 87.776 122.869 87.796 119.576 C87.849 111.389 87.946 103.202 88.042 95.016 C88.121 88.109 88.183 81.203 88.224 74.296 C88.249 71.069 88.3 67.843 88.351 64.617 C88.484 51.398 88.361 38.479 79.148 27.945 C71.782 21.275 64.003 19.168 54.302 19.355 C44.495 19.923 35.665 23.679 29 31 C23.547 37.968 21.561 44.94 21.488 53.586 C21.47 54.417 21.452 55.248 21.434 56.104 C21.379 58.861 21.345 61.618 21.312 64.375 C21.279 66.325 21.244 68.274 21.209 70.224 C20.886 89.944 20.939 109.67 21.036 129.392 C21.041 130.609 21.045 131.826 21.05 133.079 C21.058 135.375 21.071 137.671 21.088 139.967 C21.089 140.475 21.089 140.475 21.098 143.049 C21.103 143.937 21.108 144.825 21.114 145.74 C21 148 21 148 20 151 C15.003 153.053 8.771 152.186 3.473 152.185 C1.441 152.187 -0.591 152.206 -2.623 152.225 C-3.904 152.227 -5.184 152.228 -6.504 152.23 C-7.678 152.235 -8.851 152.239 -10.061 152.243 C-13 152 -13 152 -16 150 C-16.3 146.904 -16.406 144.006 -16.385 140.907 C-16.39 139.964 -16.396 139.02 -16.401 138.048 C-16.411 135.993 -16.414 133.938 -16.411 131.882 C-16.406 128.618 -16.42 125.355 -16.439 122.091 C-16.476 115.144 -16.49 108.197 -16.5 101.25 C-16.512 93.239 -16.534 85.228 -16.58 77.216 C-16.593 74.02 -16.589 70.825 -16.585 67.629 C-16.662 37.863 -16.662 37.863 -26 28 C-28.524 25.964 -31.082 24.405 -34 23 C-35.067 22.47 -36.135 21.94 -37.234 21.395 C-41.267 19.698 -44.976 19.5 -49.312 19.562 C-50.06 19.571 -50.808 19.579 -51.578 19.588 C-61.63 19.894 -69.976 23.708 -77 31 C-83.169 39.97 -85.296 48.253 -85.303 58.943 C-85.307 59.429 -85.307 59.429 -85.329 61.892 C-85.354 65.091 -85.366 68.289 -85.379 71.488 C-85.395 73.716 -85.412 75.943 -85.43 78.17 C-85.476 84.02 -85.511 89.87 -85.543 95.72 C-85.595 105.102 -85.66 114.483 -85.731 123.865 C-85.754 127.145 -85.77 130.426 -85.786 133.706 C-85.799 135.706 -85.813 137.705 -85.826 139.704 C-85.828 140.163 -85.828 140.163 -85.834 142.483 C-85.886 148.773 -85.886 148.773 -87 151 C-92.148 152.047 -97.21 152.153 -102.438 152.125 C-102.794 152.127 -102.794 152.127 -104.596 152.137 C-109.477 152.128 -114.167 151.686 -119 151 C-120.852 147.05 -121.253 143.919 -121.261 139.572 C-121.268 138.274 -121.275 136.976 -121.282 135.638 C-121.28 134.207 -121.277 132.775 -121.275 131.343 C-121.279 129.83 -121.284 128.317 -121.29 126.804 C-121.304 122.701 -121.304 118.598 -121.302 114.495 C-121.301 111.07 -121.305 107.645 -121.31 104.22 C-121.321 96.144 -121.322 88.068 -121.316 79.992 C-121.31 71.655 -121.322 63.317 -121.343 54.98 C-121.361 47.824 -121.367 40.667 -121.364 33.51 C-121.362 29.235 -121.364 24.96 -121.378 20.685 C-121.391 16.667 -121.389 12.651 -121.376 8.634 C-121.374 7.158 -121.376 5.682 -121.385 4.206 C-121.395 2.195 -121.385 0.184 -121.374 -1.826 C-121.374 -2.953 -121.375 -4.079 -121.375 -5.24 C-121 -8 -121 -8 -119.65 -9.858 C-117.134 -11.6 -114.936 -11.457 -111.906 -11.547 C-110.711 -11.587 -109.516 -11.627 -108.285 -11.668 C-107.036 -11.695 -105.787 -11.722 -104.5 -11.75 C-103.251 -11.793 -102.002 -11.835 -100.715 -11.879 C-91.447 -12.149 -91.447 -12.149 -88 -11 C-86.678 -8.355 -86.903 -6.322 -86.938 -3.375 C-86.947 -2.372 -86.956 -1.369 -86.965 -0.336 C-86.976 0.435 -86.988 1.206 -87 2 C-83.855 0.863 -82.177 0.193 -79.875 -2.312 C-75.774 -6.146 -71.165 -7.923 -66 -10 C-65.633 -10.156 -65.633 -10.156 -63.777 -10.945 C-43.491 -18.757 -15.981 -14.487 0 0 Z " transform="translate(1579,109)" id="glyph-9" />
+    <path d="M0 0 C0.811 0.544 1.622 1.088 2.457 1.648 C16.841 11.977 28.759 30.281 31.984 47.742 C32.255 49.451 32.509 51.162 32.75 52.875 C32.814 53.332 32.814 53.332 33.139 55.645 C34.267 64.564 33.978 73.089 33 82 C32.874 83.257 32.747 84.514 32.617 85.809 C30.493 103.443 22.899 118.811 11 132 C10.34 132 9.68 132 9 132 C8.745 132.593 8.49 133.186 8.227 133.797 C2.471 144.135 -14.698 150.314 -25.438 153.5 C-38.41 156.705 -54.197 156.844 -67 153 C-68.008 152.716 -69.016 152.433 -70.055 152.141 C-79.478 149.165 -87.79 144.831 -95 138 C-95 137.34 -95 136.68 -95 136 C-96.32 136 -97.64 136 -99 136 C-99.008 136.973 -99.016 137.945 -99.025 138.948 C-99.102 148.101 -99.19 157.253 -99.288 166.406 C-99.338 171.112 -99.384 175.818 -99.422 180.524 C-99.459 185.063 -99.505 189.601 -99.558 194.14 C-99.577 195.874 -99.592 197.609 -99.603 199.343 C-99.62 201.767 -99.649 204.19 -99.681 206.613 C-99.683 207.335 -99.685 208.057 -99.688 208.801 C-99.772 213.772 -99.772 213.772 -102 216 C-106.4 216.399 -110.815 216.329 -115.231 216.316 C-117.426 216.313 -119.62 216.336 -121.814 216.361 C-123.208 216.364 -124.602 216.364 -125.996 216.363 C-127.266 216.366 -128.537 216.369 -129.845 216.372 C-133 216 -133 216 -134.674 214.714 C-136.996 211.713 -136.41 207.959 -136.381 204.314 C-136.386 203.416 -136.39 202.518 -136.395 201.593 C-136.407 198.571 -136.398 195.549 -136.388 192.528 C-136.392 190.366 -136.398 188.205 -136.404 186.043 C-136.418 180.163 -136.412 174.283 -136.403 168.403 C-136.395 162.258 -136.402 156.112 -136.407 149.967 C-136.413 139.644 -136.405 129.322 -136.391 118.999 C-136.375 107.056 -136.38 95.113 -136.397 83.17 C-136.41 72.927 -136.412 62.685 -136.404 52.442 C-136.4 46.319 -136.399 40.197 -136.409 34.074 C-136.418 28.318 -136.412 22.562 -136.394 16.806 C-136.39 14.69 -136.391 12.575 -136.398 10.459 C-136.406 7.577 -136.396 4.695 -136.381 1.813 C-136.388 0.971 -136.394 0.128 -136.401 -0.74 C-136.368 -4.062 -136.236 -6.551 -134.673 -9.52 C-131.984 -11.899 -129.51 -11.484 -125.996 -11.461 C-125.657 -11.46 -125.657 -11.46 -123.938 -11.458 C-122.505 -11.452 -121.072 -11.436 -119.639 -11.412 C-117.442 -11.375 -115.246 -11.371 -113.049 -11.371 C-102.295 -11.295 -102.295 -11.295 -100 -9 C-99.615 -5.883 -99.493 -2.788 -99.344 0.348 C-99.23 1.223 -99.117 2.098 -99 3 C-98.34 3.33 -97.68 3.66 -97 4 C-96.357 3.408 -95.714 2.817 -95.051 2.207 C-88.098 -3.873 -81.856 -7.237 -73 -10 C-72.095 -10.307 -71.19 -10.614 -70.258 -10.93 C-46.283 -18.4 -20.367 -14.086 0 0 Z M-84 30 C-84.846 30.722 -85.691 31.444 -86.562 32.188 C-98.605 46.083 -101.235 60.609 -100.214 78.492 C-99.129 91.19 -92.313 102.201 -83.25 110.938 C-71.497 120.387 -57.668 123.179 -43 122 C-28.646 119.215 -19.264 111.837 -10.688 100.223 C-4.881 90.946 -3.347 80.715 -3.5 70 C-3.485 68.915 -3.469 67.829 -3.453 66.711 C-3.51 54.894 -6.923 45.39 -14 36 C-14.289 35.567 -14.289 35.567 -15.75 33.375 C-24.927 23.688 -36.373 18.897 -49.513 18.408 C-63.266 18.258 -73.468 20.828 -84 30 Z " transform="translate(1868,109)" id="glyph-10" />
+  </g></symbol></svg>
+
+<div class="reviewbar">
+  <div class="wrap">
+    <div class="legend">
+      <strong>Návrh v7 · Black First, ostrejší, ťažšie nadpisy.</strong>
+      <span><span class="todo">doplniť</span> = ešte nerozhodnuté</span>
+      <span>Modré bloky = poznámky k návrhu</span>
+    </div>
+    <button type="button" id="notesToggle" aria-pressed="true">Skryť poznámky (pohľad návštevníka)</button>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="AI BaseCamp"><svg aria-hidden="true"><use href="#logo"/></svg></a>
+    <nav class="nav-links" aria-label="Sekcie">
+      <a href="#program">Program</a>
+      <a href="#cesta">Cesta</a>
+      <a href="#cena">Cena</a>
+      <a href="#lektor">Lektor</a>
+      <a href="#otazky">Otázky</a>
+    </nav>
+    <a class="btn btn-primary" href="#hovor">Dohodnúť hovor</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-switch" id="heroSwitch" role="group" aria-label="Variant úvodu">
+      <span><strong>Úvod na porovnanie:</strong></span>
+      <button type="button" data-h="a" aria-pressed="true">A · mriežka s vrcholom</button>
+      <button type="button" data-h="b" aria-pressed="false">B · portrét</button>
+    </div>
+    <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="cap">AI BaseCamp / Milan Obetko</span>
+      <h1>Za 10 týždňov <em>rozbehnutý AI projekt</em> vo vašej firme.</h1>
+      <p class="lead">AI BaseCamp je boutique program pre firmy. Váš človek si v ňom postaví a rozbehne vlastný AI projekt, odnesie si <strong>akčný plán implementácie</strong> a vo firme sa stane <strong>AI ambasádorom</strong>. Cieľ je vyššia produktivita tímu, ktorý už máte.</p>
+      <span class="badge cap">1. turnus štartuje <span class="todo">doplniť: dátum</span></span>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#hovor">Dohodnúť 30-minútový hovor</a>
+        <a class="btn btn-ghost" href="#program">Pozrieť program</a>
+      </div>
+    </div>
+    <figure class="hero-face" id="heroFace" hidden>
+      <img src="milan-bw.jpg" alt="Milan Obetko" width="720" height="900">
+      <figcaption><b>Milan Obetko</b><span>Celý program vedie osobne. 5 AI transformácií od roku 2023, 4x CxO/CMO.</span></figcaption>
+    </figure>
+    </div>
+  </div>
+  <canvas class="mesh" id="mesh" role="img" aria-label="Terén s vrcholom: miesto, kde sa AI vo firme vyplatí najviac"></canvas>
+  <div class="facts">
+    <div class="wrap">
+      <div class="fact"><b>10</b><span>týždňov, päť krokov po dva týždne</span></div>
+      <div class="fact"><b>10</b><span>miest v turnuse, viac ich nebude</span></div>
+      <div class="fact"><b><s>4 900 €</s><i>3 900 €</i></b><span>prvých 5 miest, bez DPH</span></div>
+    </div>
+  </div>
+  
+</section>
+
+<div class="logos">
+  <div class="wrap">
+    <span class="cap">Značky, ktoré Milan viedol alebo im pomáhal rásť</span>
+    <ul class="logo-grid">
+      <li><img src="logos/subway.png" alt="Subway" width="234" height="184" loading="lazy"></li><li><img src="logos/coca-cola.png" alt="Coca-Cola" width="234" height="184" loading="lazy"></li><li><img src="logos/google.png" alt="Google" width="234" height="184" loading="lazy"></li><li><img src="logos/pg.png" alt="P&amp;G" width="234" height="184" loading="lazy"></li><li><img src="logos/heineken.png" alt="Heineken" width="234" height="184" loading="lazy"></li><li><img src="logos/volkswagen.png" alt="Volkswagen" width="234" height="184" loading="lazy"></li><li><img src="logos/eon.png" alt="E.ON" width="234" height="184" loading="lazy"></li><li><img src="logos/wpp-media.png" alt="WPP Media" width="234" height="184" loading="lazy"></li><li><img src="logos/bayer.png" alt="Bayer" width="234" height="184" loading="lazy"></li><li><img src="logos/alza.png" alt="Alza" width="234" height="184" loading="lazy"></li><li><img src="logos/edimo.png" alt="Edimo" width="234" height="184" loading="lazy"></li><li><img src="logos/dexfinity.png" alt="Dexfinity" width="234" height="184" loading="lazy"></li><li><img src="logos/gardena.png" alt="Gardena" width="234" height="184" loading="lazy"></li><li><img src="logos/homola.png" alt="Homola" width="234" height="184" loading="lazy"></li><li><img src="logos/tesco.png" alt="Tesco" width="234" height="184" loading="lazy"></li><li><img src="logos/ebay.png" alt="eBay" width="234" height="184" loading="lazy"></li>
+    </ul>
+    <div class="note"><strong>Poznámka:</strong> logá sú zatiaľ vyrezané zo snímky obrazovky milanobetko.com. Do ostrej verzie treba pôvodné súbory, inak budú na veľkých obrazovkách mäkké.</div>
+  </div>
+</div>
+
+<section id="problem">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="cap">Prečo sa firmy s AI nepohnú</span>
+      <h2>AI skúša každý. Na výsledkoch firmy to vidno málokde.</h2>
+    </div>
+    <div class="cards3">
+      <div class="problem"><span class="num">01</span><h3>Nástroje sú, výsledok nie</h3><p>Ľudia skúšajú AI každý po svojom. Na produktivite tímu sa to neprejaví.</p></div>
+      <div class="problem"><span class="num">02</span><h3>Nikto to nemá na starosti</h3><p>AI je úloha všetkých, teda nikoho. Chýba človek, ktorý ju vo firme ponesie.</p></div>
+      <div class="problem"><span class="num">03</span><h3>Nevedno, kde začať</h3><p>Príležitostí je veľa. Bez poradia podľa návratnosti sa začne tou najhlasnejšou, nie tou najvýnosnejšou.</p></div>
+    </div>
+    <div class="note"><strong>Môj odhad:</strong> texty troch kariet som napísal ja. Treba potvrdiť alebo prepísať.</div>
+  </div>
+</section>
+
+<section class="tight" id="preco">
+  <div class="wrap split">
+    <div class="copy">
+      <span class="bar"></span>
+      <h2>AI mení lineárne úsilie na <em>exponenciálnu efektivitu.</em></h2>
+      <p class="lead">Kto začne skôr, tomu rozdiel rastie každým mesiacom. AI BaseCamp je desať týždňov, v ktorých sa vaša firma dostane na druhú krivku.</p>
+      <div class="note" style="margin-top:0"><strong>Poznámka:</strong> nadpis je môj preklad Vašej anglickej vety. Druhý odsek je môj návrh.</div>
+    </div>
+    <div class="chart">
+      <svg id="curve" viewBox="0 0 560 400" role="img" aria-label="Graf: lineárne úsilie rastie pomaly, výsledok s AI rastie exponenciálne, medzi nimi sa otvára rozdiel"></svg>
+    </div>
+  </div>
+</section>
+
+<section class="tight claim">
+  <div class="wrap split">
+    <div class="copy">
+      <span class="cap">Rámec: produktivita</span>
+      <h2><span>Rovnaký tím.</span><span><em>O desiatky percent viac.</em></span><span>Bez nového náboru.</span></h2>
+      <p class="lead">V AI BaseCamp si jeden taký proces nájdete, postavíte a zmeriate vo vlastnej firme.</p>
+    </div>
+    <div class="speed" id="speed">
+      <div style="display:grid;gap:0.5rem">
+        <h3 style="font-size:1.6rem">Vybrané procesy 2-10x rýchlejšie.</h3>
+        <p style="color:var(--muted)">Kým dnes proces zbehne raz, s AI zbehne 2- až 10-krát.</p>
+      </div>
+      <div class="speed-row">
+        <div class="speed-head"><span class="who">Dnes</span><span><b id="doneNow">0</b>hotovo</span></div>
+        <div class="track"><i id="barNow"></i></div>
+        <div class="pips" id="pipsNow"><i></i></div>
+      </div>
+      <div class="speed-row ai">
+        <div class="speed-head"><span class="who">S AI</span><span><b id="doneAi">0</b>hotovo</span></div>
+        <div class="track"><i id="barAi"></i></div>
+        <div class="pips" id="pipsAi"></div>
+      </div>
+      <div class="speed-ctl">
+        <label for="speedRange" style="font-size:1rem">Zrýchlenie</label>
+        <input type="range" id="speedRange" min="2" max="10" step="1" value="5">
+        <output id="speedOut" for="speedRange">5x</output>
+      </div>
+      <p class="speed-foot">Celý front office: o desiatky percent produktívnejší s tým istým tímom.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tight" id="ambasador">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="cap">Jeden človek, celá firma</span>
+      <h2>Do programu ide jeden človek. Vracia sa <em>AI ambasádor.</em></h2>
+      <p class="lead">Účastník neodchádza len s vlastným projektom. Odchádza s plánom, ako AI rozšíriť do tímu a firmy, a s rolou toho, kto to povedie.</p>
+    </div>
+    <div class="net"><svg id="net" viewBox="0 0 640 330" role="img" aria-label="Sieť ľudí vo firme: AI sa šíri od jedného človeka do tímu a do celej firmy"></svg></div>
+    <div class="seg" id="netSeg" role="group" aria-label="Fáza šírenia">
+      <button type="button" data-s="0" aria-pressed="false">Váš človek</button>
+      <button type="button" data-s="1" aria-pressed="true">Jeho tím</button>
+      <button type="button" data-s="2" aria-pressed="false">Celá firma</button>
+    </div>
+    <p class="seg-cap" id="netCap"></p>
+  </div>
+</section>
+
+<section class="tight" id="program">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="cap">Program · AI Value Loop</span>
+      <h2>Päť krokov, na každý dva týždne.</h2>
+      <p class="lead">Nájdeme, kde sa AI vyplatí, postavíme to, zmeriame a rozšírime do celého tímu. Všetko na vašom reálnom projekte, nie na cvičných príkladoch.</p>
+    </div>
+    <div class="loop">
+      <div class="ring-col">
+        <div class="ring"><svg id="ring" viewBox="0 0 440 440" role="img" aria-label="AI Value Loop: päť krokov v kruhu, v strede váš projekt"></svg></div>
+        <div class="weeks" id="weeks" aria-hidden="true"><i>T1</i><i>T2</i><i>T3</i><i>T4</i><i>T5</i><i>T6</i><i>T7</i><i>T8</i><i>T9</i><i>T10</i></div>
+      </div>
+      <div>
+        <ol class="tl" id="tl">
+          <li data-i="0"><span class="pin">01</span><div class="body"><span class="cap">01 Nájsť</span><h3>Nájsť úzke miesto</h3><p class="sub">Kde sa AI vyplatí najviac</p><p>Zmapujete procesy vo svojej firme a nájdete, kde sa AI vráti najviac.</p><div class="tags"><span class="box">T1 – T2</span><span class="box">Mapa procesov</span></div></div></li>
+          <li data-i="1"><span class="pin">02</span><div class="body"><span class="cap">02 Zoradiť</span><h3>Zoradiť podľa návratnosti</h3><p class="sub">Čo postaviť ako prvé</p><p>Zoradíte príležitosti a vyberiete projekt, ktorý v programe postavíte.</p><div class="tags"><span class="box">T3 – T4</span><span class="box">Vybraný projekt</span></div></div></li>
+          <li data-i="2"><span class="pin">03</span><div class="body"><span class="cap">03 Postaviť a nasadiť</span><h3>Postaviť a nasadiť</h3><p class="sub">Systémy a procesy, ktoré fungujú</p><p>Projekt postavíte a rozbehnete v reálnej prevádzke vašej firmy.</p><div class="tags"><span class="box">T5 – T6</span><span class="box">Rozbehnutý projekt</span></div></div></li>
+          <li data-i="3"><span class="pin">04</span><div class="body"><span class="cap">04 Merať a zlepšovať</span><h3>Merať a zlepšovať</h3><p class="sub">Výsledky pod kontrolou, systémy vyladené</p><p>Meriate výsledok a projekt dolaďujete podľa čísel.</p><div class="tags"><span class="box">T7 – T8</span><span class="box">Meranie a prvé výsledky</span></div></div></li>
+          <li data-i="4"><span class="pin">05</span><div class="body"><span class="cap">05 Rozšíriť</span><h3>Rozšíriť do celého tímu</h3><p class="sub">Všetci pracujú novým spôsobom</p><p>Pripravíte akčný plán implementácie vo firme a prevezmete rolu AI ambasádora.</p><div class="tags"><span class="box">T9 – T10</span><span class="box">Akčný plán implementácie</span></div></div></li>
+        </ol>
+        <p class="tl-foot">Potom späť na 01, k ďalšiemu úzkemu miestu. Tentoraz to už vediete vy.</p>
+      </div>
+    </div>
+    <div class="note"><strong>Odhad:</strong> výstup kroku 04 je môj návrh. Čo presne sa deje v jednotlivých týždňoch, závisí od formátu a ešte nepadlo.</div>
+  </div>
+</section>
+
+<section class="tight" id="vystupy">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="cap">Čo z programu ostane</span>
+      <h2>Z desiatok procesov jeden projekt, ktorý beží.</h2>
+    </div>
+    <div class="split" style="align-items:start">
+      <div class="flow" aria-hidden="true">
+        <span class="cap">Procesy vo firme</span>
+        <div class="grid-dots" id="dots"></div>
+        <div class="stem"><i></i><i></i><i></i></div>
+        <span class="cap">Príležitosti podľa návratnosti</span>
+        <div class="flow-row"><span class="pick">Príležitosť 01</span><span>Príležitosť 02</span><span>Príležitosť 03</span><span class="dash">Neskôr</span></div>
+        <div class="stem one"><i></i></div>
+        <span class="cap">Po 10 týždňoch</span>
+        <div class="flow-out">Rozbehnutý AI projekt</div>
+        <div class="flow-next"><b>Akčný plán implementácie</b><span>tím, potom firma</span></div>
+      </div>
+      <div class="outs">
+        <div><span class="box">Firme</span><h3>Rozbehnutý AI projekt</h3><p>Projekt v prevádzke na vašom vlastnom procese, s meraním výsledku.</p></div>
+        <div><span class="box">Firme</span><h3>Akčný plán implementácie</h3><p>Konkrétne kroky, ako AI rozšíriť z jedného projektu do tímu a firmy.</p></div>
+        <div><span class="box">Účastníkovi</span><h3>Rola AI ambasádora</h3><p>Skúsenosť z reálneho projektu a mandát niesť AI vo firme ďalej.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tight" id="cesta">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="cap">Cesta programom</span>
+      <h2>Od prvého hovoru po projekt, ktorý beží.</h2>
+    </div>
+    <ol class="path">
+      <li><span class="cap when">Krok 1</span><h3>30-minútový hovor</h3><p>Prejdete si s Milanom, kde sa AI vo vašej firme vyplatí najviac a či je to projekt pre AI BaseCamp.</p></li>
+      <li><span class="cap when">Krok 2</span><h3>Výber</h3><p>Milan berie len projekty, ktoré vie odviesť. <span class="todo">doplniť: kritériá výberu, lehota odpovede</span></p></li>
+      <li><span class="cap when"><span class="todo">doplniť: dátum</span></span><h3>Štart turnusu</h3><p>Desať účastníkov, desať projektov. <span class="todo">doplniť: formát, kick-off</span></p></li>
+      <li><span class="cap when">10 týždňov</span><h3>Beží program</h3><p>Reálne príklady, práca na vlastnom projekte, podpora skupiny a vzájomné inšpirácie. <span class="todo">doplniť: týždenná záťaž</span></p></li>
+      <li><span class="cap when">Týždeň 10</span><h3>Projekt beží</h3><p>Odchádzate s rozbehnutým projektom a akčným plánom. <span class="todo">doplniť: čo po programe, komunita</span></p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="tight" id="cena">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="cap">Cena</span>
+      <h2>Desať miest. Prvých päť za <em>3 900 €.</em></h2>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <span class="cap">1. turnus · za účastníka · bez DPH</span>
+        <div class="seats">
+          <div class="seat early"><b>3 900 €</b>voľné</div><div class="seat early"><b>3 900 €</b>voľné</div><div class="seat early"><b>3 900 €</b>voľné</div><div class="seat early"><b>3 900 €</b>voľné</div><div class="seat early"><b>3 900 €</b>voľné</div>
+          <div class="seat"><b>4 900 €</b>voľné</div><div class="seat"><b>4 900 €</b>voľné</div><div class="seat"><b>4 900 €</b>voľné</div><div class="seat"><b>4 900 €</b>voľné</div><div class="seat"><b>4 900 €</b>voľné</div>
+        </div>
+        <p>Prvých 5 miest za <b>3 900 €</b>, ďalších 5 za riadnu cenu <b>4 900 €</b>. Viac miest v turnuse nebude.</p>
+        <a class="btn btn-primary" href="#hovor" style="justify-self:start">Dohodnúť hovor</a>
+      </div>
+      <div>
+        <h3 style="margin-bottom:1rem">Čo je v cene</h3>
+        <ul class="incl">
+          <li>10 týždňov programu v piatich krokoch AI Value Loop</li>
+          <li>Práca na vlastnom projekte z vašej firmy</li>
+          <li>Skupina najviac 10 účastníkov, vedie ju Milan osobne</li>
+          <li>Hostia z Milanovej siete na konkrétne témy</li>
+          <li>Podpora komunity a vzájomné inšpirácie <span class="todo">doplniť: podoba komunity</span></li>
+          <li><span class="todo">doplniť: konzultácie 1:1, podujatia, čo po programe</span></li>
+          <li><span class="todo">doplniť: platobné podmienky</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tight" id="lektor">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="cap">Kto vás povedie</span>
+      <h2>Jeden lektor. Celý program osobne.</h2>
+    </div>
+    <div class="lecturer">
+      <div class="photo"><img src="milan-bw.jpg" alt="Milan Obetko" width="720" height="900"></div>
+      <div class="bio">
+        <div><h3 style="font-size:2rem">Milan Obetko</h3><p class="role">Business Leader a Executive (4x Chief X Officer, CxO/CMO) a AI Operator</p></div>
+        <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="square" aria-hidden="true"><path d="M4 12.5l5.2 5.2L20 6.5"/></svg>3x certifikovaný Future AI Leader</span>
+        <ul class="cv">
+          <li><b>Edimo</b> · CMO / Growth Director, CEE &amp; DACH</li>
+          <li><b>Subway</b> · Marketing Director CEE, 13 trhov</li>
+          <li><b>WPP Media (MediaCom)</b> · Strategy Director</li>
+          <li><b>Yoplait / General Mills</b> · Marketing Director CEE</li>
+        </ul>
+        <p style="color:var(--muted)">AI zavádzal zvnútra firiem, nie z pódia. Na konkrétnu tému si do programu prizve hosťa zo svojej siete. <span class="todo">doplniť: hostia a témy</span></p>
+      </div>
+    </div>
+      </div>
+</section>
+
+<section class="tight" id="dokazy">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="cap">Dôkazy</span>
+      <h2>Už to robil. <em>V číslach a v tímoch.</em></h2>
+    </div>
+    <div class="nums">
+      <div><b>5x</b><span>AI transformácií od roku 2023</span></div>
+      <div><b>20+</b><span>rokov v marketingu, v agentúre aj u klienta</span></div>
+      <div><b>200+</b><span>strategických a go-to-market projektov v 10+ odvetviach</span></div>
+      <div><b>30+</b><span>tímov, ktoré viedol</span></div>
+      <div><b>15+</b><span>trhov v CEE a DACH</span></div>
+      <div><b>3x</b><span>certifikovaný Future AI Leader</span></div>
+    </div>
+    <div class="case-card">
+      <span class="cap">Edimo / CEE &amp; DACH / 2023-2025</span>
+      <h3>Zavedenie AI uprostred obratu firmy.</h3>
+      <div class="case">
+        <div><b>9x</b><span>zisk za 12 mesiacov</span></div>
+        <div><b>2 → 7</b><span>trhov</span></div>
+        <div><b>+260 %</b><span>leadov v prvom roku</span></div>
+      </div>
+    </div>
+    <div class="refs">
+      <blockquote class="ref">
+        <span class="cap">Tím / Edimo</span>
+        <p lang="en">“Milan drove AI adaptation in the whole marketing, product and IR dev teams. We are now delivering more and better than before. He is demanding on his teams but also on himself.”</p>
+        <footer><b>Filip Olajec</b><span>Brand Lead, Edimo</span></footer>
+      </blockquote>
+      <blockquote class="ref">
+        <span class="cap">Nadriadený / Subway</span>
+        <p lang="en">“Milan fixed the fundamentals, kept what worked and built on it, and CEE went on to outperform EMEA and Global in crucial KPIs. He earned franchisees’ trust being strategic and hands-on at the same time.”</p>
+        <footer><b>Martin Princ</b><span>CEO CEE / Territory Director CEE, Subway</span></footer>
+      </blockquote>
+      <blockquote class="ref">
+        <span class="cap">Klient / Transformácia</span>
+        <p lang="en">“Milan helped take our family business literally to the next level: strategy, digitalisation, management alignment and marketing set-up.”</p>
+        <footer><b>Ela Homolova</b><span>Co-Owner, Homola</span></footer>
+      </blockquote>
+    </div>
+    <div class="note"><strong>Poznámka:</strong> štítok pri Filipovi Olajcovi (Tím / Edimo) je môj odhad, na snímke nebol vidieť. Citáty sú v origináli po anglicky.</div>
+  </div>
+</section>
+
+<section class="tight" id="doplnky">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="cap">Pre firmy z AI BaseCamp</span>
+      <h2>Keď chcete ísť ďalej než jeden projekt.</h2>
+    </div>
+    <div class="cards3">
+      <div class="addon"><span class="cap">CEO, zakladateľ, CxO</span><h3>CEO AI session</h3><span class="p">1 500 €</span><p>1:1, 2 až 4 hodiny.</p></div>
+      <div class="addon"><span class="cap">Tím 8 až 16 ľudí</span><h3>Team AI Workshop</h3><span class="p">3 000 €</span><p>Celý deň na reálnych úlohách.</p></div>
+      <div class="addon"><span class="cap">Firma ako celok</span><h3>AI Value Booster</h3><span class="p">4 000 €</span><p>10 dní, fixný rozsah.</p></div>
+    </div>
+    <div class="note"><strong>Na rozhodnutie:</strong> ako a kedy doplnky ponúkať, ešte nepadlo. Môžu ostať takto dole, alebo sa ukázať až firmám po prijatí.</div>
+  </div>
+</section>
+
+<section class="tight" id="otazky">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="cap">Časté otázky</span>
+      <h2>Otázky a odpovede.</h2>
+    </div>
+    <div class="faq">
+      <details open><summary>Pre koho je program?</summary><p>Pre firmy, ktoré chcú AI premeniť na vyššiu produktivitu. Účastník je človek z tímu, ktorý AI ponesie vo firme ďalej. Zameranie je všeobecné, nie iba marketing. <span class="todo">doplniť: môže sa prihlásiť aj CEO osobne?</span></p></details>
+      <details><summary>Aký projekt si mám vybrať?</summary><p>Proces z vašej firmy, kde je jasná oblasť, konkrétna dodávka, zodpovedná osoba a spôsob merania. Milan berie len projekty, ktoré vie odviesť. <span class="todo">doplniť: kritériá výberu</span></p></details>
+      <details><summary>Koľko času si program vyžiada?</summary><p><span class="todo">doplniť: týždenná záťaž (Spark uvádza 4 až 6 hodín)</span></p></details>
+      <details><summary>Prebieha program online alebo osobne?</summary><p><span class="todo">doplniť: formát, kick-off a záverečné podujatie</span></p></details>
+      <details><summary>Treba vedieť programovať?</summary><p><span class="todo">doplniť: požadovaná technická úroveň účastníka</span></p></details>
+      <details><summary>Koľko to stojí a ako sa platí?</summary><p>4 900 € bez DPH za účastníka. Prvých 5 miest v turnuse je za 3 900 € bez DPH. <span class="todo">doplniť: platobné podmienky</span></p></details>
+      <details><summary>Kto program vedie?</summary><p>Celý program vedie Milan Obetko osobne. Na konkrétnu tému si prizve hosťa zo svojej siete.</p></details>
+      <details><summary>Čo sa stane po skončení programu?</summary><p>Odchádzate s rozbehnutým projektom a akčným plánom implementácie. <span class="todo">doplniť: komunita a podpora po programe</span></p></details>
+      <details><summary>Čo ak je turnus plný?</summary><p>Turnus má najviac 10 miest. Po jeho naplnení sa otvára prihlasovanie do ďalšieho.</p></details>
+    </div>
+  </div>
+</section>
+
+<div class="final" id="hovor">
+  <div class="wrap final-grid">
+    <div class="final-copy">
+      <span class="barx"></span>
+      <h2>Začnite 30-minútovým hovorom.</h2>
+      <p class="lead">Zadarmo a nezáväzne. Prejdete si s Milanom, kde sa AI vo vašej firme vyplatí najviac a či je to projekt pre AI BaseCamp.</p>
+      <div class="callbox">
+        <span class="cap">Radšej napíšete priamo?</span>
+        <div class="contact"><code id="mail">milan.obetko@gmail.com</code><button type="button" id="copyMail">Kopírovať</button></div>
+        <span class="todo">doplniť: e-mail na novej doméne, odkaz na kalendár</span>
+      </div>
+    </div>
+    <form id="applyForm" novalidate>
+      <div class="row2">
+        <label for="f-name">Meno a priezvisko<input id="f-name" name="name" autocomplete="name" required></label>
+        <label for="f-company">Firma a pozícia<input id="f-company" name="company" autocomplete="organization" required></label>
+      </div>
+      <label for="f-email">Pracovný e-mail<input id="f-email" name="email" type="email" autocomplete="email" required></label>
+      <label for="f-note">Čo chcete s AI vo firme vyriešiť? (nepovinné)<textarea id="f-note" name="note"></textarea></label>
+      <button class="btn btn-primary" type="submit">Dohodnúť hovor</button>
+      <p class="form-msg" id="formMsg" role="status">Ozvem sa <span class="todo">doplniť: lehota</span>.</p>
+    </form>
+  </div>
+</div>
+
+<div class="open-list">
+  <div class="wrap">
+    <h2>Na doplnenie pred spustením</h2>
+    <ol>
+      <li>Termín 1. turnusu a uzávierka</li>
+      <li>Týždenná záťaž účastníka v hodinách</li>
+      <li>Formát: online, osobne alebo kombinácia; kick-off a záverečné podujatie</li>
+      <li>Kto je účastník: poverený človek z tímu, alebo aj CEO osobne; požadovaná technická úroveň</li>
+      <li>Kritériá výberu projektov a lehota odpovede</li>
+      <li>Platobné podmienky a presný obsah ceny</li>
+      <li>Podoba komunity a čo nasleduje po programe</li>
+      <li>Hostia zo siete a ich témy</li>
+      <li>Ako a kedy ponúkať doplnky</li>
+      <li>Pôvodné súbory log klientov (teraz výrezy zo snímky obrazovky)</li>
+      <li>E-mail na novej doméne, odkaz na kalendár, kam sa odosiela formulár, fakturačné údaje</li>
+    </ol>
+  </div>
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 AI BaseCamp · Milan Obetko · Bratislava</span>
+    <span>ai-basecamp.sk <span class="todo">doplniť: fakturačné údaje</span></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var NS = "http://www.w3.org/2000/svg";
+  var ORANGE = "#E2550B";
+  var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function el(name, attrs, text) {
+    var n = document.createElementNS(NS, name);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    if (text != null) n.textContent = text;
+    return n;
+  }
+  function $(id) { return document.getElementById(id); }
+
+  /* Hero: wireframe terrain with one peak */
+  function terrain(x, z) {
+    return 0.66 * Math.exp(-((x - 0.3) * (x - 0.3) + (z - 2.1) * (z - 2.1)) / 0.2)
+      + 0.2 * Math.exp(-((x + 0.9) * (x + 0.9) + (z - 2.4) * (z - 2.4)) / 0.22)
+      + 0.13 * Math.exp(-((x - 1.5) * (x - 1.5) + (z - 1.9) * (z - 1.9)) / 0.16)
+      + 0.1 * Math.exp(-((x + 0.15) * (x + 0.15) + (z - 1.25) * (z - 1.25)) / 0.1);
+  }
+  function drawMesh() {
+    var c = $("mesh"); if (!c) return;
+    var W = c.clientWidth, f = Math.max(380, Math.min(W * 0.52, 680)), hor = 78, H = Math.round(hor + f * 0.6);
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    c.style.height = H + "px"; c.width = W * dpr; c.height = H * dpr;
+    var g = c.getContext("2d"); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, W, H);
+    var cam = 0.92, zc = 1.15, NX = 56, NZ = 34, X0 = -4.2, X1 = 4.2, Z0 = 0.05, Z1 = 4.4;
+    function P(x, z) { var s = f / (z + zc); return [W / 2 + x * s, hor + (cam - terrain(x, z)) * s]; }
+    for (var j = NZ - 1; j >= 0; j--) {
+      var za = Z0 + (Z1 - Z0) * j / NZ, zb = Z0 + (Z1 - Z0) * (j + 1) / NZ;
+      var a = 0.12 + 0.55 * Math.pow(1 - j / NZ, 1.3);
+      for (var i = 0; i < NX; i++) {
+        var xa = X0 + (X1 - X0) * i / NX, xb = X0 + (X1 - X0) * (i + 1) / NX;
+        var p1 = P(xa, za), p2 = P(xb, za), p3 = P(xb, zb), p4 = P(xa, zb);
+        g.beginPath(); g.moveTo(p1[0], p1[1]); g.lineTo(p2[0], p2[1]); g.lineTo(p3[0], p3[1]); g.lineTo(p4[0], p4[1]); g.closePath();
+        g.fillStyle = "#000"; g.fill();
+        g.strokeStyle = "rgba(235,235,235," + a.toFixed(3) + ")"; g.lineWidth = 1; g.stroke();
+      }
+    }
+    [[-0.9, 2.4], [1.5, 1.9], [-0.15, 1.25]].forEach(function (q) {
+      var p = P(q[0], q[1]); g.beginPath(); g.arc(p[0], p[1], 5, 0, 7); g.fillStyle = "#D8D8D8"; g.fill();
+    });
+    var pk = P(0.3, 2.1);
+    var gr = g.createRadialGradient(pk[0], pk[1], 0, pk[0], pk[1], 90);
+    gr.addColorStop(0, "rgba(226,85,11,0.55)"); gr.addColorStop(1, "rgba(226,85,11,0)");
+    g.fillStyle = gr; g.fillRect(pk[0] - 90, pk[1] - 90, 180, 180);
+    g.strokeStyle = ORANGE; g.lineWidth = 2; g.beginPath(); g.moveTo(pk[0], pk[1] - 16); g.lineTo(pk[0], pk[1] - 52); g.stroke();
+    g.beginPath(); g.arc(pk[0], pk[1], 10, 0, 7); g.fillStyle = ORANGE; g.fill();
+    g.fillStyle = "#fff"; g.font = "600 " + (W < 520 ? 15 : 18) + "px 'Space Grotesk', Arial, sans-serif"; g.textAlign = "center";
+    var label = "Kde sa AI vyplatí najviac", half = g.measureText(label).width / 2 + 8;
+    g.fillText(label, Math.max(half, Math.min(W - half, pk[0])), pk[1] - 62);
+  }
+  drawMesh();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawMesh);
+  var rt; window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(drawMesh, 120); });
+
+  /* Hero variants: A mesh, B portrait. The link ending in #portret opens B. */
+  (function () {
+    var btns = $("heroSwitch").querySelectorAll("button");
+    function hero(v) {
+      var b = v === "b";
+      document.body.classList.toggle("hero-b", b);
+      $("heroFace").hidden = !b; $("mesh").hidden = b;
+      btns.forEach(function (x) { x.setAttribute("aria-pressed", String(x.getAttribute("data-h") === v)); });
+      if (!b) drawMesh();
+    }
+    btns.forEach(function (x) { x.addEventListener("click", function () { hero(x.getAttribute("data-h")); }); });
+    function fromHash() { if (location.hash === "#portret") hero("b"); else if (location.hash === "#mriezka") hero("a"); }
+    window.addEventListener("hashchange", fromHash); fromHash();
+  })();
+
+  /* Curve: linear vs exponential */
+  (function () {
+    var s = $("curve"); if (!s) return;
+    var x0 = 30, x1 = 530, yb = 350, k = 4.6;
+    function X(t) { return x0 + (x1 - x0) * t; }
+    function L(t) { return yb - 62 * t; }
+    function E(t) { return yb - 300 * (Math.exp(k * t) - 1) / (Math.exp(k) - 1); }
+    s.appendChild(el("path", { d: "M" + x0 + " " + yb + "H" + x1, stroke: "#4A4A4A", "stroke-width": 1.5, fill: "none" }));
+    for (var i = 0; i <= 24; i++) { var tx = X(i / 24); s.appendChild(el("path", { d: "M" + tx + " " + yb + "v" + (i % 6 === 0 ? 14 : 7), stroke: "#4A4A4A", "stroke-width": 1.5 })); }
+    var tc = 0; for (var t = 0.05; t < 1; t += 0.005) { if (E(t) < L(t)) { tc = t; break; } }
+    var tg = 0.9, gap = "M" + X(tc) + " " + L(tc);
+    for (t = tc; t <= tg; t += 0.01) gap += "L" + X(t).toFixed(1) + " " + E(t).toFixed(1);
+    gap += "L" + X(tg) + " " + E(tg).toFixed(1) + "L" + X(tg) + " " + L(tg) + "Z";
+    s.appendChild(el("path", { d: gap, fill: ORANGE, opacity: 0.38 }));
+    s.appendChild(el("path", { d: "M" + X(tg) + " " + yb + "V40", stroke: "#8A8A8A", "stroke-width": 1.5, "stroke-dasharray": "5 6", fill: "none" }));
+    s.appendChild(el("path", { d: "M" + x0 + " " + L(0) + "L" + x1 + " " + L(1), stroke: "#D8D8D8", "stroke-width": 3, fill: "none" }));
+    var d = ""; for (t = 0; t <= 1.0001; t += 0.01) d += (t === 0 ? "M" : "L") + X(t).toFixed(1) + " " + E(t).toFixed(1);
+    s.appendChild(el("path", { d: d, stroke: ORANGE, "stroke-width": 16, opacity: 0.25, fill: "none", "stroke-linecap": "round" }));
+    s.appendChild(el("path", { d: d, stroke: ORANGE, "stroke-width": 5, fill: "none", "stroke-linecap": "round" }));
+    s.appendChild(el("circle", { cx: X(tg), cy: L(tg), r: 9, fill: "#E8E8E8" }));
+    s.appendChild(el("circle", { cx: X(tg), cy: E(tg), r: 10, fill: ORANGE }));
+    s.appendChild(el("circle", { cx: X(1), cy: E(1), r: 12, fill: ORANGE }));
+    s.appendChild(el("text", { x: X(tg) - 14, y: 48, fill: ORANGE, "text-anchor": "end" }, "S AI"));
+    s.appendChild(el("text", { x: X(tg) - 18, y: (E(tg) + L(tg)) / 2 + 20, fill: "#fff", "text-anchor": "end" }, "Rozdiel"));
+    s.appendChild(el("text", { x: X(0.25), y: L(0.25) - 22, fill: "#BDBDBD" }, "Lineárne úsilie"));
+  })();
+
+  /* Today vs with AI */
+  (function () {
+    var range = $("speedRange"); if (!range) return;
+    var P = 5200, start = null;
+    function pips(n) { var h = ""; for (var i = 0; i < n; i++) h += "<i></i>"; $("pipsAi").innerHTML = h; }
+    function paint(t) {
+      var s = +range.value, u = Math.min(t / P, 1), done = Math.min(Math.floor(u * s + 1e-6), s), frac = u >= 1 ? 1 : (u * s) % 1;
+      $("barNow").style.width = (u * 100).toFixed(1) + "%";
+      $("barAi").style.width = (frac * 100).toFixed(1) + "%";
+      $("doneNow").textContent = u >= 1 ? 1 : 0; $("doneAi").textContent = done;
+      $("pipsNow").firstElementChild.className = u >= 1 ? "on" : "";
+      var p = $("pipsAi").children; for (var i = 0; i < p.length; i++) p[i].className = i < done ? "on" : "";
+    }
+    function set() { $("speedOut").textContent = range.value + "x"; pips(+range.value); start = null; if (calm) paint(P * 0.72); }
+    range.addEventListener("input", set); set();
+    if (calm) return;
+    paint(P * 0.72);
+    function tick(now) {
+      if (start === null) start = now;
+      var t = now - start;
+      if (t > P + 1400) { start = now; t = 0; }
+      paint(t); requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  })();
+
+  /* Network: one person, team, company */
+  (function () {
+    var s = $("net"); if (!s) return;
+    var seed = 11; function rnd() { seed = (seed * 1103515245 + 12345) % 2147483648; return seed / 2147483648; }
+    var pts = [[320, 170]], tries = 0;
+    while (pts.length < 34 && tries++ < 4000) {
+      var p = [30 + rnd() * 580, 26 + rnd() * 278], ok = true;
+      for (var i = 0; i < pts.length; i++) { var dx = pts[i][0] - p[0], dy = pts[i][1] - p[1]; if (dx * dx + dy * dy < 62 * 62) { ok = false; break; } }
+      if (ok) pts.push(p);
+    }
+    var adj = pts.map(function () { return []; }), edges = [];
+    pts.forEach(function (a, i) {
+      var near = pts.map(function (b, j) { return [j, (a[0] - b[0]) * (a[0] - b[0]) + (a[1] - b[1]) * (a[1] - b[1])]; })
+        .filter(function (q) { return q[0] !== i; }).sort(function (x, y) { return x[1] - y[1]; }).slice(0, 2);
+      near.forEach(function (q) { if (adj[i].indexOf(q[0]) < 0) { adj[i].push(q[0]); adj[q[0]].push(i); edges.push([i, q[0]]); } });
+    });
+    var dist = pts.map(function () { return 99; }), queue = [0]; dist[0] = 0;
+    while (queue.length) { var c = queue.shift(); adj[c].forEach(function (n) { if (dist[n] > dist[c] + 1) { dist[n] = dist[c] + 1; queue.push(n); } }); }
+    var E = edges.map(function (e) { var l = el("line", { x1: pts[e[0]][0], y1: pts[e[0]][1], x2: pts[e[1]][0], y2: pts[e[1]][1], "class": "edge" }); s.appendChild(l); return l; });
+    var Hh = pts.map(function (p) { var h = el("circle", { cx: p[0], cy: p[1], r: 22, "class": "halo" }); s.appendChild(h); return h; });
+    var N = pts.map(function (p, i) { var n = el("circle", { cx: p[0], cy: p[1], r: i === 0 ? 9 : 6 + (i % 3), "class": i === 0 ? "you" : "node" }); s.appendChild(n); return n; });
+    s.appendChild(el("circle", { cx: 320, cy: 170, r: 17, "class": "you-ring" }));
+    s.appendChild(el("text", { x: 344, y: 176 }, "Váš človek"));
+    var caps = ["<b>Váš človek.</b> 10 týždňov stavia a rozbieha vlastný AI projekt.", "<b>Jeho tím.</b> Projekt beží a tím podľa neho pracuje novým spôsobom.", "<b>Celá firma.</b> Ambasádor šíri akčný plán implementácie ďalej."];
+    var lim = [0, 2, 99], btns = $("netSeg").querySelectorAll("button");
+    function show(st) {
+      var on = dist.map(function (d) { return d <= lim[st] || (st === 2); });
+      N.forEach(function (n, i) { if (i) n.setAttribute("class", "node" + (on[i] ? " on" : "")); Hh[i].setAttribute("class", "halo" + (on[i] && i ? " on" : "")); });
+      E.forEach(function (l, i) { l.setAttribute("class", "edge" + (on[edges[i][0]] && on[edges[i][1]] && st > 0 ? " on" : "")); });
+      btns.forEach(function (b) { b.setAttribute("aria-pressed", String(+b.getAttribute("data-s") === st)); });
+      $("netCap").innerHTML = caps[st];
+    }
+    btns.forEach(function (b) { b.addEventListener("click", function () { show(+b.getAttribute("data-s")); }); });
+    show(1);
+  })();
+
+  /* Loop ring + timeline */
+  (function () {
+    var s = $("ring"); if (!s) return;
+    var cx = 220, cy = 220, R = 150, names = ["01", "02", "03", "04", "05"];
+    function pt(deg, r) { var a = deg * Math.PI / 180; return [cx + r * Math.cos(a), cy + r * Math.sin(a)]; }
+    var defs = el("defs", {}), m = el("marker", { id: "ah", viewBox: "0 0 10 10", refX: 7, refY: 5, markerWidth: 7, markerHeight: 7, orient: "auto-start-reverse" });
+    m.appendChild(el("path", { d: "M1 1 9 5 1 9", fill: "none", stroke: "#E8E8E8", "stroke-width": 1.6 })); defs.appendChild(m); s.appendChild(defs);
+    s.appendChild(el("circle", { cx: cx, cy: cy, r: R, "class": "trk" }));
+    for (var i = 0; i < 5; i++) {
+      var a = pt(-90 + i * 72 + 11, R), b = pt(-90 + (i + 1) * 72 - 11, R);
+      s.appendChild(el("path", { d: "M" + a[0].toFixed(1) + " " + a[1].toFixed(1) + "A" + R + " " + R + " 0 0 1 " + b[0].toFixed(1) + " " + b[1].toFixed(1), "class": "arc", "marker-end": "url(#ah)" }));
+    }
+    s.appendChild(el("circle", { cx: cx, cy: cy, r: 84, "class": "core" }));
+    s.appendChild(el("text", { x: cx, y: cy - 24, "class": "c1" }, "V STREDE"));
+    s.appendChild(el("text", { x: cx, y: cy + 8, "class": "c2" }, "Váš projekt"));
+    s.appendChild(el("text", { x: cx, y: cy + 32, "class": "c3" }, "vedie ho váš človek"));
+    var glows = [], nodes = [], labels = [];
+    for (i = 0; i < 5; i++) {
+      var p = pt(-90 + i * 72, R), q = pt(-90 + i * 72, R + 38);
+      var gl = el("circle", { cx: p[0], cy: p[1], r: 24, "class": "glow" }), nd = el("circle", { cx: p[0], cy: p[1], r: 12, "class": "nd", "data-i": i });
+      var lb = el("text", { x: q[0], y: q[1], "class": "lbl" }, names[i]);
+      s.appendChild(gl); s.appendChild(nd); s.appendChild(lb); glows.push(gl); nodes.push(nd); labels.push(lb);
+    }
+    var items = $("tl").querySelectorAll("li"), weeks = $("weeks").children, timer = null;
+    function set(k) {
+      for (var j = 0; j < 5; j++) {
+        var on = j === k;
+        nodes[j].setAttribute("class", "nd" + (on ? " on" : "")); glows[j].setAttribute("class", "glow" + (on ? " on" : "")); labels[j].setAttribute("class", "lbl" + (on ? " on" : ""));
+        items[j].className = on ? "on" : "";
+      }
+      for (j = 0; j < 10; j++) weeks[j].className = Math.floor(j / 2) === k ? "on" : "";
+    }
+    function pick(k) { if (timer) { clearInterval(timer); timer = null; } set(k); }
+    items.forEach(function (li, j) { li.addEventListener("click", function () { pick(j); }); });
+    nodes.forEach(function (n, j) { n.addEventListener("click", function () { pick(j); }); });
+    var cur = 0; set(0);
+    if (!calm) timer = setInterval(function () { cur = (cur + 1) % 5; set(cur); }, 2600);
+  })();
+
+  /* Flow: process grid */
+  (function () {
+    var d = $("dots"); if (!d) return;
+    var on = [2, 7, 13, 20, 26, 30, 33, 38, 44, 47, 51, 57, 62], h = "";
+    for (var i = 0; i < 64; i++) h += '<i' + (on.indexOf(i) >= 0 ? ' class="on"' : "") + "></i>";
+    d.innerHTML = h;
+  })();
+
+  var toggle = $("notesToggle");
+  toggle.addEventListener("click", function () {
+    var off = document.body.classList.toggle("notes-off");
+    toggle.setAttribute("aria-pressed", String(!off));
+    toggle.textContent = off ? "Zobraziť poznámky" : "Skryť poznámky (pohľad návštevníka)";
+  });
+  var copy = $("copyMail");
+  copy.addEventListener("click", function () {
+    var text = $("mail").textContent;
+    var fallback = function () { var r = document.createRange(); r.selectNodeContents($("mail")); var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r); copy.textContent = "Označené"; };
+    try { navigator.clipboard.writeText(text).then(function () { copy.textContent = "Skopírované"; }, fallback); } catch (e) { fallback(); }
+  });
+  $("applyForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    $("formMsg").textContent = "Toto je návrh stránky. Formulár sa zatiaľ nikam neodosiela.";
+  });
+})();
+</script>
+</body>
+</html>
